@@ -25,6 +25,7 @@ module.exports = {
 
 	rules: {
 		'@typescript-eslint/no-empty-function': 'off',
+		'@typescript-eslint/consistent-type-definitions': 'off',
 		'arrow-parens': ['error', 'always'],
 		camelcase: 'error',
 		'id-length': [
