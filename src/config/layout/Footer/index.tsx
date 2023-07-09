@@ -1,10 +1,8 @@
-import { useRouter } from 'next/router';
+import css from './index.module.css';
 
 export const Footer = () => {
-	const router = useRouter();
-
 	return (
-		<footer>
+		<footer className={css.footer}>
 			<p>Hello</p>
 		</footer>
 	);
