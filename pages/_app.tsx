@@ -7,6 +7,8 @@ import type { AppProps } from 'next/app';
 import { useState } from 'react';
 
 import { AppLayout } from '@/shared/ui/template/AppLayout';
+import VibeLabTheme from '@/config/theme';
+import { ChakraProvider } from '@chakra-ui/react';
 
 const QUERY_OPTIONS = {
 	defaultOptions: {
@@ -29,9 +31,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<QueryClientProvider client={queryClient}>
 			<Hydrate state={pageProps.dehydratedState} options={QUERY_OPTIONS}>
-				<AppLayout>
-					<Component {...pageProps} />
-				</AppLayout>
+				<ChakraProvider theme={VibeLabTheme}>
+					<AppLayout>
+						<Component {...pageProps} />
+					</AppLayout>
+				</ChakraProvider>
 			</Hydrate>
 		</QueryClientProvider>
 	);

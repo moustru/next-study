@@ -10,26 +10,5 @@ module.exports = {
 					'Selector should be written in camelCase (selector-class-pattern)',
 			},
 		],
-		'scss/at-mixin-pattern': [
-			'^([a-z]|[A-Z])[a-zA-Z0-9]+$',
-			{
-				message:
-					'Mixin should be written in camelCase (selector-class-pattern)',
-			},
-		],
-		'scss/dollar-variable-pattern': [
-			'^([a-z]|[A-Z])[a-zA-Z0-9]+$',
-			{
-				message:
-					'Variable should be written in camelCase (selector-class-pattern)',
-			},
-		],
-		'scss/at-function-pattern': [
-			'^([a-z]|[A-Z])[a-zA-Z0-9]+$',
-			{
-				message:
-					'Function should be written in camelCase (selector-class-pattern)',
-			},
-		],
 	},
 };
