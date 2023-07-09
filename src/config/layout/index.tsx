@@ -13,7 +13,7 @@ export function AppLayout({ children }: PropsWithChildren) {
 				<meta name="description" content="Chulakov template next js" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<Grid>
+			<Grid minH={'100vh'} gridTemplateRows={'auto 1fr auto'}>
 				<Header />
 				<main>{children}</main>
 				<Footer />

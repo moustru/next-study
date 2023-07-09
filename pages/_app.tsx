@@ -10,6 +10,8 @@ import { AppLayout } from '@/config/layout';
 import VibeLabTheme from '@/config/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 
+import '../src/config/styles/global.css';
+
 const QUERY_OPTIONS = {
 	defaultOptions: {
 		queries: {
