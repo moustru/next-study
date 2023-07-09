@@ -1,104 +1,104 @@
-// https://github.com/bizon/eslint-config-xo-bizon
-
-const rules = {
-	'capitalized-comments': 'off',
-
-	// Not smart enough
-	'jsx-a11y/alt-text': 'off',
-
-	// This reverts the "no null" decision from xo
-	'@typescript-eslint/ban-types': 'off',
-
-	// This would be nice in an ideal world, even warnings are too much
-	'@typescript-eslint/naming-convention': 'off',
-
-	// We prefer interfaces
-	'@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-
-	// These rules are too restrictive
-	'@typescript-eslint/no-unsafe-argument': 'off',
-
-	'@typescript-eslint/no-unsafe-assignment': 'off',
-	'@typescript-eslint/no-unsafe-call': 'off',
-	'@typescript-eslint/no-unsafe-member-access': 'off',
-	'@typescript-eslint/no-unsafe-return': 'off',
-
-	// Modules
-	'import/first': 'error',
-	'import/newline-after-import': 'error',
-	'import/no-duplicates': 'error',
-	'new-cap': 'off',
-	'import/order': [
-		'error',
-		{
-			groups: ['builtin', 'external', 'internal', 'parent', 'sibling', 'index'],
-			pathGroups: [
-				{
-					pattern: '@/components/**',
-					group: 'internal',
-					position: 'after',
-				},
-				{
-					pattern: '@/lib/**',
-					group: 'internal',
-					position: 'after',
-				},
-
-				{
-					pattern: '@/!(lib|tests|types|components)/**',
-					group: 'internal',
-					position: 'after',
-				},
-				{
-					pattern: '@/types/**',
-					group: 'internal',
-					position: 'after',
-				},
-				{
-					pattern: '**/**.svg',
-					group: 'object',
-					position: 'before',
-				},
-				{
-					pattern: './**/**.scss',
-					group: 'index',
-					position: 'after',
-				},
-			],
-			'newlines-between': 'always',
-			alphabetize: {
-				order: 'asc',
-				caseInsensitive: true,
-			},
-		},
-	],
-	'sort-imports': [
-		'error',
-		{
-			ignoreCase: true,
-			ignoreDeclarationSort: true,
-		},
-	],
-};
-
 module.exports = {
 	root: true,
+
 	env: {
-		browser: true,
-		es2021: true,
+		node: true,
+		es6: true,
 	},
+
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:unicorn/recommended',
+		'plugin:prettier/recommended',
+	],
+
+	plugins: ['@typescript-eslint'],
+
+	parser: '@typrscript-eslint/parser',
 
 	parserOptions: {
 		ecmaVersion: 'latest',
-		sourceType: 'module',
 	},
-	extends: ['next/core-web-vitals', 'prettier'],
-	overrides: [
-		{
-			extends: ['next/core-web-vitals', 'prettier'],
-			files: ['*.ts', '*.tsx'],
-			rules,
-		},
-	],
-	rules,
+
+	ignorePatterns: ['*.d.ts', '*.config.ts'],
+
+	rules: {
+		'@typescript-eslint/no-empty-function': 'off',
+		'arrow-parens': ['error', 'always'],
+		camelcase: 'error',
+		'id-length': [
+			'error',
+			{
+				min: 3,
+				max: 40,
+				exceptions: ['i', 'j', 'id', 'on', 'to', '_'],
+				properties: 'never',
+			},
+		],
+		'no-console': ['warn', { allow: ['error', 'debug'] }],
+		'no-debugger': 'off',
+		'no-restricted-syntax': [
+			'error',
+			{
+				selector:
+					'VariableDeclarator[id.name!=/Dto/][init.callee.name=/^Record/],[id.name!=/Dto/][init.callee.property.name=/extend/],[id.name!=/Dto/][init.callee.property.name=/omit/],[id.name!=/Dto/][init.callee.property.name=/pick/]',
+				message: 'Необходимо называть переменную Runtype-а с окончанием Dto.',
+			},
+			{
+				selector: 'VariableDeclarator[id.name=/Dto/][init.callee.name=/Array/]',
+				message:
+					'Нет смысла присваивать массив Runtype Dto в переменную.' +
+					' Имеет смысл использовать Dto в единственном числе и потом по' +
+					' необходимости оборачивать его в RtArray(Dto)',
+			},
+			{
+				selector:
+					"CallExpression[callee.name='setTimeout'],[callee.name='setInterval']",
+				message:
+					'setTimeout и setInterval запрещены к использованию. ' +
+					'Вместо них нужно использовать useTimeout, useTimeoutFn для timeout-а,' +
+					' и useInterval, useIntervalFn для interval-а.',
+			},
+		],
+		'no-undef': 'off',
+		'prettier/prettier': 'error',
+		'unicorn/consistent-function-scoping': 'off',
+		'unicorn/prefer-top-level-await': 'off',
+		'unicorn/filename-case': [
+			'error',
+			{
+				// убираем варнинги с переводов и файлов конфигов
+				case: 'pascalCase',
+				ignore: [
+					'^\\w+.json$',
+					'\\w+.js$',
+					'^\\w+.config.ts$',
+					'^\\w+.spec.ts$',
+				],
+			},
+		],
+		'unicorn/no-abusive-eslint-disable': 'off',
+		'unicorn/no-array-callback-reference': 'off',
+		'unicorn/no-array-for-each': 'off',
+		'unicorn/no-array-reduce': 'off',
+		'unicorn/no-null': 'off',
+		'unicorn/no-thenable': 'off',
+		'unicorn/prefer-logical-operator-over-ternary': 'off',
+		'unicorn/prefer-module': 'off',
+		'unicorn/prevent-abbreviations': [
+			'error',
+			{
+				allowList: {
+					params: true,
+					props: true,
+					Ref: true,
+					Refs: true,
+					ref: true,
+					acc: true,
+					prop: true,
+				},
+			},
+		],
+	},
 };
