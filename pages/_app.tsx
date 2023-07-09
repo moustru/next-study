@@ -6,7 +6,7 @@ import {
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
 
-import { AppLayout } from '@/shared/ui/template/AppLayout';
+import { AppLayout } from '@/config/layout';
 import VibeLabTheme from '@/config/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 
