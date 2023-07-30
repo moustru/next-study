@@ -3,14 +3,9 @@ import { extendTheme } from '@chakra-ui/react';
 import colors from './colors';
 import Container from './components/Container';
 import fonts from './fonts';
-import Text from './components/Text';
+import { breakpoints } from './breakpoints';
 import Heading from './components/Heading';
-
-/**
- * All Media queries
- *
- * [480 768,991, 1280, 1440]
- */
+import Text from './components/Text';
 
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
@@ -29,6 +24,7 @@ const VibeLabTheme = extendTheme({
 
 	colors,
 	fonts,
+	breakpoints,
 });
 
 export default VibeLabTheme;
