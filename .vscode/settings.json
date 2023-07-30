@@ -30,31 +30,14 @@
 			"source.fixAll.eslint": true
 		}
 	},
-	"[scss]": {
-		"editor.defaultFormatter": "esbenp.prettier-vscode",
-		"editor.codeActionsOnSave": {
-			"source.fixAll.stylelint": true
-		}
-	},
+
 	"[jsonc]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[json]": {
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
-	"[markdown]": {
-		"editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
-		"files.trimTrailingWhitespace": false,
-		"editor.renderWhitespace": "all",
-		"editor.acceptSuggestionOnEnter": "off",
-		"editor.parameterHints.enabled": false,
-		"editor.quickSuggestions": {
-			"comments": "off",
-			"strings": "off",
-			"other": "off"
-		},
-		"editor.snippetSuggestions": "none"
-	},
+
 	//===========================================
 	//============= Linters =====================
 	//===========================================
