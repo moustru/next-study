@@ -1,9 +1,10 @@
 import { extendTheme } from '@chakra-ui/react';
 
 import colors from './colors';
-import typography from './typography';
-import { Container } from './components/container';
+import Container from './components/Container';
 import fonts from './fonts';
+import Text from './components/Text';
+import Heading from './components/Heading';
 
 /**
  * All Media queries
@@ -14,7 +15,9 @@ import fonts from './fonts';
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
 	components: {
-		...Container,
+		Container,
+		Heading,
+		Text,
 	},
 	//------  components end  ------//
 
@@ -26,7 +29,6 @@ const VibeLabTheme = extendTheme({
 
 	colors,
 	fonts,
-	typography,
 });
 
 export default VibeLabTheme;
