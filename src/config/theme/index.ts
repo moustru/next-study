@@ -4,13 +4,18 @@ import colors from './colors';
 import typography from './typography';
 import { Container } from './components/container';
 
-// import { Button } from './components/Button';
+/**
+ * All Media queries
+ *
+ * [480 768,991, 1280, 1440]
+ */
 
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
 	components: {
 		...Container,
 	},
+	//------  components end  ------//
 
 	styles: {
 		global: {
