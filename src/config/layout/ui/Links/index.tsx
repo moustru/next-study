@@ -4,10 +4,12 @@ import { links } from './constants';
 
 export const Links = ({ isLight }: { isLight: boolean }) => {
 	return (
-		<HStack>
+		<HStack spacing={'32px'}>
 			{links.map((link) => (
 				<Link href={link.href} key={link.id}>
-					<Text>{link.pageName}</Text>
+					<Text variant="sm" color={isLight ? 'white' : 'grey.600'}>
+						{link.pageName}
+					</Text>
 				</Link>
 			))}
 		</HStack>
