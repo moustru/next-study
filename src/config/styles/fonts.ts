@@ -1,5 +1,15 @@
 import localFont from 'next/font/local';
 
+const articulatCF600 = localFont({
+	src: [
+		{
+			path: '../../../public/fonts/ArticulatCF-DemiBold.ttf',
+			weight: '600',
+			style: 'normal',
+		},
+	],
+});
+
 const circe400 = localFont({
 	src: [
 		{
@@ -30,4 +40,4 @@ const circe600 = localFont({
 	],
 });
 
-export { circe400, circe500, circe600 };
+export { articulatCF600, circe400, circe500, circe600 };

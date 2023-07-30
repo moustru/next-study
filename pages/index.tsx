@@ -1,4 +1,4 @@
-import { HomePage } from '@/modules/Home/ui';
+import { HomePage } from '@/modules/Home';
 import type { GetStaticProps } from 'next';
 
 const Home = () => <HomePage />;
