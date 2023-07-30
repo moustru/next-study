@@ -4,12 +4,7 @@ import colors from './colors';
 import typography from './typography';
 import { Container } from './components/container';
 import fonts from './fonts';
-
-/**
- * All Media queries
- *
- * [480 768,991, 1280, 1440]
- */
+import { breakpoints } from './breakpoints';
 
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
@@ -27,6 +22,7 @@ const VibeLabTheme = extendTheme({
 	colors,
 	fonts,
 	typography,
+	breakpoints,
 });
 
 export default VibeLabTheme;
