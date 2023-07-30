@@ -1,0 +1,5 @@
+.logo {
+	@media (max-width: 1024px) {
+		transform: scale(0.7);
+	}
+}
