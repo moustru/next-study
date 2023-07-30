@@ -1,4 +1,3 @@
 .footer {
-	background-color: chocolate;
-	padding: 30px;
+	background-color: var(--chakra-colors-grey-600);
 }
