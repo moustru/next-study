@@ -4,6 +4,7 @@ import { SectionGreet } from './sections/SectionGreet';
 import { Box } from '@chakra-ui/react';
 import styles from './index.module.css';
 import { SectionPartners } from './sections/SectionPartners';
+import { SectionAchievements } from './sections/SectionAchievements';
 
 const HomePage = () => (
 	<>
@@ -13,8 +14,10 @@ const HomePage = () => (
 
 		<Box className={styles.greet}>
 			<SectionGreet />
-			<SectionPartners />
+			<SectionPartners mb="180px" />
 		</Box>
+
+		<SectionAchievements mb="180px" />
 	</>
 );
 

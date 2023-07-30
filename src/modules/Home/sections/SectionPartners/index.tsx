@@ -1,33 +1,35 @@
-import { Container, Flex, Grid, Heading } from '@chakra-ui/react';
+import { Container, Grid, GridItem, Heading } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const partners = [
 	{ image: 'chulakov.png', alt: 'Chulakov' },
-	{ image: 'huawei.png', alt: 'Huawei' },
-	{ image: 'kode.png', alt: 'Kode' },
-	{ image: 'med.png', alt: 'Med' },
-	{ image: 'red_mad_robot.png', alt: 'Red Mad Robot' },
-	{ image: 'sferus.png', alt: 'Sferus' },
-	{ image: 'touch_instinct.png', alt: 'Touch Instinct' },
 	{ image: 'wallet.png', alt: 'Wallet' },
+	{ image: 'kode.png', alt: 'Kode' },
+	{ image: 'red_mad_robot.png', alt: 'Red Mad Robot' },
+	{ image: 'med.png', alt: 'Med' },
+	{ image: 'sferus.png', alt: 'Sferus' },
+	{ image: 'huawei.png', alt: 'Huawei' },
+	{ image: 'touch_instinct.png', alt: 'Touch Instinct' },
 ];
 
-export const SectionPartners = () => {
+export const SectionPartners = ({ ...others }) => {
 	return (
-		<Container as="section">
-			<Heading as="h2" variant="h2">
+		<Container as="section" {...others}>
+			<Heading as="h2" variant="h2" mb="5rem">
 				С нами работают
 			</Heading>
 
-			<Grid>
+			<Grid templateColumns="repeat(4, 1fr)" rowGap="2rem">
 				{partners.map(({ image, alt }, index) => (
-					<Image
-						src={`/images/partners/${image}`}
-						alt={alt}
-						width={300}
-						height={80}
-						key={image + index}
-					/>
+					<GridItem>
+						<Image
+							src={`/images/partners/${image}`}
+							alt={alt}
+							width={300}
+							height={80}
+							key={image + index}
+						/>
+					</GridItem>
 				))}
 			</Grid>
 		</Container>

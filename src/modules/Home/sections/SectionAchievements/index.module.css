@@ -1,0 +1,7 @@
+.achievements {
+	background: radial-gradient(
+		60% 100% at 0% 50%,
+		var(--chakra-colors-basic-200) 0%,
+		var(--chakra-colors-grey-600) 100%
+	);
+}
