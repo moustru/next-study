@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { AppLayout } from '@/config/layout';
 import VibeLabTheme from '@/config/theme';
 import { ChakraProvider } from '@chakra-ui/react';
+import { circe400 } from '@/config/styles/fonts';
 
 const QUERY_OPTIONS = {
 	defaultOptions: {
@@ -33,7 +34,7 @@ const App = ({ Component, pageProps }: AppProps) => {
 			<Hydrate state={pageProps.dehydratedState} options={QUERY_OPTIONS}>
 				<ChakraProvider theme={VibeLabTheme}>
 					<AppLayout>
-						<Component {...pageProps} />
+						<Component className={circe400.className} {...pageProps} />
 					</AppLayout>
 				</ChakraProvider>
 			</Hydrate>

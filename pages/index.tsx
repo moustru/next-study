@@ -1,6 +1,5 @@
-import { type GetStaticProps } from 'next';
-
-import { HomePage } from '@/modules/Home';
+import { HomePage } from '@/modules/Home/ui';
+import type { GetStaticProps } from 'next';
 
 const Home = () => <HomePage />;
 
