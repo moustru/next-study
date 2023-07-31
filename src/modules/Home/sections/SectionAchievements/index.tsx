@@ -1,6 +1,7 @@
-import { Box, Text, Container, Flex, Heading } from '@chakra-ui/react';
+import { Box, Text, Flex, Heading } from '@chakra-ui/react';
 import Image from 'next/image';
 import styles from './index.module.css';
+import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
 const achievements = [
 	{
@@ -20,7 +21,7 @@ const achievements = [
 
 export const SectionAchievements = ({ ...others }) => {
 	return (
-		<Container as="section" {...others}>
+		<SectionTemplate {...others}>
 			<Flex
 				className={styles.achievements}
 				justify="space-between"
@@ -31,7 +32,7 @@ export const SectionAchievements = ({ ...others }) => {
 				{achievements.map(({ image, alt, place, text }, index) => (
 					<Box w={230}>
 						<Flex alignItems="start" gap={4} mb={6}>
-							<Heading as="h3" variant="h1" color="white.100">
+							<Heading as="h3" variant="h1" color="light.100">
 								#{place}
 							</Heading>
 							<Image
@@ -42,12 +43,12 @@ export const SectionAchievements = ({ ...others }) => {
 								key={alt + index}
 							/>
 						</Flex>
-						<Text color="white.100" variant="md">
+						<Text color="light.100" variant="md">
 							{text}
 						</Text>
 					</Box>
 				))}
 			</Flex>
-		</Container>
+		</SectionTemplate>
 	);
 };

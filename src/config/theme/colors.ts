@@ -8,6 +8,7 @@ const colors = {
 	},
 
 	grey: {
+		50: '#F1F2F3',
 		100: '#F7F7F8',
 		200: '#E4E5E7',
 		300: '#A3A7AE',
@@ -16,8 +17,9 @@ const colors = {
 		600: '#26282B',
 	},
 
-	white: {
+	light: {
 		100: '#FFFFFF',
+		200: '#F0F5FF',
 	},
 
 	add: {

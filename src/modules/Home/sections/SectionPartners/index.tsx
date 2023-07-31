@@ -1,4 +1,5 @@
-import { Container, Grid, GridItem, Heading } from '@chakra-ui/react';
+import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
+import { Grid, GridItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 const partners = [
@@ -14,11 +15,7 @@ const partners = [
 
 export const SectionPartners = ({ ...others }) => {
 	return (
-		<Container as="section" {...others}>
-			<Heading as="h2" variant="h2" mb="5rem">
-				С нами работают
-			</Heading>
-
+		<SectionTemplate title="С нами работают" {...others}>
 			<Grid templateColumns="repeat(4, 1fr)" rowGap="2rem">
 				{partners.map(({ image, alt }, index) => (
 					<GridItem>
@@ -32,6 +29,6 @@ export const SectionPartners = ({ ...others }) => {
 					</GridItem>
 				))}
 			</Grid>
-		</Container>
+		</SectionTemplate>
 	);
 };
