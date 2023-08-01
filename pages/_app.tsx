@@ -10,6 +10,7 @@ import { AppLayout } from '@/config/layout';
 import VibeLabTheme from '@/config/theme';
 import { ChakraProvider } from '@chakra-ui/react';
 import { circe400 } from '@/config/styles/fonts';
+import { ModalProvider } from '@/modules/Common/providers/Modal.provider';
 
 const QUERY_OPTIONS = {
 	defaultOptions: {
@@ -33,9 +34,11 @@ const App = ({ Component, pageProps }: AppProps) => {
 		<QueryClientProvider client={queryClient}>
 			<Hydrate state={pageProps.dehydratedState} options={QUERY_OPTIONS}>
 				<ChakraProvider theme={VibeLabTheme}>
-					<AppLayout>
-						<Component className={circe400.className} {...pageProps} />
-					</AppLayout>
+					<ModalProvider>
+						<AppLayout>
+							<Component className={circe400.className} {...pageProps} />
+						</AppLayout>
+					</ModalProvider>
 				</ChakraProvider>
 			</Hydrate>
 		</QueryClientProvider>

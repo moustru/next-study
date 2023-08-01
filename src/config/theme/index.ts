@@ -7,6 +7,9 @@ import { breakpoints } from './breakpoints';
 import Heading from './components/Heading';
 import Text from './components/Text';
 import Button from './components/Button';
+import Radio from './components/Radio';
+import Input from './components/Input';
+import Tag from './components/Tag';
 
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
@@ -15,6 +18,9 @@ const VibeLabTheme = extendTheme({
 		Heading,
 		Text,
 		Button,
+		Radio,
+		Input,
+		Tag,
 	},
 	//------  components end  ------//
 
