@@ -1,20 +1,20 @@
 import { Container, Heading } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 
-type SectionTemplate = {
-	children: ReactNode;
-	title?: string;
-};
-
 export const SectionTemplate = ({
 	children,
 	title = '',
+	firstBlock = false,
 	...others
-}: SectionTemplate) => {
+}: any) => {
 	return (
 		<Container as="section" {...others} mb="180px">
 			{title && (
-				<Heading as="h2" variant="h2" mb={20}>
+				<Heading
+					as={firstBlock ? 'h1' : 'h2'}
+					variant={firstBlock ? 'h1' : 'h2'}
+					mb={20}
+				>
 					{title}
 				</Heading>
 			)}
