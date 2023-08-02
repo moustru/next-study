@@ -6,10 +6,11 @@ import fonts from './fonts';
 import { breakpoints } from './breakpoints';
 import Heading from './components/Heading';
 import Text from './components/Text';
-import Button from './components/Button';
+import Button from './components/Button/Button';
 import Radio from './components/Radio';
 import Input from './components/Input';
 import Tag from './components/Tag';
+import IconButton from './components/Button/IconButton';
 
 const VibeLabTheme = extendTheme({
 	//------  components start  ------//
@@ -18,6 +19,7 @@ const VibeLabTheme = extendTheme({
 		Heading,
 		Text,
 		Button,
+		IconButton,
 		Radio,
 		Input,
 		Tag,

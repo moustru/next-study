@@ -7,10 +7,8 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	useDisclosure,
 } from '@chakra-ui/react';
 import { ReactElement } from 'react';
-import styles from './index.module.css';
 
 type CustomModalProps = CustomModalCompound & {
 	isOpen: boolean;
