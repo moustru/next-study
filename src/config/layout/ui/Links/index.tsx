@@ -2,7 +2,7 @@ import { HStack, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 import { links } from './constants';
 
-export const Links = ({ isLight }: { isLight: boolean }) => {
+export const Links = ({ isLight = false }: { isLight?: boolean }) => {
 	return (
 		<HStack spacing={'32px'}>
 			{links.map((link) => (
