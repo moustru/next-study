@@ -1,9 +1,10 @@
+import { Variant } from '@/shared/types/Variant';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 type AchieveBlockModel = {
 	bgColor?: string;
-	variant?: 'light' | 'dark';
+	variant?: Variant;
 	achievements: {
 		image: string;
 		alt: string;

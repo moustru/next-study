@@ -1,6 +1,7 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import { CustomIcon } from '../CustomIcon';
 import ArrowSVG from 'public/icons/arrow_right.svg';
+import type { Size } from '@/shared/types/Size';
+import type { Variant } from '@/shared/types/Variant';
 
 type CaseBlockProps = {
 	title: string;
@@ -9,8 +10,8 @@ type CaseBlockProps = {
 	href: string;
 	bgImage: string;
 	bgColor?: string;
-	size?: 'md' | 'sm';
-	variant?: 'light' | 'dark';
+	size?: Size;
+	variant?: Variant;
 };
 
 export const CaseBlock = ({
@@ -67,11 +68,6 @@ export const CaseBlock = ({
 				fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
 				width="60px"
 			/>
-			{/* <CustomIcon
-				icon="arrow_right"
-				width={60}
-				color={variant === 'light' ? 'grey.600' : 'light.100'}
-			/> */}
 		</Flex>
 	);
 };
