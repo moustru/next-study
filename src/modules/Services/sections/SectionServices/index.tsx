@@ -5,7 +5,7 @@ import { ServiceBlock } from '@/shared/components/ServiceBlock';
 
 export const SectionServices = () => {
 	return (
-		<SectionTemplate title="Услуги" mt={20}>
+		<SectionTemplate title="Услуги" mt={20} firstBlock>
 			<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8}>
 				{services.map((service, i) => (
 					<ServiceBlock {...service} key={service.title + i} />
