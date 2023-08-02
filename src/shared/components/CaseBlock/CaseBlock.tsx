@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import ArrowSVG from 'public/icons/arrow_right.svg';
 import type { Size } from '@/shared/types/Size';
 import type { Variant } from '@/shared/types/Variant';
+import Link from 'next/link';
 
 type CaseBlockProps = {
 	title: string;
@@ -64,10 +65,12 @@ export const CaseBlock = ({
 					{description}
 				</Text>
 			)}
-			<ArrowSVG
-				fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
-				width="60px"
-			/>
+			<Link href={href}>
+				<ArrowSVG
+					fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
+					width="60px"
+				/>
+			</Link>
 		</Flex>
 	);
 };

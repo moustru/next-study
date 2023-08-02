@@ -15,7 +15,7 @@ export const Header = () => {
 					<Logo />
 					<Flex gap={5}>
 						<Links />
-						<Button size="sm" variant="blue" onClick={onOpen}>
+						<Button size="md" variant="blue" onClick={onOpen}>
 							Написать нам
 						</Button>
 					</Flex>

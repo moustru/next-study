@@ -18,7 +18,7 @@ const HomePage = () => {
 				<MetaInfo title="Vibe Lab – главная" />
 			</Head>
 
-			<Box className={styles.greet}>
+			<Box pt="20px" className={styles.greet}>
 				<SectionGreet />
 				<SectionPartners />
 			</Box>

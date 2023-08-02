@@ -8,7 +8,12 @@ export const SectionTemplate = ({
 	...others
 }: any) => {
 	return (
-		<Container as="section" {...others} mb="180px">
+		<Container
+			as="section"
+			{...others}
+			mt={firstBlock ? '200px' : 0}
+			mb="180px"
+		>
 			{title && (
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}

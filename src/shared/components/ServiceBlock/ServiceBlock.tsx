@@ -1,6 +1,6 @@
 import { Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
-import { CustomIcon } from '../CustomIcon';
+import ArrowSVG from 'public/icons/arrow_right.svg';
 
 type ServiceBlockModel = {
 	label: string;
@@ -41,7 +41,7 @@ export const ServiceBlock = ({
 			</Stack>
 			{/* <Link href={href}> */}
 			<Link href="/service-page">
-				<CustomIcon icon="arrow_right" width={60} />
+				<ArrowSVG fill="#26282B" width="60px" />
 			</Link>
 		</Stack>
 	);

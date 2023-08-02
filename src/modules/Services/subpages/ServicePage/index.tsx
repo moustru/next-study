@@ -51,7 +51,7 @@ export const ServicePage = () => {
 				<MetaInfo title="Услуга" />
 			</Head>
 
-			<Container mt={20} mb={180}>
+			<Container mt={200} mb={180}>
 				<Heading as="h1" variant="h1" mb={12}>
 					Мобильные приложения
 				</Heading>

@@ -30,7 +30,7 @@ export const CasePage = () => {
 				<MetaInfo title="Vibe Lab – кейс" />
 			</Head>
 
-			<Container mt={20} mb={180}>
+			<Container mt={200} mb={180}>
 				<Heading as="h1" variant="h1" mb={10}>
 					Ботанический сад
 				</Heading>

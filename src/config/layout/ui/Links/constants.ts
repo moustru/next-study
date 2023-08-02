@@ -1,12 +1,12 @@
 export const links = [
 	{
 		id: 1,
-		href: '#',
+		href: '/services',
 		pageName: 'Услуги',
 	},
 	{
 		id: 2,
-		href: '#',
+		href: '/cases',
 		pageName: 'Кейсы',
 	},
 	{
