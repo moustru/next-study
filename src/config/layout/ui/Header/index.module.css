@@ -1,4 +1,5 @@
 .header {
-	padding: 30px;
-	background-color: tomato;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }

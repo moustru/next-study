@@ -2,7 +2,7 @@ import { Container, Heading, Text } from '@chakra-ui/react';
 
 export const SectionGreet = () => {
 	return (
-		<Container as="section" pt={90} pb={180}>
+		<Container as="section" pt={180} pb={180}>
 			<Heading as="h1" variant="h1">
 				Первая IT-лаборатория
 				<Text color="basic.200" display="inline-block">
