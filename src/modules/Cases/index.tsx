@@ -1,11 +1,13 @@
-import { MetaInfo } from '@/shared/components/MetaInfo';
-import Head from 'next/head';
-import { SectionTemplate } from '../Common/sections/SectionTemplate';
 import { Grid } from '@chakra-ui/react';
+import Head from 'next/head';
+
 import { CaseBlock } from '@/shared/components/CaseBlock';
+import { MetaInfo } from '@/shared/components/MetaInfo';
 import { Size } from '@/shared/types/Size';
 import { Variant } from '@/shared/types/Variant';
+
 import { SectionForm } from '../Common/sections/SectionForm';
+import { SectionTemplate } from '../Common/sections/SectionTemplate';
 
 export const caseItems = [
 	{
@@ -64,7 +66,7 @@ const casesUI: CasesUI[] = [
 ];
 
 const casesArr = caseItems.map((caseItem, i) =>
-	Object.assign(caseItem, casesUI[i])
+	Object.assign(caseItem, casesUI[i]),
 );
 
 export const CasesPage = () => {

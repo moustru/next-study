@@ -1,8 +1,12 @@
-import { MetaInfo } from '@/shared/components/MetaInfo';
 import { Heading } from '@chakra-ui/react';
 import Head from 'next/head';
-import { SectionServices } from './sections/SectionServices';
+
+import { MetaInfo } from '@/shared/components/MetaInfo';
+
 import { SectionForm } from '../Common/sections/SectionForm';
+
+import { SectionServices } from './sections/SectionServices';
+
 
 export const ServicesPage = () => {
 	return (

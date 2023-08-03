@@ -1,19 +1,19 @@
 import { extendTheme } from '@chakra-ui/react';
 
-import colors from './colors';
-import Container from './components/Container';
-import fonts from './fonts';
 import { breakpoints } from './breakpoints';
-import Heading from './components/Heading';
-import Text from './components/Text';
+import colors from './colors';
 import Button from './components/Button/Button';
-import Radio from './components/Radio';
-import Input from './components/Input';
-import Tag from './components/Tag';
 import IconButton from './components/Button/IconButton';
+import Container from './components/Container';
+import Heading from './components/Heading';
+import Input from './components/Input';
+import Radio from './components/Radio';
+import Tag from './components/Tag';
+import Text from './components/Text';
+import fonts from './fonts';
 
 const VibeLabTheme = extendTheme({
-	//------  components start  ------//
+	// ------  components start  ------//
 	components: {
 		Container,
 		Heading,
@@ -24,7 +24,7 @@ const VibeLabTheme = extendTheme({
 		Input,
 		Tag,
 	},
-	//------  components end  ------//
+	// ------  components end  ------//
 
 	styles: {
 		global: {

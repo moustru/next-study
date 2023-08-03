@@ -1,6 +1,7 @@
-import { Variant } from '@/shared/types/Variant';
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
+
+import { Variant } from '@/shared/types/Variant';
 
 type AchieveBlockModel = {
 	bgColor?: string;
@@ -32,12 +33,14 @@ export const AchieveBlock = ({
 			}}
 		>
 			{achievements.map(({ image, alt, place, text }, index) => (
-				<Box w={230}>
+				<Box w={230} key={image + index}>
 					<Flex alignItems="start" gap={4} mb={6}>
 						<Heading
 							as="h3"
 							variant="h1"
-							color={variant === 'dark' ? 'light.100' : 'grey.600'}
+							color={
+								variant === 'dark' ? 'light.100' : 'grey.600'
+							}
 						>
 							#{place}
 						</Heading>

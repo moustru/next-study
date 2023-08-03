@@ -1,3 +1,6 @@
+import { Container, Grid, Heading, Text } from '@chakra-ui/react';
+import Head from 'next/head';
+
 import { SectionForm } from '@/modules/Common/sections/SectionForm';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { achievements } from '@/modules/Home/sections/SectionAchievements/mocks/SectionAchievements.mocks';
@@ -5,8 +8,6 @@ import { AchieveBlock } from '@/shared/components/AchieveBlock/AchieveBlock';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 import { ContentSteps } from '@/shared/components/ContentSteps';
 import { MetaInfo } from '@/shared/components/MetaInfo';
-import { Container, Grid, Heading, Text } from '@chakra-ui/react';
-import Head from 'next/head';
 
 const devSteps = [
 	{

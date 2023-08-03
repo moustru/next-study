@@ -1,8 +1,9 @@
+import { Container, Grid } from '@chakra-ui/react';
+
+import { BottomBar } from './components/BottomBar';
 import { MiddleBar } from './components/MiddleBar';
 import { TopBar } from './components/TopBar';
-import { BottomBar } from './components/BottomBar';
 import css from './index.module.css';
-import { Container, Grid } from '@chakra-ui/react';
 
 export const Footer = () => {
 	return (

@@ -1,11 +1,11 @@
-import { ServicesPage } from '@/modules/Services';
+import { AboutPage } from '@/modules/About';
 
 import type { GetStaticProps } from 'next';
 
-const Services = () => <ServicesPage />;
+const About = () => <AboutPage />;
 
 export const getStaticProps: GetStaticProps = async ({}) => ({
 	props: {},
 });
 
-export default Services;
+export default About;

@@ -1,7 +1,9 @@
-import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { Grid } from '@chakra-ui/react';
-import { services } from './mocks/SectionServices.mocks';
+
+import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ServiceBlock } from '@/shared/components/ServiceBlock';
+
+import { services } from './mocks/SectionServices.mocks';
 
 export const SectionServices = () => {
 	return (

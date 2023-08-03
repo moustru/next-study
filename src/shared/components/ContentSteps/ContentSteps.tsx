@@ -1,5 +1,6 @@
-import { addZeroBeforeDigit } from '@/shared/utils/formatNumbers';
 import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+
+import { addZeroBeforeDigit } from '@/shared/utils/formatNumbers';
 
 type ContentStepModel = {
 	steps: Record<'title' | 'text', string>[];

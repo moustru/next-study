@@ -11,12 +11,12 @@ export const links = [
 	},
 	{
 		id: 3,
-		href: '#',
+		href: '/about',
 		pageName: 'О лаборатории',
 	},
 	{
 		id: 4,
-		href: '#',
+		href: '/blog',
 		pageName: 'Блог',
 	},
 ];

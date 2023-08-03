@@ -11,7 +11,7 @@
 		"start": "next start",
 		"format": "prettier --write .",
 		"stylelint": "stylelint \"**/*.scss\" --fix",
-		"lint": "next lint"
+		"lint": "next lint --fix"
 	},
 	"browserslist": {
 		"development": [
@@ -27,7 +27,7 @@
 		]
 	},
 	"engines": {
-		"node": ">=20",
+		"node": ">=18",
 		"pnpm": ">=8"
 	},
 	"dependencies": {
@@ -57,9 +57,10 @@
 		"autoprefixer": "^10.4.14",
 		"cssnano": "^6.0.1",
 		"eslint": "^8.44.0",
+		"eslint-config-airbnb": "^19.0.4",
 		"eslint-config-next": "13.1.1",
 		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-unicorn": "^47.0.0",
+		"eslint-plugin-prettier": "^5.0.0",
 		"lint-staged": "^13.2.3",
 		"postcss": "^8.4.25",
 		"postcss-import": "^15.1.0",

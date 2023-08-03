@@ -1,6 +1,7 @@
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { helpCases } from './mocks/SectionHelp.mocks';
 import { ContentSteps } from '@/shared/components/ContentSteps';
+
+import { helpCases } from './mocks/SectionHelp.mocks';
 
 export const SectionHelp = ({ ...others }) => {
 	return (

@@ -1,15 +1,18 @@
-import Head from 'next/head';
-import { MetaInfo } from '@/shared/components/MetaInfo';
-import { SectionGreet } from './sections/SectionGreet';
 import { Box } from '@chakra-ui/react';
-import styles from './index.module.css';
-import { SectionPartners } from './sections/SectionPartners';
-import { SectionAchievements } from './sections/SectionAchievements';
-import { SectionHelp } from './sections/SectionHelp';
-import { SectionCases } from './sections/SectionCases';
-import { SectionNews } from './sections/SectionNews';
-import { SectionReviews } from './sections/SectionReviews';
+import Head from 'next/head';
+
+import { MetaInfo } from '@/shared/components/MetaInfo';
+
 import { SectionForm } from '../Common/sections/SectionForm';
+
+import styles from './index.module.css';
+import { SectionAchievements } from './sections/SectionAchievements';
+import { SectionCases } from './sections/SectionCases';
+import { SectionGreet } from './sections/SectionGreet';
+import { SectionHelp } from './sections/SectionHelp';
+import { SectionNews } from './sections/SectionNews';
+import { SectionPartners } from './sections/SectionPartners';
+import { SectionReviews } from './sections/SectionReviews';
 
 const HomePage = () => {
 	return (

@@ -1,6 +1,7 @@
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { reviews } from './mocks/SectionReviews.mocks';
 import { ReviewBlock } from '@/shared/components/ReviewBlock';
+
+import { reviews } from './mocks/SectionReviews.mocks';
 
 export const SectionReviews = () => {
 	return (

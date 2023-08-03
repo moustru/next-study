@@ -1,5 +1,4 @@
 import { Container, Heading } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 
 export const SectionTemplate = ({
 	children,
@@ -10,9 +9,9 @@ export const SectionTemplate = ({
 	return (
 		<Container
 			as="section"
-			{...others}
 			mt={firstBlock ? '200px' : 0}
 			mb="180px"
+			{...others}
 		>
 			{title && (
 				<Heading

@@ -1,5 +1,6 @@
 import { Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
 type ServiceBlockModel = {

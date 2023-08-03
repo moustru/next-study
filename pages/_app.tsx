@@ -1,16 +1,17 @@
+import { ChakraProvider } from '@chakra-ui/react';
 import {
 	Hydrate,
 	QueryClient,
 	QueryClientProvider,
 } from '@tanstack/react-query';
-import type { AppProps } from 'next/app';
 import { useState } from 'react';
 
 import { AppLayout } from '@/config/layout';
-import VibeLabTheme from '@/config/theme';
-import { ChakraProvider } from '@chakra-ui/react';
 import { circe400 } from '@/config/styles/fonts';
+import VibeLabTheme from '@/config/theme';
 import { ModalProvider } from '@/modules/Common/providers/Modal.provider';
+
+import type { AppProps } from 'next/app';
 
 const QUERY_OPTIONS = {
 	defaultOptions: {

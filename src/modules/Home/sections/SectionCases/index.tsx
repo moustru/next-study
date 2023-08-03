@@ -1,8 +1,10 @@
-import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { CustomIcon } from '@/shared/components/CustomIcon';
 import { Stack, Button } from '@chakra-ui/react';
-import { caseItems } from './mocks/SectionCases.mocks';
+
+import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
+import { CustomIcon } from '@/shared/components/CustomIcon';
+
+import { caseItems } from './mocks/SectionCases.mocks';
 
 export const SectionCases = ({ ...others }) => {
 	return (

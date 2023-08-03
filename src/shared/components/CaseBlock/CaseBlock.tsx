@@ -1,8 +1,10 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import ArrowSVG from 'public/icons/arrow_right.svg';
+import Link from 'next/link';
+
 import type { Size } from '@/shared/types/Size';
 import type { Variant } from '@/shared/types/Variant';
-import Link from 'next/link';
+
+import ArrowSVG from 'public/icons/arrow_right.svg';
 
 type CaseBlockProps = {
 	title: string;

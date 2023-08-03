@@ -12,7 +12,7 @@ declare module 'axios' {
 }
 
 export const headers = {
-	Accept: 'application/json',
+	'Accept': 'application/json',
 	'Content-Type': 'application/json; charset=utf-8',
 	'X-Requested-With': 'XMLHttpRequest',
 };
@@ -33,7 +33,7 @@ class Http {
 
 		http.interceptors.response.use(
 			({ data }: AxiosResponse) => data,
-			async (error) => this.handleError(error)
+			async (error) => this.handleError(error),
 		);
 
 		this.instance = http;
@@ -41,14 +41,14 @@ class Http {
 	}
 
 	async request<T = any, R = AxiosResponse<T>>(
-		config: AxiosRequestConfig
+		config: AxiosRequestConfig,
 	): Promise<R> {
 		return this.http.request(config);
 	}
 
 	async get<T = any, R = AxiosResponse<T>>(
 		url: string,
-		config?: AxiosRequestConfig
+		config?: AxiosRequestConfig,
 	): Promise<R> {
 		return this.http.get<T, R>(url, config);
 	}
@@ -56,7 +56,7 @@ class Http {
 	async post<T = any, R = AxiosResponse<T>>(
 		url: string,
 		data?: T,
-		config?: AxiosRequestConfig
+		config?: AxiosRequestConfig,
 	): Promise<R> {
 		return this.http.post<T, R>(url, data, config);
 	}
@@ -64,14 +64,14 @@ class Http {
 	async put<T = any, R = AxiosResponse<T>>(
 		url: string,
 		data?: T,
-		config?: AxiosRequestConfig
+		config?: AxiosRequestConfig,
 	): Promise<R> {
 		return this.http.put<T, R>(url, data, config);
 	}
 
 	async delete<T = any, R = AxiosResponse<T>>(
 		url: string,
-		config?: AxiosRequestConfig
+		config?: AxiosRequestConfig,
 	): Promise<R> {
 		return this.http.delete<T, R>(url, config);
 	}

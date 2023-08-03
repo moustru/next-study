@@ -1,7 +1,9 @@
-import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { Flex } from '@chakra-ui/react';
-import { news } from './mocks/SectionNews.mocks';
+
+import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { NewsItem } from '@/shared/components/NewsItem';
+
+import { news } from './mocks/SectionNews.mocks';
 
 export const SectionNews = () => {
 	return (

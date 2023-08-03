@@ -7,6 +7,9 @@ const path = require('path');
  * */
 const nextConfig = {
 	reactStrictMode: false,
+	eslint: {
+		ignoreDuringBuilds: true,
+	},
 	swcMinify: true,
 	webpack(config) {
 		config.module.rules.push({

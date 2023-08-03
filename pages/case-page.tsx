@@ -1,4 +1,5 @@
 import { CasePage as CasePageComponent } from '@/modules/Cases/subpages/CasePage';
+
 import type { GetStaticProps } from 'next';
 
 const CasePage = () => <CasePageComponent />;

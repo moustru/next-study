@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import { ReactElement } from 'react';
 
-import VkSVG from 'public/icons/social/vk.svg';
 import FacebookSVG from 'public/icons/social/facebook.svg';
-import Link from 'next/link';
+import VkSVG from 'public/icons/social/vk.svg';
 
 interface IconMap {
 	[key: string]: ReactElement;
