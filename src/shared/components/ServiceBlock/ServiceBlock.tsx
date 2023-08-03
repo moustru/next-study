@@ -22,8 +22,8 @@ export const ServiceBlock = ({
 			gap={0}
 			bgColor="light.100"
 			borderRadius={44}
-			px="60px"
-			py="80px"
+			px="80px"
+			py="60px"
 		>
 			<Stack gap={0}>
 				<Text variant="sm" mb={4}>

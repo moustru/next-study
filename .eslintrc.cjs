@@ -1,105 +1,145 @@
 module.exports = {
-	root: true,
-
 	env: {
-		node: true,
-		es6: true,
+		browser: true,
+		es2021: true,
 	},
-
 	extends: [
-		'eslint:recommended',
+		'plugin:react/recommended',
 		'plugin:@typescript-eslint/recommended',
-		'plugin:unicorn/recommended',
-		'plugin:prettier/recommended',
+		'airbnb',
+		'next',
+		'prettier',
 	],
-
-	plugins: ['@typescript-eslint'],
-
 	parser: '@typescript-eslint/parser',
-
 	parserOptions: {
+		ecmaFeatures: {
+			jsx: true,
+		},
 		ecmaVersion: 'latest',
+		sourceType: 'module',
 	},
-
-	ignorePatterns: ['*.d.ts', '*.config.ts'],
-
+	plugins: ['react', 'react-hooks', '@typescript-eslint'],
+	settings: {
+		'import/resolver': {
+			typescript: {},
+		},
+	},
 	rules: {
-		'@typescript-eslint/no-empty-function': 'off',
-		'@typescript-eslint/consistent-type-definitions': 'off',
-		'arrow-parens': ['error', 'always'],
-		camelcase: 'error',
-		'id-length': [
-			'error',
+		/** React */
+		'react-hooks/rules-of-hooks': 1,
+		'react/jsx-no-bind': 'off',
+		'react/no-unescaped-entities': 'warn',
+		'react-hooks/exhaustive-deps': 0,
+		'react/react-in-jsx-scope': 0,
+		'react/jsx-props-no-spreading': 0,
+		'react/button-has-type': 0,
+		'react/jsx-filename-extension': [
+			'warn',
 			{
-				min: 3,
-				max: 40,
-				exceptions: ['i', 'j', 'id', 'on', 'to', '_'],
-				properties: 'never',
+				extensions: ['.tsx'],
 			},
 		],
-		'no-console': ['warn', { allow: ['error', 'debug'] }],
-		'no-debugger': 'off',
-		'no-restricted-syntax': [
-			'error',
+		'react/forbid-prop-types': 0,
+		'react/require-default-props': 0,
+		'react/display-name': 0,
+		'react/no-arrow-function-lifecycle': 0,
+		'react/no-invalid-html-attribute': 0,
+		'react/no-unused-class-component-methods': 0,
+		'react/destructuring-assignment': 0,
+		'react/prop-types': 0,
+		'react/function-component-definition': [
+			0,
 			{
-				selector:
-					'VariableDeclarator[id.name!=/Dto/][init.callee.name=/^Record/],[id.name!=/Dto/][init.callee.property.name=/extend/],[id.name!=/Dto/][init.callee.property.name=/omit/],[id.name!=/Dto/][init.callee.property.name=/pick/]',
-				message: 'Необходимо называть переменную Runtype-а с окончанием Dto.',
-			},
-			{
-				selector: 'VariableDeclarator[id.name=/Dto/][init.callee.name=/Array/]',
-				message:
-					'Нет смысла присваивать массив Runtype Dto в переменную.' +
-					' Имеет смысл использовать Dto в единственном числе и потом по' +
-					' необходимости оборачивать его в RtArray(Dto)',
-			},
-			{
-				selector:
-					"CallExpression[callee.name='setTimeout'],[callee.name='setInterval']",
-				message:
-					'setTimeout и setInterval запрещены к использованию. ' +
-					'Вместо них нужно использовать useTimeout, useTimeoutFn для timeout-а,' +
-					' и useInterval, useIntervalFn для interval-а.',
+				namedComponents: 'arrow-function',
+				unnamedComponents: 'arrow-function',
 			},
 		],
-		'no-undef': 'off',
-		'prettier/prettier': 'error',
-		'unicorn/consistent-function-scoping': 'off',
-		'unicorn/prefer-top-level-await': 'off',
-		'unicorn/filename-case': [
-			'error',
+		'react/no-array-index-key': 0,
+
+		/** TypeScript */
+		'@typescript-eslint/no-empty-interface': 0,
+		'@typescript-eslint/no-var-requires': 0,
+		'@typescript-eslint/no-empty-function': 0,
+		'@typescript-eslint/no-use-before-define': 0,
+		'@typescript-eslint/no-unused-vars': 0,
+		'@typescript-eslint/no-shadow': [1],
+		'@typescript-eslint/no-explicit-any': 0,
+		'@typescript-eslint/explicit-function-return-type': 0,
+		'@typescript-eslint/no-namespace': 0,
+		'@typescript-eslint/ban-ts-comment': 0,
+
+		/** Imports  */
+		'import/order': [
+			'warn',
 			{
-				// убираем варнинги с переводов и файлов конфигов
-				case: 'pascalCase',
-				ignore: [
-					'^\\w+.json$',
-					'\\w+.js$',
-					'^\\w+.config.ts$',
-					'^\\w+.spec.ts$',
+				'newlines-between': 'always',
+				alphabetize: {
+					caseInsensitive: false,
+					order: 'asc',
+				},
+				warnOnUnassignedImports: true,
+				groups: [
+					'builtin',
+					'external',
+					'internal',
+					'parent',
+					'sibling',
+					'index',
+					'type',
+					'object',
+				],
+				pathGroups: [
+					{
+						pattern: './**/**.scss',
+						group: 'object',
+						position: 'after',
+					},
+					{
+						pattern: '**/**.svg',
+						group: 'object',
+						position: 'before',
+					},
 				],
 			},
 		],
-		'unicorn/no-abusive-eslint-disable': 'off',
-		'unicorn/no-array-callback-reference': 'off',
-		'unicorn/no-array-for-each': 'off',
-		'unicorn/no-array-reduce': 'off',
-		'unicorn/no-null': 'off',
-		'unicorn/no-thenable': 'off',
-		'unicorn/prefer-logical-operator-over-ternary': 'off',
-		'unicorn/prefer-module': 'off',
-		'unicorn/prevent-abbreviations': [
-			'error',
+		'import/no-extraneous-dependencies': 0,
+		'import/no-unresolved': 0,
+		'import/no-cycle': 0,
+		'import/prefer-default-export': 0,
+		'import/extensions': [
+			1,
+			'ignorePackages',
 			{
-				allowList: {
-					params: true,
-					props: true,
-					Ref: true,
-					Refs: true,
-					ref: true,
-					acc: true,
-					prop: true,
-				},
+				ts: 'never',
+				tsx: 'never',
 			},
 		],
+		'import/react-hooks/exhaustive-deps': [
+			0,
+			{
+				devDependencies: ['**/*.stories.*', '**/.storybook/**/*.*'],
+				peerDependencies: true,
+			},
+		],
+
+		/** Others  */
+		'no-param-reassign': 0,
+		'jsx-a11y/click-events-have-key-events': 'warn',
+		'no-shadow': 0,
+		'arrow-body-style': 'off',
+		'no-unused-vars': ['warn', { args: 'all' }],
+		allowForLoopAfterthoughts: 0,
+		'jsx-a11y/anchor-is-valid': 0,
+		'jsx-a11y/label-has-associated-control': 0,
+		'no-underscore-dangle': 0,
+		'class-methods-use-this': 0,
+		'no-return-await': 0,
+		'prefer-promise-reject-errors': 0,
+		'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
+		'no-undef': 0,
+		camelcase: 0,
+		'no-use-before-define': 0,
+		'@next/next/no-img-element': 0,
+		'prefer-const': 0,
 	},
 };
