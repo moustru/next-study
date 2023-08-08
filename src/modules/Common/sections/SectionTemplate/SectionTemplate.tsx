@@ -10,14 +10,14 @@ export const SectionTemplate = ({
 		<Container
 			as="section"
 			mt={firstBlock ? '200px' : 0}
-			mb="180px"
+			mb={{ base: '180px', sm: '100px' }}
 			{...others}
 		>
 			{title && (
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={20}
+					mb={{ base: 20, sm: 12 }}
 				>
 					{title}
 				</Heading>

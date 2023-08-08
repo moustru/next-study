@@ -15,39 +15,37 @@ export const SectionForm = () => {
 				Выберите нативное решение
 			</Text>
 			<RadioGroup mb="54px">
-				<Grid gridTemplateColumns="repeat(3, 1fr)" gap={8}>
-					<RadioCard
-						labelText="Нативное решение"
-						text="Мобильное приложение"
-					/>
-					<RadioCard
-						labelText="Нативное решение"
-						text="Веб-платформа"
-					/>
+				<Grid
+					gridTemplateColumns={{
+						lg: 'repeat(3, 1fr)',
+						md: 'repeat(2, 1fr)',
+						xs: 'repeat(1, 1fr)',
+					}}
+					gap={{ lg: 8, xs: 4 }}
+				>
+					<RadioCard labelText="Нативное решение" text="Мобильное приложение" />
+					<RadioCard labelText="Нативное решение" text="Веб-платформа" />
 					<RadioCard labelText="Нативное решение" text="Аутстафф" />
-					<RadioCard
-						labelText="Нативное решение"
-						text="Партнерство"
-					/>
-					<RadioCard
-						labelText="Нативное решение"
-						text="AI и нейросети"
-					/>
+					<RadioCard labelText="Нативное решение" text="Партнерство" />
+					<RadioCard labelText="Нативное решение" text="AI и нейросети" />
 					<RadioCard labelText="Нативное решение" text="CRM и ERP" />
 				</Grid>
 			</RadioGroup>
 
-			<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8} mb={20}>
+			<Grid
+				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+				gap={{ lg: 8, xs: 4 }}
+				mb={{ lg: 20, xs: 8 }}
+			>
 				<InputField label="Ваше имя" />
 				<InputField label="Ваша электронная почта" />
 			</Grid>
 
 			<Flex justifyContent="flex-end" alignItems="center" gap={8}>
-				<Text variant="sm" w={340}>
-					Нажимая на кнопку, вы даете согласие на обработку
-					персональных данных
+				<Text variant="sm" w={{ lg: 340, xs: 'auto' }}>
+					Нажимая на кнопку, вы даете согласие на обработку персональных данных
 				</Text>
-				<Button size="xl" variant="blue" onClick={onOpen}>
+				<Button size={{ lg: 'xl', xs: 'md' }} variant="blue" onClick={onOpen}>
 					Написать нам
 				</Button>
 			</Flex>

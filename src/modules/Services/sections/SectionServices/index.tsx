@@ -8,7 +8,10 @@ import { services } from './mocks/SectionServices.mocks';
 export const SectionServices = () => {
 	return (
 		<SectionTemplate title="Услуги" firstBlock>
-			<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8}>
+			<Grid
+				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+				gap={{ base: 8, md: 4 }}
+			>
 				{services.map((service, i) => (
 					<ServiceBlock {...service} key={service.title + i} />
 				))}

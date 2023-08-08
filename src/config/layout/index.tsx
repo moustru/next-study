@@ -1,5 +1,4 @@
 import { Grid } from '@chakra-ui/react';
-import Head from 'next/head';
 import { type PropsWithChildren } from 'react';
 
 import { Footer } from './ui/Footer';

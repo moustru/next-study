@@ -29,22 +29,30 @@ export const CaseBlock = ({
 }: CaseBlockProps) => {
 	return (
 		<Flex
-			h={size === 'md' ? 460 : 380}
+			h={size === 'md' ? { base: 460, md: 320 } : { base: 380, md: 240 }}
 			flexDirection="column"
 			justifyContent="space-between"
 			bgImage={`/images/cases/${bgImage}`}
 			bgRepeat="no-repeat"
 			bgColor={bgColor}
 			bgPosition="bottom right"
-			bgSize={size === 'md' ? 'auto' : '50%'}
+			bgSize={size === 'md' ? { base: 'auto', xs: '50%' } : '50%'}
 			borderRadius={56}
-			px={size === 'md' ? '100px' : '80px'}
-			py={size === 'md' ? '80px' : '70px'}
+			px={
+				size === 'md'
+					? { base: '100px', md: '64px' }
+					: { base: '80px', md: '48px' }
+			}
+			py={
+				size === 'md'
+					? { base: '80px', md: '48px' }
+					: { base: '70px', md: '40px' }
+			}
 		>
 			<Box>
 				<Text
 					variant="sm"
-					mb={size === 'md' ? 8 : 6}
+					mb={size === 'md' ? { base: 8, md: 4 } : { base: 6, md: 3 }}
 					color={variant === 'light' ? 'grey.600' : 'light.100'}
 				>
 					{developType}
@@ -52,7 +60,7 @@ export const CaseBlock = ({
 				<Heading
 					as="h3"
 					variant="h2"
-					mb={4}
+					mb={{ base: 4, md: 2 }}
 					color={variant === 'light' ? 'grey.600' : 'light.100'}
 				>
 					{title}
@@ -61,7 +69,7 @@ export const CaseBlock = ({
 			{size === 'md' && (
 				<Text
 					variant="md"
-					mb={16}
+					mb={{ base: 16, md: 8 }}
 					color={variant === 'light' ? 'grey.600' : 'light.100'}
 				>
 					{description}

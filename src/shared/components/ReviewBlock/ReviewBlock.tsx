@@ -14,11 +14,13 @@ export const ReviewBlock = ({
 }: ReviewBlockModel) => {
 	return (
 		<Flex
+			align={{ base: 'flex-start', md: 'center' }}
+			direction={{ base: 'row', md: 'column' }}
 			bgColor="light.100"
-			px="48px"
-			py="40px"
-			h={344}
-			gap={12}
+			px={{ base: '48px', md: '32px' }}
+			py={{ base: '40px', md: '32px' }}
+			h={{ base: 344, md: 'auto' }}
+			gap={{ base: 12, md: 6 }}
 			borderRadius={32}
 		>
 			<Text variant="xl">{reviewText}</Text>
