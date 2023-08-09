@@ -25,18 +25,18 @@ export const AchieveBlock = ({
 	return (
 		<Flex
 			justify="space-between"
-			direction={{ lg: 'row', sm: 'column' }}
-			px={{ base: '100px', sm: '64px' }}
-			py={{ base: '80px', sm: '48px' }}
-			gap={{ base: 0, sm: 6 }}
-			borderRadius={56}
+			direction={{ lg: 'row', xs: 'column' }}
+			px={{ lg: '100px', sm: '64px', xs: '32px' }}
+			py={{ lg: '80px', sm: '48px', xs: '24px' }}
+			gap={{ lg: 0, sm: 6, xs: 12 }}
+			borderRadius={{ md: 56, xs: 28 }}
 			sx={{
 				background: bgColor,
 			}}
 		>
 			{achievements.map(({ image, alt, place, text }, index) => (
-				<Box w={{ base: 230, sm: '100%' }} key={image + index}>
-					<Flex alignItems="start" gap={4} mb={{ base: 6, sm: 2 }}>
+				<Box w={{ lg: 230, sm: '100%' }} key={image + index}>
+					<Flex alignItems="start" gap={4} mb={{ lg: 6, sm: 2 }}>
 						<Heading
 							as="h3"
 							variant="h1"

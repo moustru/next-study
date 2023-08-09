@@ -41,8 +41,17 @@ export const SectionForm = () => {
 				<InputField label="Ваша электронная почта" />
 			</Grid>
 
-			<Flex justifyContent="flex-end" alignItems="center" gap={8}>
-				<Text variant="sm" w={{ lg: 340, xs: 'auto' }}>
+			<Flex
+				justifyContent="flex-end"
+				alignItems="center"
+				direction={{ md: 'row', xs: 'column' }}
+				gap={{ md: 8, xs: 4 }}
+			>
+				<Text
+					variant="sm"
+					w={{ lg: 340, xs: 'auto' }}
+					textAlign={{ md: 'left', xs: 'center' }}
+				>
 					Нажимая на кнопку, вы даете согласие на обработку персональных данных
 				</Text>
 				<Button size={{ lg: 'xl', xs: 'md' }} variant="blue" onClick={onOpen}>

@@ -52,17 +52,20 @@ export const ServicePage = () => {
 				<MetaInfo title="Услуга" />
 			</Head>
 
-			<Container mt={200} mb={180}>
-				<Heading as="h1" variant="h1" mb={12}>
+			<Container
+				mt={{ md: 200, xs: 120 }}
+				mb={{ lg: 180, md: '80px', xs: '40px' }}
+			>
+				<Heading as="h1" variant="h1" mb={{ lg: 12, md: 8, xs: 4 }}>
 					Мобильные приложения
 				</Heading>
-				<Text variant="xl" maxW={900}>
+				<Text variant="xl" maxW={{ lg: 900, xs: 'auto' }}>
 					Создаем приложения на основе inhome библиотек, что позволяет сократить
 					время и повысить качество разработки
 				</Text>
 			</Container>
 
-			<Container mb={180}>
+			<Container mb={{ lg: 180, md: 120, xs: '40px' }}>
 				<AchieveBlock
 					achievements={achievements}
 					bgColor="linear-gradient(90deg, var(--chakra-colors-light-100) 40%, var(--chakra-colors-basic-100) 100%);"
@@ -75,7 +78,10 @@ export const ServicePage = () => {
 			</SectionTemplate>
 
 			<SectionTemplate title="Примеры кейсов">
-				<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8}>
+				<Grid
+					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+					gap={8}
+				>
 					<CaseBlock
 						{...caseItems[0]}
 						bgColor="grey.200"

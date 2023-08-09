@@ -12,8 +12,8 @@ export const SectionCases = ({ ...others }) => {
 		<SectionTemplate title="Кейсы" {...others}>
 			<>
 				<Stack
-					gap={{ base: '100px', md: '64px' }}
-					mb={{ base: '60px', md: '32px' }}
+					gap={{ lg: '100px', md: '64px', xs: '32px' }}
+					mb={{ lg: '60px', md: '32px', xs: '16px' }}
 				>
 					{caseItems.map((caseItem, i) => (
 						<CaseBlock {...caseItem} key={caseItem.title + i} />
@@ -23,6 +23,7 @@ export const SectionCases = ({ ...others }) => {
 					float="right"
 					rightIcon={<ArrowSVG fill="#26282B" width="24px" />}
 					variant="ghost"
+					size={{ md: 'md', xs: 'sm' }}
 				>
 					Ко всем кейсам
 				</Button>

@@ -5,8 +5,8 @@ type NewsModel = Record<'title' | 'text' | 'publisher' | 'date', string>;
 export const NewsItem = ({ title, text, publisher, date }: NewsModel) => {
 	return (
 		<Flex
-			w={{ base: 418, md: '100%' }}
-			h={{ base: 288, md: 220 }}
+			w={{ lg: 418, xs: '100%' }}
+			h={{ lg: 288, xs: 220 }}
 			direction="column"
 			justify="space-between"
 			bgColor="grey.50"

@@ -26,7 +26,11 @@ export const GenerateSegment = ({ segments }: any) => {
 		if (segment.type === 'text') {
 			return (
 				<Container
-					mb={segment.smallBottomSpace ? '80px' : '180px'}
+					mb={
+						segment.smallBottomSpace
+							? { lg: '80px', md: '48px', xs: '32px' }
+							: { lg: '180px', md: '120px', xs: '80px' }
+					}
 					key={segment.type + i}
 				>
 					<Text variant="xl">{segment.content}</Text>
@@ -39,7 +43,7 @@ export const GenerateSegment = ({ segments }: any) => {
 				key={segment.imageSrc + i}
 				width={1440}
 				height={600}
-				mb={180}
+				mb={{ lg: 180, md: 120, xs: '80px' }}
 				position="relative"
 			>
 				<Image src={segment.imageSrc} alt="Article image" fill />

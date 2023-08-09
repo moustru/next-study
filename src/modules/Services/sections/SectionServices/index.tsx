@@ -10,7 +10,7 @@ export const SectionServices = () => {
 		<SectionTemplate title="Услуги" firstBlock>
 			<Grid
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
-				gap={{ base: 8, md: 4 }}
+				gap={{ lg: 8, xs: 4 }}
 			>
 				{services.map((service, i) => (
 					<ServiceBlock {...service} key={service.title + i} />

@@ -66,7 +66,7 @@ const casesUI: CasesUI[] = [
 ];
 
 const casesArr = caseItems.map((caseItem, i) =>
-	Object.assign(caseItem, casesUI[i]),
+	Object.assign(caseItem, casesUI[i])
 );
 
 export const CasesPage = () => {
@@ -76,8 +76,11 @@ export const CasesPage = () => {
 				<MetaInfo title="Vibe Lab – кейсы" />
 			</Head>
 
-			<SectionTemplate title="Кейсы" firstBlock mt={20}>
-				<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8}>
+			<SectionTemplate title="Кейсы" firstBlock mt={{ md: 200, xs: '120px' }}>
+				<Grid
+					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+					gap={{ md: 8, xs: 4 }}
+				>
 					{casesArr.map((caseItem, i) => (
 						<CaseBlock {...caseItem} key={caseItem.title + i} />
 					))}

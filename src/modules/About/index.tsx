@@ -1,10 +1,12 @@
-import { MetaInfo } from '@/shared/components/MetaInfo';
-import Head from 'next/head';
-import { SectionForm } from '../Common/sections/SectionForm';
 import { Box, Flex, Grid, Heading, Stack, Text } from '@chakra-ui/react';
-import { SectionTemplate } from '../Common/sections/SectionTemplate';
-import { CustomAvatar } from '@/shared/components/CustomAvatar';
+import Head from 'next/head';
 import Image from 'next/image';
+
+import { CustomAvatar } from '@/shared/components/CustomAvatar';
+import { MetaInfo } from '@/shared/components/MetaInfo';
+
+import { SectionForm } from '../Common/sections/SectionForm';
+import { SectionTemplate } from '../Common/sections/SectionTemplate';
 
 type RoadStepModel = {
 	year: number;
@@ -86,15 +88,23 @@ export const AboutPage = () => {
 				<MetaInfo title="Vibe Lab – о нас" />
 			</Head>
 
-			<Box mt={200} mb={120} backgroundColor="grey.600">
-				<Box maxWidth={1440} m="0 auto" p="60px">
-					<Heading as="h1" variant="h1" color="grey.100" mb={12}>
+			<Box
+				mt={{ lg: 200, md: 160, xs: 120 }}
+				mb={{ lg: 120, md: '80px', xs: '40px' }}
+				backgroundColor="grey.600"
+			>
+				<Box maxWidth={1440} m="0 auto" p={{ md: '60px', xs: '24px' }}>
+					<Heading as="h1" variant="h1" color="grey.100" mb={{ md: 12, xs: 4 }}>
 						Наша&nbsp;
 						<Text color="basic.200" display="inline-block">
 							миссия
 						</Text>
 					</Heading>
-					<Text variant="xl" color="grey.100" maxWidth="70%">
+					<Text
+						variant={{ md: 'xl', xs: 'md' }}
+						color="grey.100"
+						maxWidth={{ lg: '70%', xs: '100%' }}
+					>
 						Создаем уникальные сервисы и приложения для IT-индустрии на базе
 						СПбГЭТУ ЛЭТИ с командой из более чем 30 специалистов с собственным
 						R&D отделом. Создаем уникальные сервисы и приложения для
@@ -123,14 +133,21 @@ export const AboutPage = () => {
 				</Flex>
 			</SectionTemplate>
 
-			<SectionTemplate title="Контакты" mb="100px">
+			<SectionTemplate title="Контакты" mb={{ lg: '100px', xs: '40px' }}>
 				<Stack>
-					<Flex justifyContent="space-between">
-						<Text variant="xl" maxW={350}>
+					<Flex
+						justifyContent="space-between"
+						direction={{ lg: 'row', xs: 'column' }}
+						gap={{ lg: 0, xs: 4 }}
+					>
+						<Text variant="xl" maxW={{ lg: 350, xs: 'none' }}>
 							г. Санкт-Петербург, ул. Профессора Попова, 5
 						</Text>
 
-						<Flex gap={14}>
+						<Flex
+							gap={{ lg: 14, xs: 4 }}
+							direction={{ lg: 'row', xs: 'column' }}
+						>
 							<Text variant="xl">+7 (999) 201-85-87</Text>
 							<Text variant="xl">vibelab@etu.ru</Text>
 						</Flex>
@@ -138,7 +155,12 @@ export const AboutPage = () => {
 				</Stack>
 			</SectionTemplate>
 
-			<Box width="100%" height={632} position="relative" mb={180}>
+			<Box
+				width="100%"
+				height={632}
+				position="relative"
+				mb={{ lg: 180, md: 120, xs: '40px' }}
+			>
 				<Image src="/images/about/map.png" alt="Map" fill />
 			</Box>
 

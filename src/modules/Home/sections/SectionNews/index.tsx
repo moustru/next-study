@@ -8,7 +8,7 @@ import { news } from './mocks/SectionNews.mocks';
 export const SectionNews = () => {
 	return (
 		<SectionTemplate title="Новости">
-			<Flex gap={{ base: 8, md: 4 }} wrap={{ base: 'nowrap', md: 'wrap' }}>
+			<Flex gap={{ lg: 8, xs: 4 }} wrap={{ lg: 'nowrap', xs: 'wrap' }}>
 				{news.map((newsItem, i) => (
 					<NewsItem {...newsItem} key={newsItem.title + i} />
 				))}

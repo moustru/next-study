@@ -9,15 +9,15 @@ export const SectionTemplate = ({
 	return (
 		<Container
 			as="section"
-			mt={firstBlock ? '200px' : 0}
-			mb={{ base: '180px', sm: '100px' }}
+			mt={firstBlock ? { lg: '200px', sm: '160px', xs: '100px' } : 0}
+			mb={{ lg: '180px', sm: '100px', xs: '60px' }}
 			{...others}
 		>
 			{title && (
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={{ base: 20, sm: 12 }}
+					mb={{ lg: 20, sm: 12, xs: 8 }}
 				>
 					{title}
 				</Heading>

@@ -14,18 +14,18 @@ export const ReviewBlock = ({
 }: ReviewBlockModel) => {
 	return (
 		<Flex
-			align={{ base: 'flex-start', md: 'center' }}
-			direction={{ base: 'row', md: 'column' }}
+			align={{ lg: 'flex-start', xs: 'center' }}
+			direction={{ lg: 'row', xs: 'column' }}
 			bgColor="light.100"
-			px={{ base: '48px', md: '32px' }}
-			py={{ base: '40px', md: '32px' }}
-			h={{ base: 344, md: 'auto' }}
-			gap={{ base: 12, md: 6 }}
+			px={{ lg: '48px', xs: '32px' }}
+			py={{ lg: '40px', xs: '32px' }}
+			h={{ lg: 344, xs: 'auto' }}
+			gap={{ lg: 12, md: 6, xs: 4 }}
 			borderRadius={32}
 		>
-			<Text variant="xl">{reviewText}</Text>
+			<Text variant={{ lg: 'xl', sm: 'md', xs: 'sm' }}>{reviewText}</Text>
 			<Divider orientation="vertical" />
-			<Stack minW={185}>
+			<Stack minW={185} align={{ xs: 'center', lg: 'left' }}>
 				<Image
 					src={`/images/reviews/${avatar}`}
 					alt="Terminatessa"

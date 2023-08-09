@@ -29,11 +29,11 @@ export const BlogBlock = ({
 			justifyContent="space-between"
 			gap={0}
 			bgColor="light.100"
-			borderRadius={44}
-			px="80px"
-			py="60px"
+			borderRadius={{ md: 44, xs: 20 }}
+			px={{ lg: '80px', xs: '32px' }}
+			py={{ lg: '60px', xs: '24px' }}
 		>
-			<Stack gap={0} mb={12}>
+			<Stack gap={0} mb={{ lg: 12, xs: 4 }}>
 				<Flex gap={4} mb={5}>
 					{tags.map((tag, i) => (
 						<Tag key={tag + i} size="sm" variant="default">
@@ -44,7 +44,7 @@ export const BlogBlock = ({
 				<Heading as="h3" variant="h3" mb={2.5}>
 					{title}
 				</Heading>
-				<Text variant="sm" mb={7}>
+				<Text variant="sm" mb={{ md: 7, xs: 4 }}>
 					{subText}
 				</Text>
 
@@ -88,7 +88,10 @@ export const BlogPage = () => {
 			</Head>
 
 			<SectionTemplate title="Блог" firstBlock>
-				<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8}>
+				<Grid
+					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+					gap={{ md: 8, xs: 4 }}
+				>
 					<BlogBlock />
 					<BlogBlock />
 				</Grid>
