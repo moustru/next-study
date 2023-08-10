@@ -43,6 +43,7 @@ export const GenerateSegment = ({ segments }: any) => {
 				key={segment.imageSrc + i}
 				width={1440}
 				height={600}
+				mx="auto"
 				mb={{ lg: 180, md: 120, xs: '80px' }}
 				position="relative"
 			>

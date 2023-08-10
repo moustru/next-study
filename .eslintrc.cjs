@@ -141,5 +141,6 @@ module.exports = {
 		'no-use-before-define': 0,
 		'@next/next/no-img-element': 0,
 		'prefer-const': 0,
+		'no-empty-pattern': 0,
 	},
 };

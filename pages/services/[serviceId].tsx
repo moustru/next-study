@@ -1,10 +1,10 @@
 import { ServicePage as ServicePageComponent } from '@/modules/Services/subpages/ServicePage';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const ServicePage = () => <ServicePageComponent />;
 
-export const getStaticProps: GetStaticProps = async ({}) => ({
+export const getServerSideProps: GetServerSideProps = async ({}) => ({
 	props: {},
 });
 

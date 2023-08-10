@@ -6,11 +6,11 @@ const Heading = {
 			...setTypographyVariant(60, 72, 600),
 
 			'@media screen and (max-width: 768px)': {
-				...setTypographyVariant(48, 58, 600),
+				...setTypographyVariant(36, 48, 600),
 			},
 
 			'@media screen and (max-width: 480px)': {
-				...setTypographyVariant(32, 38, 600),
+				...setTypographyVariant(28, 38, 600),
 			},
 		},
 
@@ -22,7 +22,7 @@ const Heading = {
 			},
 
 			'@media screen and (max-width: 480px)': {
-				...setTypographyVariant(28, 34, 600),
+				...setTypographyVariant(24, 32, 600),
 			},
 		},
 
@@ -30,11 +30,11 @@ const Heading = {
 			...setTypographyVariant(32, 38, 600),
 
 			'@media screen and (max-width: 768px)': {
-				...setTypographyVariant(28, 34, 600),
+				...setTypographyVariant(24, 32, 600),
 			},
 
 			'@media screen and (max-width: 480px)': {
-				...setTypographyVariant(24, 32, 600),
+				...setTypographyVariant(20, 28, 600),
 			},
 		},
 		h4: setTypographyVariant(28, 34, 600),

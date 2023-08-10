@@ -1,10 +1,10 @@
 import { ArticlePage } from '@/modules/Blog/subpages/ArticlePage';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const Article = () => <ArticlePage />;
 
-export const getStaticProps: GetStaticProps = async ({}) => ({
+export const getServerSideProps: GetServerSideProps = async ({}) => ({
 	props: {},
 });
 

@@ -3,7 +3,7 @@ import { Grid } from '@chakra-ui/react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ServiceBlock } from '@/shared/components/ServiceBlock';
 
-import { services } from './mocks/SectionServices.mocks';
+import { services } from './mocks';
 
 export const SectionServices = () => {
 	return (

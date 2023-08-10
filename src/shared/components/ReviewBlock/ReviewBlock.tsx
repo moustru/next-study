@@ -21,7 +21,7 @@ export const ReviewBlock = ({
 			py={{ lg: '40px', xs: '32px' }}
 			h={{ lg: 344, xs: 'auto' }}
 			gap={{ lg: 12, md: 6, xs: 4 }}
-			borderRadius={32}
+			borderRadius={{ md: 32, xs: 20 }}
 		>
 			<Text variant={{ lg: 'xl', sm: 'md', xs: 'sm' }}>{reviewText}</Text>
 			<Divider orientation="vertical" />
