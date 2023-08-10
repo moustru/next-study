@@ -15,7 +15,7 @@ export const AuthorSegment = ({
 	likes,
 }: AuthorSegmentModel) => {
 	return (
-		<Flex justifyContent="space-between">
+		<Flex justifyContent="space-between" mb={{ md: 0, xs: 8 }}>
 			<Flex alignItems="center" gap={4}>
 				<Box
 					width={8}
@@ -26,12 +26,12 @@ export const AuthorSegment = ({
 				>
 					<Image src={imageSrc} alt="Author" fill />
 				</Box>
-				<Text variant="lg">{name}</Text>
+				<Text variant={{ md: 'lg', xs: 'md' }}>{name}</Text>
 			</Flex>
 
 			<Flex alignItems="center" gap={4}>
 				<LikeSVG fill="#E06667" width="30px" />
-				<Text color="grey.400" variant="lg">
+				<Text color="grey.400" variant={{ md: 'lg', xs: 'sm' }}>
 					{likes}
 				</Text>
 			</Flex>

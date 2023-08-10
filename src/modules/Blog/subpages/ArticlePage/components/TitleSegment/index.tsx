@@ -6,7 +6,7 @@ type TitleSegmentModel = {
 
 export const TitleSegment = ({ title }: TitleSegmentModel) => {
 	return (
-		<Heading as="h1" variant="h1" mb={12}>
+		<Heading as="h1" variant="h1" mb={{ md: 12, xs: 6 }}>
 			{title}
 		</Heading>
 	);

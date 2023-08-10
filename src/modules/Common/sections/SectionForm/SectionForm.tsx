@@ -1,56 +1,99 @@
 import { Text, RadioGroup, Grid, Flex, Button } from '@chakra-ui/react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
 
 import { InputField } from '@/shared/components/InputField';
 import { RadioCard } from '@/shared/components/RadioCard';
 
-import { useModal } from '../../providers/Modal.provider';
 import { SectionTemplate } from '../SectionTemplate';
 
+import { formSchema } from './lib/validationSchema';
+import { radios } from './mocks';
+
 export const SectionForm = () => {
-	const { onOpen } = useModal();
+	const [solution, setSolution] = useState('mobile');
+
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm({
+		resolver: yupResolver(formSchema),
+	});
+
+	const sendData = (data: any) => {
+		// TODO: Добавить отправку формы (когда будет)
+		console.log({
+			...data,
+			solution,
+		});
+	};
 
 	return (
 		<SectionTemplate title="Оставьте вашу заявку">
 			<Text variant="sm" mb={4}>
 				Выберите нативное решение
 			</Text>
-			<RadioGroup mb="54px">
-				<Grid gridTemplateColumns="repeat(3, 1fr)" gap={8}>
-					<RadioCard
-						labelText="Нативное решение"
-						text="Мобильное приложение"
-					/>
-					<RadioCard
-						labelText="Нативное решение"
-						text="Веб-платформа"
-					/>
-					<RadioCard labelText="Нативное решение" text="Аутстафф" />
-					<RadioCard
-						labelText="Нативное решение"
-						text="Партнерство"
-					/>
-					<RadioCard
-						labelText="Нативное решение"
-						text="AI и нейросети"
-					/>
-					<RadioCard labelText="Нативное решение" text="CRM и ERP" />
+			<RadioGroup mb="54px" onChange={setSolution} value={solution}>
+				<Grid
+					gridTemplateColumns={{
+						lg: 'repeat(3, 1fr)',
+						md: 'repeat(2, 1fr)',
+						xs: 'repeat(1, 1fr)',
+					}}
+					gap={{ lg: 8, xs: 4 }}
+				>
+					{radios.map((radio, i) => (
+						<RadioCard labelText="Нативное решение" {...radio} key={i} />
+					))}
 				</Grid>
 			</RadioGroup>
 
-			<Grid gridTemplateColumns="repeat(2, 1fr)" gap={8} mb={20}>
-				<InputField label="Ваше имя" />
-				<InputField label="Ваша электронная почта" />
-			</Grid>
+			<form onSubmit={handleSubmit(sendData)}>
+				<Grid
+					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
+					gap={{ lg: 8, xs: 4 }}
+					mb={{ lg: 20, xs: 8 }}
+				>
+					<InputField
+						label="Ваше имя"
+						validateData={register('name')}
+						isInvalid={!!errors.name?.message}
+						errorMsg={errors.name?.message}
+					/>
+					<InputField
+						label="Ваша электронная почта"
+						validateData={register('email')}
+						isInvalid={!!errors.email?.message}
+						errorMsg={errors.email?.message}
+					/>
+				</Grid>
 
-			<Flex justifyContent="flex-end" alignItems="center" gap={8}>
-				<Text variant="sm" w={340}>
-					Нажимая на кнопку, вы даете согласие на обработку
-					персональных данных
-				</Text>
-				<Button size="xl" variant="blue" onClick={onOpen}>
-					Написать нам
-				</Button>
-			</Flex>
+				<Flex
+					justifyContent="flex-end"
+					alignItems="center"
+					direction={{ md: 'row', xs: 'column' }}
+					gap={{ md: 8, xs: 4 }}
+				>
+					<Text
+						variant="sm"
+						w={{ lg: 340, xs: 'auto' }}
+						textAlign={{ md: 'left', xs: 'center' }}
+					>
+						Нажимая на кнопку, вы даете согласие на обработку персональных
+						данных
+					</Text>
+					<Button
+						size={{ lg: 'xl', xs: 'md' }}
+						variant="blue"
+						onClick={handleSubmit(sendData)}
+						type="submit"
+					>
+						Написать нам
+					</Button>
+				</Flex>
+			</form>
 		</SectionTemplate>
 	);
 };

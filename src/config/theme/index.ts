@@ -32,6 +32,10 @@ const VibeLabTheme = extendTheme({
 				backgroundColor: colors.grey['100'],
 				color: colors.grey['600'],
 			},
+
+			main: {
+				maxWidth: '100vw',
+			},
 		},
 	},
 

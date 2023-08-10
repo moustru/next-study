@@ -28,51 +28,63 @@ export const CaseBlock = ({
 	variant = 'light',
 }: CaseBlockProps) => {
 	return (
-		<Flex
-			h={size === 'md' ? 460 : 380}
-			flexDirection="column"
-			justifyContent="space-between"
-			bgImage={`/images/cases/${bgImage}`}
-			bgRepeat="no-repeat"
-			bgColor={bgColor}
-			bgPosition="bottom right"
-			bgSize={size === 'md' ? 'auto' : '50%'}
-			borderRadius={56}
-			px={size === 'md' ? '100px' : '80px'}
-			py={size === 'md' ? '80px' : '70px'}
-		>
-			<Box>
-				<Text
-					variant="sm"
-					mb={size === 'md' ? 8 : 6}
-					color={variant === 'light' ? 'grey.600' : 'light.100'}
-				>
-					{developType}
-				</Text>
-				<Heading
-					as="h3"
-					variant="h2"
-					mb={4}
-					color={variant === 'light' ? 'grey.600' : 'light.100'}
-				>
-					{title}
-				</Heading>
-			</Box>
-			{size === 'md' && (
-				<Text
-					variant="md"
-					mb={16}
-					color={variant === 'light' ? 'grey.600' : 'light.100'}
-				>
-					{description}
-				</Text>
-			)}
-			<Link href={href}>
+		<Link href={href}>
+			<Flex
+				h={
+					size === 'md'
+						? { lg: 460, md: 320, xs: 'auto' }
+						: { lg: 380, md: 240, xs: 'auto' }
+				}
+				flexDirection="column"
+				justifyContent="space-between"
+				bgImage={`/images/cases/${bgImage}`}
+				bgRepeat="no-repeat"
+				bgColor={bgColor}
+				bgPosition="bottom right"
+				bgSize={size === 'md' ? { lg: 'auto', xs: '50%' } : '50%'}
+				borderRadius={{ md: 56, xs: 20 }}
+				px={
+					size === 'md'
+						? { lg: '100px', md: '64px', xs: '32px' }
+						: { lg: '80px', md: '48px', xs: '24px' }
+				}
+				py={
+					size === 'md'
+						? { lg: '80px', md: '48px', xs: '32px' }
+						: { lg: '70px', md: '40px', xs: '24px' }
+				}
+			>
+				<Box>
+					<Text
+						variant="sm"
+						mb={size === 'md' ? { lg: 8, xs: 4 } : { lg: 6, xs: 3 }}
+						color={variant === 'light' ? 'grey.600' : 'light.100'}
+					>
+						{developType}
+					</Text>
+					<Heading
+						as="h3"
+						variant="h2"
+						mb={{ lg: 4, xs: 2 }}
+						color={variant === 'light' ? 'grey.600' : 'light.100'}
+					>
+						{title}
+					</Heading>
+				</Box>
+				{size === 'md' && (
+					<Text
+						variant="md"
+						mb={{ lg: 16, xs: 8 }}
+						color={variant === 'light' ? 'grey.600' : 'light.100'}
+					>
+						{description}
+					</Text>
+				)}
 				<ArrowSVG
 					fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
 					width="60px"
 				/>
-			</Link>
-		</Flex>
+			</Flex>
+		</Link>
 	);
 };

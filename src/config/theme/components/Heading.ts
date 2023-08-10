@@ -2,9 +2,41 @@ import { setTypographyVariant } from '@/shared/utils/typography';
 
 const Heading = {
 	variants: {
-		h1: setTypographyVariant(60, 72, 600),
-		h2: setTypographyVariant(48, 58, 600),
-		h3: setTypographyVariant(32, 38, 600),
+		h1: {
+			...setTypographyVariant(60, 72, 600),
+
+			'@media screen and (max-width: 768px)': {
+				...setTypographyVariant(36, 48, 600),
+			},
+
+			'@media screen and (max-width: 480px)': {
+				...setTypographyVariant(28, 38, 600),
+			},
+		},
+
+		h2: {
+			...setTypographyVariant(48, 58, 600),
+
+			'@media screen and (max-width: 768px)': {
+				...setTypographyVariant(32, 38, 600),
+			},
+
+			'@media screen and (max-width: 480px)': {
+				...setTypographyVariant(24, 32, 600),
+			},
+		},
+
+		h3: {
+			...setTypographyVariant(32, 38, 600),
+
+			'@media screen and (max-width: 768px)': {
+				...setTypographyVariant(24, 32, 600),
+			},
+
+			'@media screen and (max-width: 480px)': {
+				...setTypographyVariant(20, 28, 600),
+			},
+		},
 		h4: setTypographyVariant(28, 34, 600),
 	},
 };

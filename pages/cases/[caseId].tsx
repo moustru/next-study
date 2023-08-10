@@ -1,10 +1,10 @@
 import { CasePage as CasePageComponent } from '@/modules/Cases/subpages/CasePage';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const CasePage = () => <CasePageComponent />;
 
-export const getStaticProps: GetStaticProps = async ({}) => ({
+export const getServerSideProps: GetServerSideProps = async ({}) => ({
 	props: {},
 });
 

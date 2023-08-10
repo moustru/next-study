@@ -8,7 +8,14 @@ import { partners } from './mocks/SectionPartners.mocks';
 export const SectionPartners = ({ ...others }) => {
 	return (
 		<SectionTemplate title="С нами работают" {...others}>
-			<Grid templateColumns="repeat(4, 1fr)" rowGap="2rem">
+			<Grid
+				templateColumns={{
+					lg: 'repeat(4, 1fr)',
+					sm: 'repeat(2, 1fr)',
+					xs: 'repeat(1, 1fr)',
+				}}
+				rowGap="2rem"
+			>
 				{partners.map(({ image, alt }, index) => (
 					<GridItem key={image + index}>
 						<Image

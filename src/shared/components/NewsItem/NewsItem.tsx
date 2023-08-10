@@ -5,12 +5,12 @@ type NewsModel = Record<'title' | 'text' | 'publisher' | 'date', string>;
 export const NewsItem = ({ title, text, publisher, date }: NewsModel) => {
 	return (
 		<Flex
-			w={418}
-			h={288}
+			w={{ lg: 418, xs: '100%' }}
+			h={{ lg: 288, xs: 220 }}
 			direction="column"
 			justify="space-between"
 			bgColor="grey.50"
-			borderRadius={32}
+			borderRadius={{ md: 32, xs: 20 }}
 			px="32px"
 			py="24px"
 		>

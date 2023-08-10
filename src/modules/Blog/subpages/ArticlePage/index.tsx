@@ -22,7 +22,7 @@ export const ArticlePage = () => {
 				<MetaInfo title="Vibe Lab – блог" />
 			</Head>
 
-			<Container mt={180} mb={120}>
+			<Container mt={{ md: 200, xs: 120 }} mb={{ lg: 120, md: '80px' }}>
 				<HeadSegment {...articleHeadSegment} />
 
 				<TitleSegment {...articleTitleSegment} />
