@@ -1,9 +1,10 @@
 import { Stack, Button } from '@chakra-ui/react';
+import Link from 'next/link';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
-import { caseItems } from './mocks/SectionCases.mocks';
+import { caseItems } from './mocks';
 
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
@@ -25,7 +26,7 @@ export const SectionCases = ({ ...others }) => {
 					variant="ghost"
 					size={{ md: 'md', xs: 'sm' }}
 				>
-					Ко всем кейсам
+					<Link href="/cases">Ко всем кейсам</Link>
 				</Button>
 			</>
 		</SectionTemplate>

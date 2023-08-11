@@ -7,9 +7,14 @@ type CustomAvatarModel = {
 	tags: string[];
 };
 
-export const CustomAvatar = ({ name, imageSrc, tags }: CustomAvatarModel) => {
+export const CustomAvatar = ({
+	name,
+	imageSrc,
+	tags,
+	...others
+}: CustomAvatarModel) => {
 	return (
-		<Stack gap={0} maxW={230} align="center">
+		<Stack gap={0} maxW={230} align="center" {...others}>
 			<Box
 				w={230}
 				h={230}

@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
-import { partners } from './mocks/SectionPartners.mocks';
+import { partners } from './mocks';
 
 export const SectionPartners = ({ ...others }) => {
 	return (
