@@ -13,7 +13,7 @@ import {
 	articleAuthorSegment,
 	articleTitleSegment,
 	articleGenerateSegments,
-} from './mocks/ArticlePage.mocks';
+} from './mocks';
 
 export const ArticlePage = () => {
 	return (

@@ -1,7 +1,7 @@
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { AchieveBlock } from '@/shared/components/AchieveBlock/AchieveBlock';
+import { AchieveBlock } from '@/shared/components/AchieveBlock';
 
-import { achievements } from './mocks/SectionAchievements.mocks';
+import { achievements } from './mocks';
 
 export const SectionAchievements = ({ ...others }) => {
 	return (
