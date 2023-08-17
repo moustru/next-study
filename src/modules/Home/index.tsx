@@ -14,7 +14,9 @@ import { SectionNews } from './sections/SectionNews';
 import { SectionPartners } from './sections/SectionPartners';
 import { SectionReviews } from './sections/SectionReviews';
 
-const HomePage = () => {
+const HomePage = (props: any) => {
+	console.log(props);
+
 	return (
 		<>
 			<Head>
@@ -32,7 +34,7 @@ const HomePage = () => {
 
 			<SectionCases />
 
-			<SectionNews />
+			<SectionNews news={props.news} />
 
 			<SectionReviews />
 

@@ -1,11 +1,14 @@
 import {
+	Box,
 	Button,
 	Container,
 	Flex,
 	Heading,
 	IconButton,
 	Text,
+	useMediaQuery,
 } from '@chakra-ui/react';
+import { Carousel } from '@mantine/carousel';
 import Image from 'next/image';
 
 import { images } from './mocks';
@@ -14,6 +17,8 @@ import AppStoreSVG from 'public/icons/app_store.svg';
 import GooglePlaySVG from 'public/icons/google_play.svg';
 
 export const SectionDescription = () => {
+	const [largerThan768] = useMediaQuery('(min-width: 768px)');
+
 	return (
 		<>
 			<Container mb={{ lg: 180, md: '80px', xs: '40px' }}>
@@ -73,17 +78,29 @@ export const SectionDescription = () => {
 			</Container>
 
 			<Container mb={{ lg: 180, md: '80px', xs: '40px' }}>
-				<Flex justifyContent="space-between">
-					{images.map((image, i) => (
-						<Image
-							src={image}
-							key={image + i}
-							alt={`Example ${i}`}
-							width={330}
-							height={712}
-						/>
-					))}
-				</Flex>
+				{largerThan768 ? (
+					<Flex justifyContent="space-between">
+						{images.map((image, i) => (
+							<Box
+								key={image + i}
+								w={{ xs: '100%', md: 330 }}
+								h={{ xs: 150, md: 330 }}
+							>
+								<Image src={image} alt={`Example ${i}`} fill />
+							</Box>
+						))}
+					</Flex>
+				) : (
+					<Carousel slideGap={16} slideSize="100%">
+						{images.map((image, i) => (
+							<Carousel.Slide key={image + i}>
+								<Box w={{ xs: '100%', md: 330 }} h={{ xs: 150, md: 330 }}>
+									<Image src={image} alt={`Example ${i}`} fill />
+								</Box>
+							</Carousel.Slide>
+						))}
+					</Carousel>
+				)}
 			</Container>
 		</>
 	);

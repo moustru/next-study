@@ -37,7 +37,7 @@ export const SectionTemplate = ({
 	return (
 		<Container
 			as="section"
-			mt={firstBlock ? { lg: '200px', sm: '160px', xs: '100px' } : 0}
+			mt={firstBlock ? { lg: '200px', xs: '160px' } : 0}
 			mb={{ lg: '180px', sm: '100px', xs: '60px' }}
 			{...others}
 		>

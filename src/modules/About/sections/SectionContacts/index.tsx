@@ -1,4 +1,5 @@
 import { Flex, Stack, Text } from '@chakra-ui/react';
+import Link from 'next/link';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
@@ -16,8 +17,12 @@ export const SectionContacts = () => {
 					</Text>
 
 					<Flex gap={{ lg: 14, xs: 4 }} direction={{ lg: 'row', xs: 'column' }}>
-						<Text variant="xl">+7 (999) 201-85-87</Text>
-						<Text variant="xl">vibelab@etu.ru</Text>
+						<Link href="tel:+79992018587">
+							<Text variant="xl">+7 (999) 201-85-87</Text>
+						</Link>
+						<Link href="mailto:vibelab@etu.ru">
+							<Text variant="xl">vibelab@etu.ru</Text>
+						</Link>
 					</Flex>
 				</Flex>
 			</Stack>

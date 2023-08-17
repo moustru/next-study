@@ -5,12 +5,17 @@ import type { TabModel } from '@/shared/types/Tabs';
 type TabItemModel = TabModel & {
 	isActive: boolean;
 	// eslint-disable-next-line no-unused-vars
-	selectTab: (val: string) => void;
+	selectTab?: (val: TabModel) => void;
 };
 
-export const TabItem = ({ isActive, text, value, selectTab }: TabItemModel) => {
+export const TabItem = ({
+	isActive,
+	text,
+	value,
+	selectTab = () => false,
+}: TabItemModel) => {
 	const handleClick = () => {
-		selectTab(value);
+		selectTab({ text, value });
 	};
 
 	return (

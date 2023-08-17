@@ -18,9 +18,9 @@ export const MemberReviewBlock = ({
 			gap={6}
 		>
 			<Box
-				minWidth={100}
-				width={100}
-				height={100}
+				minWidth={{ xs: '48px', md: '100px' }}
+				width={{ xs: '48px', md: '100px' }}
+				height={{ xs: '48px', md: '100px' }}
 				position="relative"
 				borderRadius="50%"
 				overflow="hidden"

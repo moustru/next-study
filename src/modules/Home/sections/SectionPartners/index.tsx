@@ -5,7 +5,11 @@ import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
 import { partners } from './mocks';
 
-export const SectionPartners = ({ ...others }) => {
+// type SectionPartnersModel = {
+// 	partners:
+// }
+
+export const SectionPartners = ({ ...others }: any) => {
 	return (
 		<SectionTemplate title="С нами работают" {...others}>
 			<Grid

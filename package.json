@@ -40,7 +40,6 @@
 		"@types/node": "^18.16.19",
 		"@types/react": "^18.2.14",
 		"@types/react-dom": "^18.2.6",
-		"axios": "^1.4.0",
 		"cross-env": "^7.0.3",
 		"embla-carousel-react": "8.0.0-rc11",
 		"framer-motion": "^10.12.18",
@@ -48,7 +47,8 @@
 		"next": "^13.4.9",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
-		"react-hook-form": "^7.45.1"
+		"react-hook-form": "^7.45.1",
+		"wretch": "^2.6.0"
 	},
 	"devDependencies": {
 		"@hookform/resolvers": "^3.2.0",

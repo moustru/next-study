@@ -80,10 +80,12 @@ export const CaseBlock = ({
 						{description}
 					</Text>
 				)}
-				<ArrowSVG
-					fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
-					width="60px"
-				/>
+				<Box w={{ xs: '32px', md: '60px' }}>
+					<ArrowSVG
+						fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
+						width="100%"
+					/>
+				</Box>
 			</Flex>
 		</Link>
 	);

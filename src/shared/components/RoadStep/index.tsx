@@ -43,7 +43,7 @@ export const RoadStep = ({ year, milestones }: RoadStepModel) => {
 	}
 
 	return (
-		<Flex h={300}>
+		<Flex h={{ xs: 300, sm: 200 }}>
 			<Flex flexDirection="column" alignItems="center">
 				<Box
 					width={6}

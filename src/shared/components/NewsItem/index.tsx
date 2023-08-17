@@ -1,8 +1,18 @@
 import { Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
-type NewsModel = Record<'title' | 'text' | 'publisher' | 'date', string>;
+type NewsModel = Record<
+	'title' | 'description' | 'publisher' | 'releaseDate',
+	string
+>;
 
-export const NewsItem = ({ title, text, publisher, date }: NewsModel) => {
+export const NewsItem = ({
+	title,
+	description,
+	publisher,
+	releaseDate,
+}: NewsModel) => {
+	const formattedDate = new Date(releaseDate).toLocaleDateString();
+
 	return (
 		<Flex
 			w={{ lg: 418, xs: '100%' }}
@@ -18,10 +28,10 @@ export const NewsItem = ({ title, text, publisher, date }: NewsModel) => {
 				<Heading as="h3" variant="h3" mb={4}>
 					{title}
 				</Heading>
-				<Text variant="lg">{text}</Text>
+				<Text variant="lg">{description}</Text>
 			</Stack>
 			<Text variant="sm" color="grey.500">
-				{publisher}, {date}
+				{publisher}, {formattedDate}
 			</Text>
 		</Flex>
 	);

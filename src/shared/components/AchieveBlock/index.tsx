@@ -36,7 +36,7 @@ export const AchieveBlock = ({
 		>
 			{achievements.map(({ image, alt, place, text }, index) => (
 				<Box w={{ lg: 230, sm: '100%' }} key={image + index}>
-					<Flex alignItems="start" gap={4} mb={{ lg: 6, sm: 2 }}>
+					<Flex alignItems="center" gap={4} mb={{ lg: 6, sm: 2 }}>
 						<Heading
 							as="h3"
 							variant="h1"
@@ -44,13 +44,18 @@ export const AchieveBlock = ({
 						>
 							#{place}
 						</Heading>
-						<Image
-							src={`/images/achievements/${image}`}
-							alt={alt}
-							width={56}
-							height={56}
-							key={alt + index}
-						/>
+						<Box
+							position="relative"
+							width={{ xs: '10vw', md: '56px' }}
+							height={{ xs: '10vw', md: '56px' }}
+						>
+							<Image
+								src={`/images/achievements/${image}`}
+								alt={alt}
+								fill
+								key={alt + index}
+							/>
+						</Box>
 					</Flex>
 					<Text
 						color={variant === 'dark' ? 'light.100' : 'grey.600'}
