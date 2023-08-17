@@ -1,9 +1,6 @@
 import {
 	Button,
 	Container,
-	Drawer,
-	DrawerContent,
-	DrawerOverlay,
 	Flex,
 	IconButton,
 	useDisclosure,
@@ -11,6 +8,7 @@ import {
 } from '@chakra-ui/react';
 
 import { useModal } from '@/modules/Common/providers/Modal.provider';
+import { CustomModal } from '@/shared/components/CustomModal';
 
 import { Links } from '../Links';
 import { Logo } from '../Logo';
@@ -28,7 +26,7 @@ export const Header = () => {
 		onClose: closeMenu,
 	} = useDisclosure();
 
-	const [largetThan768] = useMediaQuery('(min-width: 768px)');
+	const [largerThan768] = useMediaQuery('(min-width: 768px)');
 
 	const MenuIcon = isMenuOpen ? CloseSVG : BurgerSVG;
 
@@ -42,7 +40,7 @@ export const Header = () => {
 				<Flex alignItems="center" justifyContent="space-between">
 					<Logo />
 
-					{largetThan768 ? (
+					{largerThan768 ? (
 						<Flex gap={5} align="center">
 							<Links />
 							<Button size="md" variant="blue" onClick={onOpen}>
@@ -60,16 +58,7 @@ export const Header = () => {
 					)}
 				</Flex>
 			</Container>
-
-			<Drawer isOpen={isMenuOpen} onClose={closeMenu} placement="top">
-				<DrawerOverlay />
-				<DrawerContent px="32px" py="40px" gap={8}>
-					<Links closeMenu={closeMenu} />
-					<Button size="md" variant="blue" onClick={onOpen}>
-						Написать нам
-					</Button>
-				</DrawerContent>
-			</Drawer>
+			{/* <CustomModal isOpen={isOpen} onClose={onClose} /> */}
 		</header>
 	);
 };

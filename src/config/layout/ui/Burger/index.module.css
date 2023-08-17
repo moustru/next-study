@@ -1,0 +1,51 @@
+.Root {
+	display: block;
+	height: 100%;
+	pointer-events: none;
+	width: 100%;
+	z-index: 2;
+	margin-inline: 20px;
+	@media (min-width: 769px) {
+		display: none;
+	}
+}
+
+.isOpen {
+	pointer-events: all;
+}
+
+.Logo {
+	margin: 26px;
+	pointer-events: auto;
+}
+
+.mask {
+	background-color: #07061d;
+	bottom: 0;
+	left: 0;
+	opacity: 0.8;
+	position: absolute;
+	right: 0;
+	top: 0;
+	z-index: 1;
+}
+
+.Modal {
+	bottom: 0;
+	padding: 0 40px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 300px;
+	z-index: 2;
+}
+
+.menu {
+	background: linear-gradient(109.24deg, #fff 14.38%, #98a7c6 80.1%), #fff;
+	border-radius: 16px;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 300px;
+}
