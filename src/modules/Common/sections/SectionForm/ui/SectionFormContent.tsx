@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
+import { httpStrapi } from '@/config/api';
 import { InputField } from '@/shared/components/InputField';
 import { RadioCard } from '@/shared/components/RadioCard';
 
@@ -21,11 +22,7 @@ export const SectionFormContent = () => {
 	});
 
 	const sendData = (data: any) => {
-		// TODO: Добавить отправку формы (когда будет)
-		console.log({
-			...data,
-			solution,
-		});
+		httpStrapi.url('/email').post({ ...data, solution });
 	};
 
 	return (
