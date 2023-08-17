@@ -1,28 +1,14 @@
 import { httpStrapi } from '@/config/api';
 
 export class Service {
-	private _requests: Record<
+	private requests: Record<
 		string,
 		(url: string, method?: string) => Promise<unknown>
 	> = {};
 
-	private _keys: string[];
-
-	constructor(keys: string[]) {
-		this._keys = keys;
+	constructor(private keys: string[]) {
+		this.keys = keys;
 		this.initRequests();
-	}
-
-	get requests() {
-		return this._requests;
-	}
-
-	set requests(val) {
-		this._requests = val;
-	}
-
-	get keys() {
-		return this._keys;
 	}
 
 	protected createRequest(url: string, method = 'GET') {

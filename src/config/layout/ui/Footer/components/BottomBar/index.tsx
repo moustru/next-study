@@ -5,7 +5,11 @@ import { icons } from './constants';
 
 export const BottomBar = () => {
 	return (
-		<Flex justifyContent="space-between">
+		<Flex
+			justifyContent={{ md: 'space-between' }}
+			direction={{ xs: 'column-reverse', md: 'row' }}
+			gap={{ xs: 8, md: 0 }}
+		>
 			<Grid color="white">
 				<Text variant="xs">
 					Лаборатория коммерческой разработки VibeLab, 2023

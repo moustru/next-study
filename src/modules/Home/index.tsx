@@ -15,6 +15,8 @@ import { SectionPartners } from './sections/SectionPartners';
 import { SectionReviews } from './sections/SectionReviews';
 
 const HomePage = (props: any) => {
+	console.log(props);
+
 	return (
 		<>
 			<Head>

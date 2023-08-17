@@ -33,7 +33,7 @@ export const SectionTeam = () => {
 				breakpoints={[
 					{ maxWidth: 1024, slideSize: '33.333333%' },
 					{ maxWidth: 768, slideSize: '50%' },
-					{ maxWidth: 600, slideSize: '100%' },
+					{ maxWidth: 480, slideSize: '100%' },
 					// { maxWidth: 'sm', slideSize: '100%' },
 				]}
 			>

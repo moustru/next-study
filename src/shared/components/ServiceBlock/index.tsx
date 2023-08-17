@@ -1,4 +1,4 @@
-import { Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import ArrowSVG from 'public/icons/arrow_right.svg';
@@ -42,7 +42,9 @@ export const ServiceBlock = ({
 						))}
 					</Flex>
 				</Stack>
-				<ArrowSVG fill="#26282B" width="60px" />
+				<Box w={{ xs: '32px', md: '60px' }}>
+					<ArrowSVG fill="#26282B" width="100%" />
+				</Box>
 			</Stack>
 		</Link>
 	);

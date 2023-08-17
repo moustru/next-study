@@ -1,18 +1,29 @@
-import { HStack, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { links } from './constants';
 
-export const Links = ({ isLight = false }: { isLight?: boolean }) => {
+type LinksModel = {
+	isLight?: boolean;
+	closeMenu?: () => void;
+};
+
+export const Links = ({
+	isLight = false,
+	closeMenu = () => false,
+}: LinksModel) => {
 	return (
-		<HStack spacing="32px">
+		<Flex gap={8} direction={{ xs: 'column', md: 'row' }}>
 			{links.map((link) => (
-				<Link href={link.href} key={link.id}>
-					<Text variant="sm" color={isLight ? 'white' : 'grey.600'}>
+				<Link href={link.href} key={link.id} onClick={closeMenu}>
+					<Text
+						variant={{ xs: 'xl', md: 'sm' }}
+						color={isLight ? 'white' : 'grey.600'}
+					>
 						{link.pageName}
 					</Text>
 				</Link>
 			))}
-		</HStack>
+		</Flex>
 	);
 };
