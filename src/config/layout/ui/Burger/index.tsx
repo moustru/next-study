@@ -1,6 +1,8 @@
+import { Box, Spacer } from '@chakra-ui/react';
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
 
+import { Links } from '../Links';
 import { Logo } from '../Logo';
 
 import { MenuToggle } from './components/MenuToggle';
@@ -78,9 +80,8 @@ export const HeaderMobile = () => {
 							animate={{ opacity: 1, position: 'absolute' }}
 							exit={{ opacity: 0 }}
 						>
-							<div>rfwrfweferw</div>
-							<div>rfwrfweferw</div>
-							<div>rfwrfweferw</div>
+							<Spacer h="32px" />
+							<Links />
 						</motion.div>
 					</AnimatePresence>
 				)}

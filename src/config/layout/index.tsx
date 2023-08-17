@@ -17,10 +17,10 @@ export function AppLayout({ children }: PropsWithChildren) {
 		<Grid minH="100vh" gridTemplateRows="auto 1fr auto">
 			{largerThan768 ? <Header /> : <HeaderMobile />}
 
-			{/* <main>{children}</main> */}
+			<main>{children}</main>
 			<Footer />
 
-			{/* <CustomModal isOpen={isOpen} onClose={onClose}>
+			<CustomModal isOpen={isOpen} onClose={onClose}>
 				<CustomModal.Header>
 					<Heading variant="h2" as="h2">
 						Оставьте вашу заявку
@@ -30,7 +30,7 @@ export function AppLayout({ children }: PropsWithChildren) {
 				<CustomModal.Body>
 					<SectionFormContent />
 				</CustomModal.Body>
-			</CustomModal> */}
+			</CustomModal>
 		</Grid>
 	);
 }

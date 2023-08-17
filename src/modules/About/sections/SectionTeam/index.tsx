@@ -1,4 +1,3 @@
-import { Flex } from '@chakra-ui/react';
 import { Carousel, Embla } from '@mantine/carousel';
 import { useState } from 'react';
 
