@@ -32,9 +32,6 @@ export const ModalProvider = ({ children }: ModalProviderModel) => {
 
 	const closeModal = () => {
 		onClose();
-		// setModalComponent(null);
-
-		// setTimeout(() => setModalComponent(null), 500);
 	};
 
 	const ModalDataMemo = useMemo(

@@ -1,31 +1,18 @@
-import { motion } from 'framer-motion';
 import React from 'react';
 
+import { MaskPath } from './MaskPath';
 import css from './index.module.css';
-
-const Path = (props: any) => (
-	<motion.path
-		fill="transparent"
-		strokeWidth="3"
-		stroke="#717171"
-		strokeLinecap="round"
-		width="28"
-		height="1"
-		rx="0.5"
-		{...props}
-	/>
-);
 
 export const MenuToggle = ({ toggle }: any) => (
 	<button className={css.button} onClick={toggle}>
 		<svg width="28" height="23" viewBox="0 0 23 23">
-			<Path
+			<MaskPath
 				variants={{
 					closed: { d: 'M 2 2.5 L 20 2.5' },
 					open: { d: 'M 3 16.5 L 17 2.5' },
 				}}
 			/>
-			<Path
+			<MaskPath
 				d="M 2 9.423 L 20 9.423"
 				variants={{
 					closed: { opacity: 1 },
@@ -33,7 +20,7 @@ export const MenuToggle = ({ toggle }: any) => (
 				}}
 				transition={{ duration: 0.1 }}
 			/>
-			<Path
+			<MaskPath
 				variants={{
 					closed: { d: 'M 2 16.346 L 20 16.346' },
 					open: { d: 'M 3 2.5 L 17 16.346' },

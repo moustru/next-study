@@ -1,39 +1,25 @@
-import { Box, Spacer } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
+
+import { useDimensions } from '@/shared/hooks/useDimensions';
+import useLockedBody from '@/shared/hooks/useLockedBody';
 
 import { Links } from '../Links';
 import { Logo } from '../Logo';
 
+import { sidebarAnimationVariants } from './burger.constants';
 import { MenuToggle } from './components/MenuToggle';
-import useLockedBody, { useDimensions } from './hooks';
+import { Overlay } from './components/Overlay';
 import css from './index.module.css';
-
-const sidebar = {
-	open: (height = 1000) => ({
-		clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
-		transition: {
-			type: 'spring',
-			stiffness: 20,
-			restDelta: 2,
-		},
-	}),
-	closed: {
-		clipPath: 'circle(0px at 259px 65px)',
-		transition: {
-			delay: 0.5,
-			type: 'spring',
-			stiffness: 400,
-			damping: 40,
-		},
-	},
-};
 
 export const HeaderMobile = () => {
 	const [isOpen, toggleOpen] = useCycle(false, true);
 	const containerRef = useRef(null);
 	const { height } = useDimensions(containerRef);
 	const [locked, setLocked] = useLockedBody(false, 'root');
+
+	const toggleOpenHandler = () => toggleOpen();
 
 	const disableScroll = () => {
 		setLocked(!locked);
@@ -50,20 +36,8 @@ export const HeaderMobile = () => {
 	}, [isOpen]);
 
 	return (
-		<div className={(css.Root, isOpen ? css.isOpen : '')}>
-			<AnimatePresence>
-				{isOpen && (
-					<motion.div
-						className={css.mask}
-						onClick={() => {
-							toggleOpen();
-						}}
-						initial={{ opacity: 0 }}
-						animate={{ opacity: 0.8 }}
-						exit={{ opacity: 0 }}
-					/>
-				)}
-			</AnimatePresence>
+		<header className={css.burger}>
+			<Overlay isOpen={isOpen} onClick={toggleOpenHandler} />
 			<motion.nav
 				className={css.Modal}
 				initial={false}
@@ -71,27 +45,25 @@ export const HeaderMobile = () => {
 				custom={height}
 				ref={containerRef}
 			>
-				<motion.div className={css.menu} variants={sidebar} />
-				{isOpen && (
-					<AnimatePresence>
+				<motion.div className={css.menu} variants={sidebarAnimationVariants} />
+				<AnimatePresence>
+					{isOpen && (
 						<motion.div
-							transition={{ duration: 1.2 }}
+							transition={{ duration: 0.8 }}
 							initial={{ opacity: 0 }}
-							animate={{ opacity: 1, position: 'absolute' }}
+							animate={{ opacity: 1, position: 'absolute', top: '30px' }}
 							exit={{ opacity: 0 }}
 						>
-							<Spacer h="32px" />
 							<Links />
+							<Button mt={10} size="md" variant="blue" onClick={() => {}}>
+								Написать нам
+							</Button>
 						</motion.div>
-					</AnimatePresence>
-				)}
-				<MenuToggle
-					toggle={() => {
-						toggleOpen();
-					}}
-				/>
+					)}
+				</AnimatePresence>
+				<MenuToggle toggle={toggleOpenHandler} />
 			</motion.nav>
 			<Logo />
-		</div>
+		</header>
 	);
 };

@@ -4,11 +4,11 @@
 	cursor: pointer;
 	height: 50px;
 	outline: none;
-	//border: none;
+
 	pointer-events: all;
 	position: absolute;
 	right: 0;
-	top: 10px;
+	top: 20px;
 	user-select: none;
 	width: 50px;
 }
