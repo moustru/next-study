@@ -1,10 +1,16 @@
 import { useDisclosure } from '@chakra-ui/react';
-import { ReactElement, useContext, createContext, useMemo } from 'react';
+import {
+	ReactElement,
+	useContext,
+	createContext,
+	useMemo,
+	useState,
+} from 'react';
 
 type ModalContextModel = {
 	isOpen: boolean;
-	onOpen: () => void;
-	onClose: () => void;
+	openModal: (component: ReactElement) => void;
+	closeModal: () => void;
 };
 
 type ModalProviderModel = {
@@ -15,12 +21,29 @@ const ModalContext = createContext<ModalContextModel | null>(null);
 
 export const ModalProvider = ({ children }: ModalProviderModel) => {
 	const { isOpen, onOpen, onClose } = useDisclosure();
+	const [modalComponent, setModalComponent] = useState<ReactElement | null>(
+		null
+	);
 
-	const ModalDataMemo = useMemo(() => ({ isOpen, onOpen, onClose }), [isOpen]);
+	const openModal = (component: ReactElement) => {
+		setModalComponent(component);
+		onOpen();
+	};
+
+	const closeModal = () => {
+		onClose();
+	};
+
+	const ModalDataMemo = useMemo(
+		() => ({ isOpen, openModal, closeModal }),
+		[isOpen]
+	);
 
 	return (
 		<ModalContext.Provider value={ModalDataMemo}>
 			{children}
+
+			{modalComponent}
 		</ModalContext.Provider>
 	);
 };

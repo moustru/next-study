@@ -1,0 +1,10 @@
+.mask {
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+
+	background-color: #07061d;
+	opacity: 0.8;
+
+	pointer-events: all;
+}

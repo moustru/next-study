@@ -1,0 +1,29 @@
+.burger {
+	position: fixed;
+	display: block;
+	height: 100%;
+	width: 100%;
+	z-index: 2;
+	padding-inline: 20px;
+	padding-block: 20px;
+}
+
+.modal {
+	bottom: 0;
+	padding: 0 40px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 300px;
+	z-index: 2;
+}
+
+.menu {
+	background: linear-gradient(109.24deg, #fff 14.38%, #98a7c6 80.1%), #fff;
+	border-radius: 16px;
+	bottom: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 300px;
+}

@@ -83,6 +83,7 @@ export const SectionDescription = () => {
 						{images.map((image, i) => (
 							<Box
 								key={image + i}
+								position="relative"
 								w={{ xs: '100%', md: 330 }}
 								h={{ xs: 150, md: 330 }}
 							>
@@ -94,7 +95,11 @@ export const SectionDescription = () => {
 					<Carousel slideGap={16} slideSize="100%">
 						{images.map((image, i) => (
 							<Carousel.Slide key={image + i}>
-								<Box w={{ xs: '100%', md: 330 }} h={{ xs: 150, md: 330 }}>
+								<Box
+									position="relative"
+									w={{ xs: '100%', md: 330 }}
+									h={{ xs: 150, md: 330 }}
+								>
 									<Image src={image} alt={`Example ${i}`} fill />
 								</Box>
 							</Carousel.Slide>
