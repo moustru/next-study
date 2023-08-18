@@ -6,6 +6,10 @@
 	border-top-left-radius: 24px;
 	border-bottom-left-radius: 24px;
 	bottom: 40px;
+
+	@media (max-width: 768px) {
+		height: 2px;
+	}
 }
 
 .blackmove {
@@ -22,6 +26,11 @@
 		transform: rotate(45deg);
 		top: -8px;
 		border-radius: 24px;
+		@media (max-width: 768px) {
+			height: 2px;
+			width: 15px;
+			top: -5px;
+		}
 	}
 	&::after {
 		content: '';
@@ -33,5 +42,10 @@
 		transform: rotate(-45deg);
 		top: 8px;
 		border-radius: 24px;
+		@media (max-width: 768px) {
+			height: 2px;
+			width: 15px;
+			top: 5px;
+		}
 	}
 }

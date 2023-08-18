@@ -51,7 +51,7 @@ export const CaseBlock = ({
 				bgRepeat="no-repeat"
 				bgColor={bgColor}
 				bgPosition="bottom right"
-				bgSize={size === 'md' ? { lg: 'auto', xs: '50%' } : '50%'}
+				bgSize={size === 'md' ? { lg: 'auto', xs: '30%' } : '50%'}
 				borderRadius={{ md: 56, xs: 20 }}
 				px={
 					size === 'md'
