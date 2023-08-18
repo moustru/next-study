@@ -20,7 +20,7 @@ export function AppLayout({ children }: PropsWithChildren) {
 			<main>{children}</main>
 			<Footer />
 
-			{/* <CustomModal isOpen={isOpen} onClose={onClose}>
+			<CustomModal isOpen={isOpen} onClose={onClose}>
 				<CustomModal.Header>
 					<Heading variant="h2" as="h2">
 						Оставьте вашу заявку
@@ -30,7 +30,7 @@ export function AppLayout({ children }: PropsWithChildren) {
 				<CustomModal.Body>
 					<SectionFormContent />
 				</CustomModal.Body>
-			</CustomModal> */}
+			</CustomModal>
 		</Grid>
 	);
 }

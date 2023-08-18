@@ -1,27 +1,41 @@
 import { httpStrapi } from '@/config/api';
 
+type RequestModel = {
+	[key: string]: {
+		params: string;
+		// eslint-disable-next-line no-unused-vars
+		fn: (url: string, method?: string) => Promise<unknown>;
+	};
+};
+
 export class Service {
-	private requests: Record<
-		string,
-		(url: string, method?: string) => Promise<unknown>
-	> = {};
+	private requests: RequestModel = {} as RequestModel;
 
 	constructor(private keys: string[]) {
 		this.keys = keys;
 		this.initRequests();
 	}
 
-	protected createRequest(url: string, method = 'GET') {
+	protected createRequest(url: string, method = 'GET', params = '') {
 		switch (method) {
 			case 'GET':
 			default:
-				return httpStrapi.get(url).json();
+				return httpStrapi.get(params ? `${url}?${params}` : url).json();
 		}
 	}
 
 	protected initRequests() {
-		this.keys.forEach((key) => {
-			this.requests[key] = this.createRequest;
+		const formattedKeys = this.keys.map((key) => key.split('?')[0]);
+
+		this.keys.forEach((key, i) => {
+			const keyWithParamsAsArray = key.split('?');
+
+			this.requests[formattedKeys[i]] = {
+				params:
+					// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+					keyWithParamsAsArray.length > 1 ? keyWithParamsAsArray.at(-1)! : '',
+				fn: this.createRequest,
+			};
 		});
 	}
 
@@ -29,8 +43,8 @@ export class Service {
 		const res: Record<string, any> = {};
 
 		const requestCalls = await Promise.allSettled(
-			Object.values(this.requests).map((requestFn, i) =>
-				requestFn(`/${this.keys[i]}`)
+			Object.values(this.requests).map((request, i) =>
+				request.fn(`/${this.keys[i]}`)
 			)
 		);
 

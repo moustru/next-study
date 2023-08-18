@@ -13,7 +13,6 @@ import {
 	ModalFooter,
 	ModalHeader,
 	ModalOverlay,
-	Text,
 	useMediaQuery,
 } from '@chakra-ui/react';
 import { ReactElement } from 'react';
@@ -27,12 +26,7 @@ type CustomModalCompound = {
 	children?: ReactElement | ReactElement[];
 };
 
-const CustomModal = ({
-	isOpen,
-	onClose,
-	children,
-	...others
-}: CustomModalProps) => {
+const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	return largerThan1024 ? (
@@ -53,13 +47,6 @@ const CustomModal = ({
 			<DrawerContent p={{ lg: '60px', xs: '24px' }}>{children}</DrawerContent>
 		</Drawer>
 	);
-
-	// return (
-	// 	<Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
-	// 		<ModalOverlay bg="blackAlpha.500" />
-	// 		<ModalContent {...others}>{children}</ModalContent>
-	// 	</Modal>
-	// );
 };
 
 CustomModal.Header = ({ children }: CustomModalCompound) => {
