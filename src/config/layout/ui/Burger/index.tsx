@@ -2,6 +2,8 @@ import { Button } from '@chakra-ui/react';
 import { AnimatePresence, motion, useCycle } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
 
+import { useModal } from '@/config/providers/Modal.provider';
+import { ModalForm } from '@/modules/Common/modals';
 import { useDimensions } from '@/shared/hooks/useDimensions';
 import useLockedBody from '@/shared/hooks/useLockedBody';
 
@@ -35,11 +37,15 @@ export const HeaderMobile = () => {
 		};
 	}, [isOpen]);
 
+	const { openModal } = useModal();
+
+	const modalHandler = () => openModal(<ModalForm />);
+
 	return (
 		<header className={css.burger}>
 			<Overlay isOpen={isOpen} onClick={toggleOpenHandler} />
 			<motion.nav
-				className={css.Modal}
+				className={css.modal}
 				initial={false}
 				animate={isOpen ? 'open' : 'closed'}
 				custom={height}
@@ -54,8 +60,8 @@ export const HeaderMobile = () => {
 							animate={{ opacity: 1, position: 'absolute', top: '30px' }}
 							exit={{ opacity: 0 }}
 						>
-							<Links />
-							<Button mt={10} size="md" variant="blue" onClick={() => {}}>
+							<Links closeMenu={toggleOpenHandler} />
+							<Button mt={10} size="md" variant="blue" onClick={modalHandler}>
 								Написать нам
 							</Button>
 						</motion.div>
@@ -63,7 +69,7 @@ export const HeaderMobile = () => {
 				</AnimatePresence>
 				<MenuToggle toggle={toggleOpenHandler} />
 			</motion.nav>
-			<Logo />
+			<Logo extraClick={toggleOpenHandler} />
 		</header>
 	);
 };

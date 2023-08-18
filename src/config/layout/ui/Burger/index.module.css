@@ -2,34 +2,13 @@
 	position: fixed;
 	display: block;
 	height: 100%;
-	pointer-events: none;
 	width: 100%;
 	z-index: 2;
 	padding-inline: 20px;
 	padding-block: 20px;
-	@media (min-width: 769px) {
-		display: none;
-	}
 }
 
-.Logo {
-	margin: 26px;
-	pointer-events: auto;
-}
-
-.mask {
-	background-color: #07061d;
-	bottom: 0;
-	left: 0;
-	opacity: 0.8;
-	position: absolute;
-	right: 0;
-	top: 0;
-	z-index: 1;
-	pointer-events: all;
-}
-
-.Modal {
+.modal {
 	bottom: 0;
 	padding: 0 40px;
 	position: absolute;

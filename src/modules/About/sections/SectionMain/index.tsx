@@ -3,7 +3,7 @@ import { Box, Heading, Text } from '@chakra-ui/react';
 export const SectionMain = () => {
 	return (
 		<Box
-			mt={{ lg: 200, md: 160, xs: '32px' }}
+			mt={{ lg: 200, md: 160, xs: '80px' }}
 			mb={{ lg: 120, md: '80px', xs: '40px' }}
 			backgroundColor="grey.600"
 		>

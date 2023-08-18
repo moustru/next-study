@@ -4,10 +4,10 @@ import css from './index.module.css';
 
 import LogoSVG from 'public/images/logo.svg';
 
-export const Logo = () => {
+export const Logo = ({ extraClick }: { extraClick?: () => void }) => {
 	return (
 		<Link href="/" className={css.link}>
-			<LogoSVG className={css.logo} />
+			<LogoSVG onClick={extraClick} className={css.logo} />
 		</Link>
 	);
 };
