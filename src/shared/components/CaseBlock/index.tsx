@@ -1,5 +1,9 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useState } from 'react';
+
+import css from './index.module.css';
 
 import type { Size } from '@/shared/types/Size';
 import type { Variant } from '@/shared/types/Variant';
@@ -27,9 +31,15 @@ export const CaseBlock = ({
 	size = 'md',
 	variant = 'light',
 }: CaseBlockProps) => {
+	const [hovered, setHovered] = useState(false);
+	const hoverHandler = () => setHovered(!hovered);
+
 	return (
 		<Link href={href}>
 			<Flex
+				position="relative"
+				onMouseEnter={hoverHandler}
+				onMouseLeave={hoverHandler}
 				h={
 					size === 'md'
 						? { lg: 460, md: 320, xs: 'auto' }
@@ -80,12 +90,14 @@ export const CaseBlock = ({
 						{description}
 					</Text>
 				)}
-				<Box w={{ xs: '32px', md: '60px' }}>
-					<ArrowSVG
-						fill={variant === 'light' ? '#26282B' : '#FFFFFF'}
-						width="100%"
+				<div className={css.arrow}>
+					<motion.div
+						className={css.blackmove}
+						initial={{ x: '-10%' }}
+						animate={{ x: hovered ? '100%' : 0 }}
+						transition={{ duration: 0.3, cubicBezier: '0.83, 0, 0.17, 1' }}
 					/>
-				</Box>
+				</div>
 			</Flex>
 		</Link>
 	);
