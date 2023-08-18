@@ -10,12 +10,14 @@ import nodemailer from 'nodemailer';
 
 export default async function handler(req, res) {
 	const requestBody = req.body;
-	const TEXT = `
-		<p><strong>Name:</strong> ${requestBody.name}</p>
-		<p><strong>E-mail:</strong> ${requestBody.email}</p>
-		<p><strong>Company:</strong> ${requestBody.company}</p>
-		<p><strong>Message:</strong> ${requestBody.message}</p>
-		`;
+	console.log(req.body);
+
+	// const TEXT = `
+	// 	<p><strong>Name:</strong> ${requestBody.name}</p>
+	// 	<p><strong>E-mail:</strong> ${requestBody.email}</p>
+	// 	<p><strong>Company:</strong> ${requestBody.company}</p>
+	// 	<p><strong>Message:</strong> ${requestBody.message}</p>
+	// 	`;
 
 	const transporter = nodemailer.createTransport({
 		host: process.env.MAIL_HOST,
@@ -31,8 +33,7 @@ export default async function handler(req, res) {
 		from: requestBody.email,
 		to: process.env.MAIL_TO,
 		subject: `Request | ${requestBody.name} | CRYPTOX `,
-		text: requestBody.message,
-		html: TEXT,
+		text: requestBody,
 	};
 
 	transporter.sendMail(mailOptions, (error) => {

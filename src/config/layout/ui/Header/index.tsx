@@ -7,7 +7,8 @@ import {
 	useMediaQuery,
 } from '@chakra-ui/react';
 
-import { useModal } from '@/modules/Common/providers/Modal.provider';
+import { useModal } from '@/config/providers/Modal.provider';
+import { ModalForm, ModalSuccess } from '@/modules/Common/modals';
 import { CustomModal } from '@/shared/components/CustomModal';
 
 import { Links } from '../Links';
@@ -19,7 +20,7 @@ import CloseSVG from 'public/icons/close.svg';
 import BurgerSVG from 'public/icons/menu.svg';
 
 export const Header = () => {
-	const { onOpen } = useModal();
+	const { isOpen, openModal, closeModal } = useModal();
 	const {
 		isOpen: isMenuOpen,
 		onOpen: openMenu,
@@ -43,7 +44,11 @@ export const Header = () => {
 					{largerThan768 ? (
 						<Flex gap={5} align="center">
 							<Links />
-							<Button size="md" variant="blue" onClick={onOpen}>
+							<Button
+								size="md"
+								variant="blue"
+								onClick={() => openModal(<ModalForm />)}
+							>
 								Написать нам
 							</Button>
 						</Flex>

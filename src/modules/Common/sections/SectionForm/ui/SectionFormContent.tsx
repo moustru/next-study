@@ -1,9 +1,19 @@
-import { Button, Flex, Grid, RadioGroup, Text } from '@chakra-ui/react';
+import {
+	Button,
+	Flex,
+	Grid,
+	RadioGroup,
+	Text,
+	useToast,
+} from '@chakra-ui/react';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { useMutation } from '@tanstack/react-query';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-import { httpStrapi } from '@/config/api';
+import { sendEmailMethod } from '@/config/api/sendEmail';
+import { useModal } from '@/config/providers/Modal.provider';
+import { ModalSuccess } from '@/modules/Common/modals';
 import { InputField } from '@/shared/components/InputField';
 import { RadioCard } from '@/shared/components/RadioCard';
 
@@ -12,6 +22,8 @@ import { radios } from '../mocks';
 
 export const SectionFormContent = () => {
 	const [solution, setSolution] = useState('mobile');
+	const { openModal } = useModal();
+	const toast = useToast();
 
 	const {
 		register,
@@ -21,8 +33,24 @@ export const SectionFormContent = () => {
 		resolver: yupResolver(formSchema),
 	});
 
+	const { mutate: sendEmailData, isLoading: isLoadingSendingEmail } =
+		useMutation(sendEmailMethod, {
+			onSuccess: () => {
+				openModal(<ModalSuccess />);
+			},
+
+			onError: () => {
+				toast({
+					title: 'Ошибка!',
+					description: 'Не удалось отправить данные',
+					status: 'error',
+					isClosable: true,
+				});
+			},
+		});
+
 	const sendData = (data: any) => {
-		httpStrapi.url('/email').post({ ...data, solution });
+		sendEmailData({ ...data, solution });
 	};
 
 	return (
@@ -79,9 +107,9 @@ export const SectionFormContent = () => {
 						данных
 					</Text>
 					<Button
+						isLoading={isLoadingSendingEmail}
 						size={{ lg: 'xl', xs: 'md' }}
 						variant="blue"
-						onClick={handleSubmit(sendData)}
 						type="submit"
 					>
 						Написать нам

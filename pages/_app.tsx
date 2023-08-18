@@ -7,9 +7,9 @@ import {
 import { useState } from 'react';
 
 import { AppLayout } from '@/config/layout';
+import { ModalProvider } from '@/config/providers/Modal.provider';
 import { circe400 } from '@/config/styles/fonts';
 import VibeLabTheme from '@/config/theme';
-import { ModalProvider } from '@/modules/Common/providers/Modal.provider';
 
 import type { AppProps } from 'next/app';
 
