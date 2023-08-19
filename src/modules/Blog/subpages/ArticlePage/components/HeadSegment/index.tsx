@@ -1,11 +1,13 @@
 import { Flex, Text, Tag } from '@chakra-ui/react';
 
+import type { TagModel } from '@/shared/types/Tag';
+
 type HeadSegmentModel = {
-	tags: string[];
-	date: string;
+	tags: TagModel[];
+	publicationDate: string;
 };
 
-export const HeadSegment = ({ tags, date }: HeadSegmentModel) => {
+export const HeadSegment = ({ tags, publicationDate }: HeadSegmentModel) => {
 	return (
 		<Flex
 			justifyContent="space-between"
@@ -14,13 +16,13 @@ export const HeadSegment = ({ tags, date }: HeadSegmentModel) => {
 			mb={{ md: 8, xs: 4 }}
 		>
 			<Flex maxWidth="80%" gap={4}>
-				{tags.map((tag, i) => (
-					<Tag variant="default" key={tag + i}>
-						{tag}
+				{tags.map((tag) => (
+					<Tag variant="default" key={tag.id}>
+						{tag.value}
 					</Tag>
 				))}
 			</Flex>
-			<Text variant="sm">{date}</Text>
+			<Text variant="sm">{publicationDate}</Text>
 		</Flex>
 	);
 };
