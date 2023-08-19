@@ -11,7 +11,7 @@ export function AppLayout({ children }: PropsWithChildren) {
 
 	useEffect(() => {
 		setScreenSize(screenLess768);
-	}, [isPhone]);
+	}, [screenLess768]);
 
 	return (
 		<Grid minH="100vh" gridTemplateRows="auto 1fr auto">

@@ -5,10 +5,6 @@ import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
 import { partners } from './mocks';
 
-// type SectionPartnersModel = {
-// 	partners:
-// }
-
 export const SectionPartners = ({ ...others }: any) => {
 	return (
 		<SectionTemplate title="С нами работают" {...others}>
@@ -25,9 +21,11 @@ export const SectionPartners = ({ ...others }: any) => {
 						<Image
 							src={`/images/partners/${image}`}
 							alt={alt}
-							width={300}
+							width={200}
+							quality={100}
 							height={80}
 							key={image + index}
+							objectFit="contain"
 						/>
 					</GridItem>
 				))}

@@ -1,6 +1,9 @@
 import { Box, Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useState } from 'react';
+
+import { MovingArrow } from '../MovingArrow';
 
 import type { Url } from 'next/dist/shared/lib/router/router';
 
@@ -24,11 +27,21 @@ export const ArticleBlock = ({
 	date = '11',
 	position = 'Head',
 }: BlogBlockModel) => {
+	const [hovered, setHovered] = useState(false);
+	const hoverHandler = () => setHovered(!hovered);
 	return (
-		<Link href={href}>
+		<Link
+			style={{
+				position: 'relative',
+			}}
+			href={href}
+			onMouseEnter={hoverHandler}
+			onMouseLeave={hoverHandler}
+		>
 			<Stack
 				justifyContent="space-between"
 				gap={0}
+				height="100%"
 				bgColor="light.100"
 				borderRadius={{ md: 44, xs: 20 }}
 				px={{ lg: '80px', xs: '32px' }}
@@ -75,7 +88,7 @@ export const ArticleBlock = ({
 						</Flex>
 					</Box>
 				</Stack>
-				<ArrowSVG fill="#26282B" width="60px" />
+				<MovingArrow isHoverOnParent={hovered} />
 			</Stack>
 		</Link>
 	);

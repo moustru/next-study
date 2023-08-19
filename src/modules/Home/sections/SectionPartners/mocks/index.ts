@@ -1,10 +1,10 @@
 export const partners = [
-	{ image: 'chulakov.png', alt: 'Chulakov' },
-	{ image: 'wallet.png', alt: 'Wallet' },
-	{ image: 'kode.png', alt: 'Kode' },
-	{ image: 'red_mad_robot.png', alt: 'Red Mad Robot' },
-	{ image: 'med.png', alt: 'Med' },
-	{ image: 'sferus.png', alt: 'Sferus' },
-	{ image: 'huawei.png', alt: 'Huawei' },
-	{ image: 'touch_instinct.png', alt: 'Touch Instinct' },
+	{ image: 'chulakov.svg', alt: 'Chulakov' },
+	{ image: 'wallet.svg', alt: 'Wallet' },
+	{ image: 'kode.svg', alt: 'Kode' },
+	{ image: 'red_mad_robot.svg', alt: 'Red Mad Robot' },
+	{ image: 'med.svg', alt: 'Med' },
+	{ image: 'sferus.svg', alt: 'Sferus' },
+	{ image: 'huawei.svg', alt: 'Huawei' },
+	{ image: 'touch_instinct.svg', alt: 'Touch Instinct' },
 ];

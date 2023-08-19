@@ -1,9 +1,8 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import css from './index.module.css';
+import { MovingArrow } from '../MovingArrow';
 
 import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
@@ -76,14 +75,7 @@ export const CaseBlock = ({
 						{description}
 					</Text>
 				)}
-				<div className={css.arrow}>
-					<motion.div
-						className={css.blackmove}
-						initial={{ x: '-10%' }}
-						animate={{ x: hovered ? '100%' : 0 }}
-						transition={{ duration: 0.3, cubicBezier: '0.83, 0, 0.17, 1' }}
-					/>
-				</div>
+				<MovingArrow isHoverOnParent={hovered} />
 			</Flex>
 		</Link>
 	);
