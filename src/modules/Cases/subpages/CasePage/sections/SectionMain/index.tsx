@@ -2,10 +2,7 @@ import { Button, Container, Flex, Heading, Tag, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type TagModel = {
-	id: number;
-	value: string;
-};
+import type { TagModel } from '@/shared/types/Tag';
 
 type LinkModel = {
 	id: number;

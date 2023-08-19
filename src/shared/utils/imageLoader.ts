@@ -7,7 +7,7 @@ export default function myImageLoader({
 	width,
 	quality,
 }: ImageLoaderProps) {
-	return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE}/${src}?w=${width}&q=${
+	return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${src}?w=${width}&q=${
 		quality || 100
 	}`;
 }

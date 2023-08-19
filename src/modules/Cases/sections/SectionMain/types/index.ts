@@ -8,6 +8,7 @@ export type CaseDataModel = {
 	description: string;
 	href: string;
 	bgImageSrc: string;
+	size: Size;
+	variant: Variant;
+	bgColor: string;
 };
-
-export type CaseUIModel = { size: Size; variant: Variant; bgColor: string };

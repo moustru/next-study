@@ -3,12 +3,9 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import {
-	CaseDataModel,
-	CaseUIModel,
-} from '@/modules/Cases/sections/SectionMain/types';
-
 import css from './index.module.css';
+
+import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
 export const CaseBlock = ({
 	id,
@@ -19,7 +16,7 @@ export const CaseBlock = ({
 	bgColor = 'light.200',
 	size = 'md',
 	variant = 'light',
-}: CaseDataModel & CaseUIModel) => {
+}: CaseDataModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
 

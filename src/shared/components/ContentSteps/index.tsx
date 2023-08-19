@@ -2,8 +2,10 @@ import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
 
 import { addZeroBeforeDigit } from '@/shared/utils/formatNumbers';
 
+import type { StepBlock } from '@/shared/types/StepBlock';
+
 type ContentStepModel = {
-	steps: Record<'title' | 'text', string>[];
+	steps: StepBlock[];
 };
 
 export const ContentSteps = ({ steps }: ContentStepModel) => {
@@ -17,8 +19,8 @@ export const ContentSteps = ({ steps }: ContentStepModel) => {
 			rowGap={{ lg: 20, sm: 12, xs: 8 }}
 			columnGap={6}
 		>
-			{steps.map(({ title, text }, i) => (
-				<GridItem key={title + i}>
+			{steps.map(({ id, title, text }, i) => (
+				<GridItem key={id}>
 					<Text mb={{ lg: 5, xs: 2 }}>{addZeroBeforeDigit(i + 1)}</Text>
 					<Heading as="h3" variant="h3" color="basic.200" mb={{ md: 4, xs: 2 }}>
 						{title}
