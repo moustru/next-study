@@ -11,7 +11,7 @@ export const NewsItem = ({
 	publisher,
 	releaseDate,
 }: NewsModel) => {
-	const formattedDate = new Date(releaseDate).toLocaleDateString();
+	// const formattedDate = new Date(releaseDate).toLocaleDateString();
 
 	return (
 		<Flex
@@ -31,7 +31,7 @@ export const NewsItem = ({
 				<Text variant="lg">{description}</Text>
 			</Stack>
 			<Text variant="sm" color="grey.500">
-				{publisher}, {formattedDate}
+				{publisher}, 10.03.2023
 			</Text>
 		</Flex>
 	);

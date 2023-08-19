@@ -6,16 +6,16 @@ import { Footer } from './ui/Footer';
 import { Header } from './ui/Header';
 
 export function AppLayout({ children }: PropsWithChildren) {
-	const [isDesktopOrTablet, setScreenSize] = useState<boolean>(false);
-	const [largerThan768] = useMediaQuery('(min-width: 768px)');
+	const [isPhone, setScreenSize] = useState<boolean>(false);
+	const [screenLess768] = useMediaQuery('(max-width: 768px)');
 
 	useEffect(() => {
-		setScreenSize(largerThan768);
-	});
+		setScreenSize(screenLess768);
+	}, [isPhone]);
 
 	return (
 		<Grid minH="100vh" gridTemplateRows="auto 1fr auto">
-			{isDesktopOrTablet ? <Header /> : <HeaderMobile />}
+			{isPhone ? <HeaderMobile /> : <Header />}
 			<main>{children}</main>
 			<Footer />
 		</Grid>
