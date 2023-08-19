@@ -3,14 +3,28 @@ import { Stack } from '@chakra-ui/react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { MemberReviewBlock } from '@/shared/components/MemberReviewBlock';
 
-import { teamReviews } from './mocks';
+// import { teamReviews } from './mocks';
 
-export const SectionTeam = () => {
+type TeamSingleModel = {
+	id: number;
+	avatar: string;
+	position: string;
+	review: string;
+};
+
+type SectionTeamModel = {
+	heading: string;
+	team: {
+		team: TeamSingleModel[];
+	};
+};
+
+export const SectionTeam = ({ heading, team }: SectionTeamModel) => {
 	return (
-		<SectionTemplate title="Команда проекта">
+		<SectionTemplate title={heading}>
 			<Stack gap={{ lg: 10, xs: 5 }}>
-				{teamReviews.map((teamReview, i) => (
-					<MemberReviewBlock {...teamReview} key={teamReview.name + i} />
+				{team.team.map((teamReview) => (
+					<MemberReviewBlock {...teamReview} key={teamReview.id} />
 				))}
 			</Stack>
 		</SectionTemplate>

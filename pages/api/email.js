@@ -20,20 +20,20 @@ export default async function handler(req, res) {
 	// 	`;
 
 	const transporter = nodemailer.createTransport({
-		host: process.env.MAIL_HOST,
-		port: Number(process.env.MAIL_PORT),
+		host: process.env.NEXT_PUBLIC_MAIL_HOST,
+		port: Number(process.env.NEXT_PUBLIC_MAIL_PORT),
 		secure: false,
 		auth: {
-			user: process.env.MAIL_USERNAME,
-			pass: process.env.MAIL_PASSWORD,
+			user: process.env.NEXT_PUBLIC_MAIL_USERNAME,
+			pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,
 		},
 	});
 
 	const mailOptions = {
 		from: requestBody.email,
-		to: process.env.MAIL_TO,
-		subject: `Request | ${requestBody.name} | CRYPTOX `,
-		text: requestBody,
+		to: process.env.NEXT_PUBLIC_MAIL_TO,
+		subject: `Request | ${requestBody.name} | Vibe Lab `,
+		text: 'Hello!',
 	};
 
 	transporter.sendMail(mailOptions, (error) => {

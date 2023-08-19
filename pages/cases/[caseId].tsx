@@ -1,16 +1,33 @@
-import { Service } from '@/config/api/service';
+import { httpStrapi } from '@/config/api';
+import { composeQueryClient } from '@/config/api/queryClient';
 import { CasePage as CasePageComponent } from '@/modules/Cases/subpages/CasePage';
+import { prefetchCasePageData } from '@/modules/Cases/subpages/CasePage/api';
 
-import type { GetServerSideProps } from 'next';
+import type { GetStaticProps } from 'next';
 
 const CasePage = () => <CasePageComponent />;
 
-export const getServerSideProps: GetServerSideProps = async ({}) => {
-	const service = new Service(['botanical-garden']);
-	const props = await service.execute();
+export async function getStaticPaths() {
+	let cases = (await httpStrapi.get('/case-pages?populate=*').json()) as any;
+
+	const paths = cases.data.map((caseItem: any) => ({
+		params: { caseId: caseItem.id.toString() },
+	}));
 
 	return {
-		props,
+		paths,
+		fallback: true,
+	};
+}
+
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+	const queryClient = composeQueryClient();
+
+	await prefetchCasePageData(queryClient, params?.caseId as string);
+
+	return {
+		props: {},
+		revalidate: 1,
 	};
 };
 
