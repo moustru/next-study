@@ -10,15 +10,19 @@ import LikeSVG from 'public/icons/like.svg';
 type BlogBlockModel = {
 	subText?: string;
 	title?: string;
-	tags?: string[];
+	tag?: string;
+	date: string;
+	position: string;
 	href?: Url;
 };
 
 export const ArticleBlock = ({
 	title = 'Название статьи возможно длинное',
-	tags = ['Мобильная разработка'],
+	tag = 'Мобильная разработка',
 	subText = 'Необльшое описание или что-то в этом духе',
 	href = '/blog/1',
+	date = '11',
+	position = 'Head',
 }: BlogBlockModel) => {
 	return (
 		<Link href={href}>
@@ -32,11 +36,9 @@ export const ArticleBlock = ({
 			>
 				<Stack gap={0} mb={{ lg: 12, xs: 4 }}>
 					<Flex gap={4} mb={5}>
-						{tags.map((tag, i) => (
-							<Tag key={tag + i} size="sm" variant="default">
-								{tag}
-							</Tag>
-						))}
+						<Tag size="sm" variant="default">
+							{tag}
+						</Tag>
 					</Flex>
 					<Heading as="h3" variant="h3" mb={2.5}>
 						{title}
@@ -60,11 +62,11 @@ export const ArticleBlock = ({
 									fill
 								/>
 							</Box>
-							<Text variant="xs">Ефименко Георгий, Head</Text>
+							<Text variant="xs">{position}</Text>
 						</Flex>
 
 						<Flex gap={6}>
-							<Text color="grey.400">28.07.2023</Text>
+							<Text color="grey.400">{date}</Text>
 
 							<Flex alignItems="center" gap={1}>
 								<LikeSVG fill="#787D87" width="16px" />

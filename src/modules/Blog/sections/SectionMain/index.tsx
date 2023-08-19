@@ -1,23 +1,29 @@
-import { Grid } from '@chakra-ui/react';
+import { Tabs } from '@chakra-ui/react';
+import { useState } from 'react';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { ArticleBlock } from '@/shared/components/ArticleBlock';
-import { Tabs } from '@/shared/components/Tabs';
 
-import { blogTabItems } from './mocks';
+import { useArticlesData } from './api';
+import { TabList } from './components/TabList';
+import { TabPanels } from './components/TabPanels';
 
 export const SectionMain = () => {
+	const { data, isLoading, error } = useArticlesData();
+	const [filteredNews, setFilteredNews] = useState('all');
+
+	const nData = data?.data[0].attributes.news;
+
 	return (
 		<SectionTemplate title="Блог" firstBlock>
-			<Tabs tabs={blogTabItems} />
-
-			<Grid
-				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
-				gap={{ md: 8, xs: 4 }}
-			>
-				<ArticleBlock />
-				<ArticleBlock />
-			</Grid>
+			<Tabs>
+				<TabList onClick={setFilteredNews} />
+				<TabPanels
+					isLoading={isLoading}
+					isError={error}
+					currGroup={filteredNews}
+					items={nData}
+				/>
+			</Tabs>
 		</SectionTemplate>
 	);
 };

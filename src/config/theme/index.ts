@@ -8,6 +8,7 @@ import Container from './components/Container';
 import Heading from './components/Heading';
 import Input from './components/Input';
 import Radio from './components/Radio';
+import Tabs from './components/Tabs';
 import Tag from './components/Tag';
 import Text from './components/Text';
 import fonts from './fonts';
@@ -15,14 +16,15 @@ import fonts from './fonts';
 const VibeLabTheme = extendTheme({
 	// ------  components start  ------//
 	components: {
-		Container,
-		Heading,
-		Text,
-		Button,
-		IconButton,
-		Radio,
-		Input,
 		Tag,
+		Tabs,
+		Text,
+		Input,
+		Radio,
+		Button,
+		Heading,
+		Container,
+		IconButton,
 	},
 	// ------  components end  ------//
 
