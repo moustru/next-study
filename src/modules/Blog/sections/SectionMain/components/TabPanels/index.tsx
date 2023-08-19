@@ -3,6 +3,8 @@ import {
 	TabPanel,
 	Grid,
 	Box,
+	Flex,
+	Spinner,
 } from '@chakra-ui/react';
 
 import { ArticleBlock } from '@/shared/components/ArticleBlock';
@@ -16,7 +18,17 @@ export const blogTabItems: any = [
 ];
 
 export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
-	if (isLoading) return <Box>Loading...</Box>;
+	if (isLoading)
+		return (
+			<Flex
+				justifyContent="center"
+				alignItems="center"
+				width="100%"
+				height="400px"
+			>
+				<Spinner />
+			</Flex>
+		);
 
 	if (isError) return <Box>An error has occurred</Box>;
 
