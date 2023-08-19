@@ -19,8 +19,6 @@ export const CasePage = () => {
 
 	const content = data?.data?.attributes?.zoneOfContents;
 
-	console.log(content);
-
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
 			case 'sections.header-of-case':

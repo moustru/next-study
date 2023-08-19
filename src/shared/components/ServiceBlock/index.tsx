@@ -1,23 +1,20 @@
 import { Box, Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
+import type { TagModel } from '@/shared/types/Tag';
+
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
 type ServiceBlockModel = {
+	id: number;
 	label: string;
 	title: string;
-	tags: string[];
-	href: string;
+	tags: TagModel[];
 };
 
-export const ServiceBlock = ({
-	label,
-	title,
-	tags,
-	href,
-}: ServiceBlockModel) => {
+export const ServiceBlock = ({ id, label, title, tags }: ServiceBlockModel) => {
 	return (
-		<Link href={href}>
+		<Link href={`/services/${id}`}>
 			<Stack
 				h={{ lg: 425, md: 300, xs: 200 }}
 				justifyContent="space-between"
@@ -35,9 +32,9 @@ export const ServiceBlock = ({
 						{title}
 					</Heading>
 					<Flex gap={4} mb={{ md: 25, xs: '12px' }}>
-						{tags.map((tag, i) => (
-							<Tag key={tag + i} size="sm" variant="default">
-								{tag}
+						{tags.map((tag) => (
+							<Tag key={tag.id} size="sm" variant="default">
+								{tag.value}
 							</Tag>
 						))}
 					</Flex>

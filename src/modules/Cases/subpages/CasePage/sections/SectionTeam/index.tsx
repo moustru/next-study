@@ -7,23 +7,21 @@ import { MemberReviewBlock } from '@/shared/components/MemberReviewBlock';
 
 type TeamSingleModel = {
 	id: number;
-	avatar: string;
-	position: string;
-	review: string;
+	avatarSrc: string;
+	nameAndPosition: string;
+	reviewText: string;
 };
 
 type SectionTeamModel = {
 	heading: string;
-	team: {
-		team: TeamSingleModel[];
-	};
+	reviews: TeamSingleModel[];
 };
 
-export const SectionTeam = ({ heading, team }: SectionTeamModel) => {
+export const SectionTeam = ({ heading, reviews }: SectionTeamModel) => {
 	return (
 		<SectionTemplate title={heading}>
 			<Stack gap={{ lg: 10, xs: 5 }}>
-				{team.team.map((teamReview) => (
+				{reviews.map((teamReview) => (
 					<MemberReviewBlock {...teamReview} key={teamReview.id} />
 				))}
 			</Stack>

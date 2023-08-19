@@ -1,5 +1,5 @@
 import type { CaseDataModel, CaseUIModel } from '../types';
-
+// Убрать нахуй
 /**
  * Подмешивает в объект с данными информацию о UI карточки
  *

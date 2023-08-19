@@ -3,7 +3,9 @@ import { useQuery, type QueryClient } from '@tanstack/react-query';
 import { httpStrapi } from '@/config/api';
 
 export const getCasePageData = async (caseId: string): Promise<any> =>
-	await httpStrapi.get(`/case-pages/${caseId}?populate=*`).json();
+	await httpStrapi
+		.get(`/case-pages/${caseId}?populate[zoneOfContents][populate]=*`)
+		.json();
 
 const config = {
 	queryKey: (caseId: string) => [`casePage-${caseId}`],

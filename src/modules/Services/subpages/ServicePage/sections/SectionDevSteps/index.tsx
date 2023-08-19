@@ -1,12 +1,17 @@
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ContentSteps } from '@/shared/components/ContentSteps';
 
-import { devSteps } from './mocks';
+import type { StepBlock } from '@/shared/types/StepBlock';
 
-export const SectionDevSteps = () => {
+type SectionDevStepsModel = {
+	heading: string;
+	steps: StepBlock[];
+};
+
+export const SectionDevSteps = ({ steps, heading }: SectionDevStepsModel) => {
 	return (
-		<SectionTemplate title="Этапы разработки">
-			<ContentSteps steps={devSteps} />
+		<SectionTemplate title={heading}>
+			<ContentSteps steps={steps} />
 		</SectionTemplate>
 	);
 };

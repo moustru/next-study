@@ -2,10 +2,7 @@ import { Button, Container, Flex, Heading, Tag, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-type TagModel = {
-	id: number;
-	name: string;
-};
+import type { TagModel } from '@/shared/types/Tag';
 
 type LinkModel = {
 	id: number;
@@ -23,9 +20,7 @@ type SectionMainModel = {
 	heading: string;
 	description: string;
 	links: LinkSectionModel;
-	tags: {
-		tags: TagModel[];
-	};
+	tags: TagModel[];
 };
 
 export const SectionMain = ({
@@ -47,9 +42,9 @@ export const SectionMain = ({
 					{description}
 				</Text>
 				<Flex gap={{ md: 4, xs: 2 }}>
-					{tags.tags.map((tag) => (
+					{tags.map((tag) => (
 						<Tag variant="default" key={tag.id}>
-							{tag.name}
+							{tag.value}
 						</Tag>
 					))}
 				</Flex>
