@@ -19,6 +19,10 @@ export const Links = ({
 					<Text
 						variant={{ xs: 'xl', md: 'sm' }}
 						color={isLight ? 'white' : 'grey.600'}
+						sx={{ fontWeight: '600 !important' }}
+						_hover={{
+							color: 'basic.200',
+						}}
 					>
 						{link.pageName}
 					</Text>
