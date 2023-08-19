@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 type TagModel = {
 	id: number;
-	name: string;
+	value: string;
 };
 
 type LinkModel = {
@@ -23,9 +23,7 @@ type SectionMainModel = {
 	heading: string;
 	description: string;
 	links: LinkSectionModel;
-	tags: {
-		tags: TagModel[];
-	};
+	tags: TagModel[];
 };
 
 export const SectionMain = ({
@@ -47,9 +45,9 @@ export const SectionMain = ({
 					{description}
 				</Text>
 				<Flex gap={{ md: 4, xs: 2 }}>
-					{tags.tags.map((tag) => (
+					{tags.map((tag) => (
 						<Tag variant="default" key={tag.id}>
-							{tag.name}
+							{tag.value}
 						</Tag>
 					))}
 				</Flex>

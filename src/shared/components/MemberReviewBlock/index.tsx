@@ -1,16 +1,18 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
+import myImageLoader from '@/shared/utils/imageLoader';
+
 type TeamSingleModel = {
-	avatar: string;
-	position: string;
-	review: string;
+	avatarSrc: string;
+	nameAndPosition: string;
+	reviewText: string;
 };
 
 export const MemberReviewBlock = ({
-	avatar,
-	position,
-	review,
+	avatarSrc,
+	nameAndPosition,
+	reviewText,
 }: TeamSingleModel) => {
 	return (
 		<Flex
@@ -29,17 +31,13 @@ export const MemberReviewBlock = ({
 				borderRadius="50%"
 				overflow="hidden"
 			>
-				<Image
-					src={avatar || '/images/reviews/terminatessa.jpg'}
-					alt="Member photo"
-					fill
-				/>
+				<Image src={avatarSrc} loader={myImageLoader} alt="Member photo" fill />
 			</Box>
 			<Box width="fit-content">
 				<Text variant="xl" mb={3}>
-					{review}
+					{reviewText}
 				</Text>
-				<Text variant="sm">{position}</Text>
+				<Text variant="sm">{nameAndPosition}</Text>
 			</Box>
 		</Flex>
 	);

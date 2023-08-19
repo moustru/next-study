@@ -3,39 +3,28 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import {
+	CaseDataModel,
+	CaseUIModel,
+} from '@/modules/Cases/sections/SectionMain/types';
+
 import css from './index.module.css';
 
-import type { Size } from '@/shared/types/Size';
-import type { Variant } from '@/shared/types/Variant';
-
-import ArrowSVG from 'public/icons/arrow_right.svg';
-
-type CaseBlockProps = {
-	title: string;
-	developType: string;
-	description: string;
-	href: string;
-	bgImage: string;
-	bgColor?: string;
-	size?: Size;
-	variant?: Variant;
-};
-
 export const CaseBlock = ({
+	id,
 	title,
 	developType,
 	description,
-	href,
-	bgImage,
+	bgImageSrc,
 	bgColor = 'light.200',
 	size = 'md',
 	variant = 'light',
-}: CaseBlockProps) => {
+}: CaseDataModel & CaseUIModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
 
 	return (
-		<Link href={href}>
+		<Link href={`/cases/${id}`}>
 			<Flex
 				position="relative"
 				onMouseEnter={hoverHandler}
@@ -47,7 +36,7 @@ export const CaseBlock = ({
 				}
 				flexDirection="column"
 				justifyContent="space-between"
-				bgImage={`/images/cases/${bgImage}`}
+				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageSrc}`}
 				bgRepeat="no-repeat"
 				bgColor={bgColor}
 				bgPosition="bottom right"

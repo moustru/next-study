@@ -1,17 +1,13 @@
 'use client';
 
-type ImageLoaderModel = {
-	src: string;
-	width: number;
-	quality: number;
-};
+import type { ImageLoaderProps } from 'next/image';
 
 export default function myImageLoader({
 	src,
 	width,
 	quality,
-}: ImageLoaderModel) {
-	return `${process.env.NEXT_PUBLIC_STRAPI_URL}/${src}?w=${width}&q=${
+}: ImageLoaderProps) {
+	return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE}/${src}?w=${width}&q=${
 		quality || 100
 	}`;
 }
