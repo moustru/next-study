@@ -15,7 +15,6 @@ const getSolution = (value) => {
 
 export default async function handler(req, res) {
 	const requestBody = req.body;
-	console.log(req.body);
 
 	const TEXT = `
 		<p><strong>Имя:</strong> ${requestBody.name}</p>
@@ -43,10 +42,9 @@ export default async function handler(req, res) {
 
 	transporter.sendMail(mailOptions, (error) => {
 		if (error) {
-			console.log(error);
 			res.status(500).send(error);
 		} else {
-			res.send('Email sent');
+			res.send(requestBody);
 		}
 	});
 }
