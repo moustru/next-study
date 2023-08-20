@@ -1,4 +1,4 @@
-import { Center, Container, Heading } from '@chakra-ui/react';
+import { Container, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -15,11 +15,9 @@ import { TitleSegment } from './components/TitleSegment';
 export const ArticlePage = () => {
 	const { query } = useRouter();
 
-	const { data, isLoading } = useArticleData(query.articleId as string);
+	const { data } = useArticleData(query.articleId as string);
 
-	const content = data?.data?.attributes;
-
-	console.log(content);
+	const content = data.data.attributes;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
@@ -35,16 +33,6 @@ export const ArticlePage = () => {
 				);
 		}
 	};
-
-	// TODO: Ну это надо убирать и решать вопрос с нормальной загрузкой данных
-	if (isLoading)
-		return (
-			<Center w="100vw" h="100vh">
-				<Heading as="h1" variant="h1">
-					Loading...
-				</Heading>
-			</Center>
-		);
 
 	return (
 		<>

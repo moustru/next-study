@@ -1,3 +1,5 @@
+import { dehydrate } from '@tanstack/react-query';
+
 import { composeQueryClient } from '@/config/api/queryClient';
 import { CasesPage } from '@/modules/Cases';
 import { prefetchCasesData } from '@/modules/Cases/api';
@@ -12,7 +14,9 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 	await prefetchCasesData(queryClient);
 
 	return {
-		props: {},
+		props: {
+			dehydratedState: dehydrate(queryClient),
+		},
 		revalidate: 1,
 	};
 };

@@ -1,3 +1,5 @@
+import { dehydrate } from '@tanstack/react-query';
+
 import { httpStrapi } from '@/config/api';
 import { composeQueryClient } from '@/config/api/queryClient';
 import { ArticlePage } from '@/modules/Blog/subpages/ArticlePage';
@@ -26,7 +28,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 	await prefetchArticleData(queryClient, params?.articleId as string);
 
 	return {
-		props: {},
+		props: {
+			dehydratedState: dehydrate(queryClient),
+		},
 		revalidate: 1,
 	};
 };

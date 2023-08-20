@@ -22,7 +22,7 @@ export default async function handler(req, res) {
 	const transporter = nodemailer.createTransport({
 		host: process.env.NEXT_PUBLIC_MAIL_HOST,
 		port: Number(process.env.NEXT_PUBLIC_MAIL_PORT),
-		secure: false,
+		secure: true,
 		auth: {
 			user: process.env.NEXT_PUBLIC_MAIL_USERNAME,
 			pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,

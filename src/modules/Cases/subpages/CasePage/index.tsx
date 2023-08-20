@@ -15,9 +15,18 @@ import { SectionTeam } from './sections/SectionTeam';
 export const CasePage = () => {
 	const { query } = useRouter();
 
-	const { data, isLoading } = useCasePageData(query.caseId as string);
+	const { data } = useCasePageData(query.caseId as string);
 
-	const content = data?.data?.attributes?.zoneOfContents;
+	if (!data)
+		return (
+			<Center>
+				<Heading as="h1" variant="h1">
+					404 - Страница не найдена
+				</Heading>
+			</Center>
+		);
+
+	const content = data.data.attributes.zoneOfContents;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
@@ -39,16 +48,6 @@ export const CasePage = () => {
 				);
 		}
 	};
-
-	// TODO: Ну это надо убирать и решать вопрос с нормальной загрузкой данных
-	if (isLoading)
-		return (
-			<Center w="100vw" h="100vh">
-				<Heading as="h1" variant="h1">
-					Loading...
-				</Heading>
-			</Center>
-		);
 
 	return (
 		<>
