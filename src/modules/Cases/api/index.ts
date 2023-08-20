@@ -3,7 +3,7 @@ import { useQuery, type QueryClient } from '@tanstack/react-query';
 import { httpStrapi } from '@/config/api';
 
 export const getCasesData = async (): Promise<any> =>
-	await httpStrapi.get('/cases?populate=*').json();
+	await httpStrapi.get('/cases?populate[cases][populate]=*').json();
 
 const config = {
 	queryKey: ['cases'],

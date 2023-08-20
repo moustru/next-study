@@ -1,7 +1,5 @@
 import wretch from 'wretch';
 
-import { httpStrapi } from '.';
-
 export const sendEmailMethod = async ({ name, email, solution }: any) =>
 	await wretch()
 		.url('/api/email')

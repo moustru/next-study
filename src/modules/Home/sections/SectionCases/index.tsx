@@ -4,20 +4,18 @@ import Link from 'next/link';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
-import { caseItems } from './mocks';
-
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
-export const SectionCases = ({ ...others }) => {
+export const SectionCases = ({ heading, cases, ...others }: any) => {
 	return (
-		<SectionTemplate title="Кейсы" {...others}>
+		<SectionTemplate title={heading} {...others}>
 			<>
 				<Stack
 					gap={{ lg: '100px', md: '64px', xs: '32px' }}
 					mb={{ lg: '60px', md: '32px', xs: '16px' }}
 				>
-					{caseItems.map((caseItem, i) => (
-						<CaseBlock {...caseItem} key={caseItem.title + i} />
+					{cases.map((caseItem: any) => (
+						<CaseBlock {...caseItem} key={caseItem.id} />
 					))}
 				</Stack>
 				<Button

@@ -6,20 +6,22 @@ import { NewsItem } from '@/shared/components/NewsItem';
 // import { news } from './mocks';
 
 type SectionNewsModel = {
-	news?: {
+	heading: string;
+	news: {
+		id: number;
 		title: string;
 		description: string;
 		publisher: string;
-		releaseDate: string;
+		publicationDate: string;
 	}[];
 };
 
-export const SectionNews = ({ news = [] }: SectionNewsModel) => {
+export const SectionNews = ({ heading, news }: SectionNewsModel) => {
 	return (
-		<SectionTemplate title="Новости">
+		<SectionTemplate title={heading}>
 			<Flex gap={{ lg: 8, xs: 4 }} wrap={{ lg: 'nowrap', xs: 'wrap' }}>
-				{news.map((newsItem, i) => (
-					<NewsItem {...newsItem} key={newsItem.title + i} />
+				{news.map((newsItem) => (
+					<NewsItem {...newsItem} key={newsItem.id} />
 				))}
 			</Flex>
 		</SectionTemplate>

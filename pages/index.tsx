@@ -1,17 +1,18 @@
-import { Service } from '@/config/api/service';
+import { composeQueryClient } from '@/config/api/queryClient';
 import { HomePage } from '@/modules/Home';
-import { REQUESTS_KEYS } from '@/modules/Home/service';
+import { prefetchHomeData } from '@/modules/Home/api';
 
 import type { GetStaticProps } from 'next';
 
-const Home = (props: any) => <HomePage {...props} />;
+const Home = () => <HomePage />;
 
 export const getStaticProps: GetStaticProps = async () => {
-	const service = new Service(REQUESTS_KEYS);
-	const props = await service.execute();
+	const queryClient = composeQueryClient();
+
+	await prefetchHomeData(queryClient);
 
 	return {
-		props,
+		props: {},
 		revalidate: 1,
 	};
 };

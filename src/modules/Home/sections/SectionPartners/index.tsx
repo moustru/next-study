@@ -2,10 +2,11 @@ import { Grid, GridItem } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
+import myImageLoader from '@/shared/utils/imageLoader';
 
-import { partners } from './mocks';
+export const SectionPartners = ({ partnersLogos, ...others }: any) => {
+	const logos = partnersLogos?.data?.map((logo: any) => logo.attributes.url);
 
-export const SectionPartners = ({ ...others }: any) => {
 	return (
 		<SectionTemplate title="С нами работают" {...others}>
 			<Grid
@@ -16,15 +17,12 @@ export const SectionPartners = ({ ...others }: any) => {
 				}}
 				rowGap="2rem"
 			>
-				{partners.map(({ image, alt }, index) => (
-					<GridItem key={image + index}>
+				{logos?.map((logo: any, index: number) => (
+					<GridItem key={logo + index}>
 						<Image
-							src={`/images/partners/${image}`}
-							alt={alt}
-							width={200}
-							quality={100}
-							height={80}
-							key={image + index}
+							src={logo}
+							alt="Partner logo"
+							loader={myImageLoader}
 							objectFit="contain"
 						/>
 					</GridItem>

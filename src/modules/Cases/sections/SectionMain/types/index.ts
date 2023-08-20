@@ -7,7 +7,7 @@ export type CaseDataModel = {
 	developType: string;
 	description: string;
 	href: string;
-	bgImageSrc: string;
+	bgImage: any;
 	size: Size;
 	variant: Variant;
 	bgColor: string;
