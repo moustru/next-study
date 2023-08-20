@@ -1,9 +1,10 @@
-import { Box, Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
+import { Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
+
+import { MovingArrow } from '../MovingArrow';
 
 import type { TagModel } from '@/shared/types/Tag';
-
-import ArrowSVG from 'public/icons/arrow_right.svg';
 
 type ServiceBlockModel = {
 	id: number;
@@ -13,8 +14,17 @@ type ServiceBlockModel = {
 };
 
 export const ServiceBlock = ({ id, label, title, tags }: ServiceBlockModel) => {
+	const [hovered, setHovered] = useState(false);
+	const hoverHandler = () => setHovered(!hovered);
 	return (
-		<Link href={`/services/${id}`}>
+		<Link
+			href={`/services/${id}`}
+			onMouseEnter={hoverHandler}
+			onMouseLeave={hoverHandler}
+			style={{
+				position: 'relative',
+			}}
+		>
 			<Stack
 				h={{ lg: 425, md: 300, xs: 200 }}
 				justifyContent="space-between"
@@ -39,9 +49,8 @@ export const ServiceBlock = ({ id, label, title, tags }: ServiceBlockModel) => {
 						))}
 					</Flex>
 				</Stack>
-				<Box w={{ xs: '32px', md: '60px' }}>
-					<ArrowSVG fill="#26282B" width="100%" />
-				</Box>
+
+				<MovingArrow isHoverOnParent={hovered} />
 			</Stack>
 		</Link>
 	);

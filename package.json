@@ -41,6 +41,7 @@
 		"@types/react": "^18.2.14",
 		"@types/react-dom": "^18.2.6",
 		"cross-env": "^7.0.3",
+		"embla-carousel-autoplay": "8.0.0-rc11",
 		"embla-carousel-react": "8.0.0-rc11",
 		"framer-motion": "^10.12.18",
 		"html-react-parser": "^3.0.16",

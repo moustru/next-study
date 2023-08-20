@@ -1,5 +1,6 @@
 import { Carousel, type Embla } from '@mantine/carousel';
-import { useState } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef, useState } from 'react';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ReviewBlock } from '@/shared/components/ReviewBlock';
@@ -17,6 +18,7 @@ type SectionReviewsModel = {
 
 export const SectionReviews = ({ heading, reviews }: SectionReviewsModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
+	const autoplay = useRef(Autoplay({ delay: 2000 }));
 
 	const prevSlide = () => {
 		embla?.scrollPrev();
@@ -35,7 +37,12 @@ export const SectionReviews = ({ heading, reviews }: SectionReviewsModel) => {
 				scrollNext: nextSlide,
 			}}
 		>
-			<Carousel withControls={false} getEmblaApi={setEmbla} slideGap={16}>
+			<Carousel
+				withControls={false}
+				getEmblaApi={setEmbla}
+				slideGap={16}
+				plugins={[autoplay.current]}
+			>
 				{reviews.map((review) => (
 					<Carousel.Slide key={review.id}>
 						<ReviewBlock {...review} />

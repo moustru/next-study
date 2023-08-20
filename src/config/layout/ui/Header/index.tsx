@@ -19,7 +19,7 @@ export const Header = () => {
 				<Flex alignItems="center" justifyContent="space-between">
 					<Logo />
 
-					<Flex gap={5} align="center">
+					<Flex gap={7} align="center">
 						<Links />
 						<Button size="md" variant="blue" onClick={modalHandler}>
 							Написать нам
