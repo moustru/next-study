@@ -4,6 +4,6 @@ export type AchievementModel = {
 	id: number;
 	place: number;
 	description: string;
-	iconSrc: string;
+	icon: any;
 	variant: Variant;
 };

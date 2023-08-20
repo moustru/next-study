@@ -34,7 +34,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 				background: setBgColor(variant),
 			}}
 		>
-			{achievements.map((achieve) => (
+			{achievements?.map((achieve) => (
 				<Box w={{ lg: 230, sm: '100%' }} key={achieve.id}>
 					<Flex alignItems="center" gap={4} mb={{ lg: 6, sm: 2 }}>
 						<Heading
@@ -50,7 +50,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 							height={{ xs: '10vw', md: '56px' }}
 						>
 							<Image
-								src={achieve.iconSrc}
+								src={achieve?.icon?.data?.attributes?.url}
 								loader={myImageLoader}
 								alt="Achieve icon"
 								fill

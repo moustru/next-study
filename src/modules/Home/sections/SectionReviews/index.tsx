@@ -4,9 +4,20 @@ import { useState } from 'react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ReviewBlock } from '@/shared/components/ReviewBlock';
 
-import { reviews } from './mocks';
+// import { reviews } from './mocks';
 
-export const SectionReviews = () => {
+type SectionReviewsModel = {
+	heading: string;
+	reviews: {
+		id: number;
+		reviewText: string;
+		reviewAuthor: string;
+		avatar: any;
+		authorCompany: string;
+	}[];
+};
+
+export const SectionReviews = ({ heading, reviews }: SectionReviewsModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
 
 	const prevSlide = () => {
@@ -19,7 +30,7 @@ export const SectionReviews = () => {
 
 	return (
 		<SectionTemplate
-			title="Отзывы"
+			title={heading}
 			carouselControls
 			carouselEvents={{
 				scrollPrev: prevSlide,
@@ -27,8 +38,8 @@ export const SectionReviews = () => {
 			}}
 		>
 			<Carousel withControls={false} getEmblaApi={setEmbla} slideGap={16}>
-				{reviews.map((review, i) => (
-					<Carousel.Slide key={review.user + i}>
+				{reviews.map((review) => (
+					<Carousel.Slide key={review.id}>
 						<ReviewBlock {...review} />
 					</Carousel.Slide>
 				))}

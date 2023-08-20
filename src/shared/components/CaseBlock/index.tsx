@@ -11,13 +11,15 @@ export const CaseBlock = ({
 	title,
 	developType,
 	description,
-	bgImageSrc,
+	bgImage,
 	bgColor = 'light.200',
 	size = 'md',
 	variant = 'light',
 }: CaseDataModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
+
+	const bgImageURL = bgImage.data.attributes.url;
 
 	return (
 		<Link href={`/cases/${id}`}>
@@ -32,7 +34,7 @@ export const CaseBlock = ({
 				}
 				flexDirection="column"
 				justifyContent="space-between"
-				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageSrc}`}
+				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageURL}`}
 				bgRepeat="no-repeat"
 				bgColor={bgColor}
 				bgPosition="bottom right"
