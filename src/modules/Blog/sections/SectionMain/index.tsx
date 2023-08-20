@@ -3,15 +3,16 @@ import { useState } from 'react';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 
-import { useArticlesData } from './api';
+import { useAllArticlesData } from '../../api';
+
 import { TabList } from './components/TabList';
 import { TabPanels } from './components/TabPanels';
 
 export const SectionMain = () => {
-	const { data, isLoading, error } = useArticlesData();
+	const { data, isLoading, error } = useAllArticlesData();
 	const [filteredNews, setFilteredNews] = useState<string>('all');
 
-	const blogData = data?.data;
+	const blogData = data.data;
 
 	return (
 		<SectionTemplate title="Блог" firstBlock>
