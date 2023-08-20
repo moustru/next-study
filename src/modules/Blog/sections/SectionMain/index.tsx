@@ -9,9 +9,9 @@ import { TabPanels } from './components/TabPanels';
 
 export const SectionMain = () => {
 	const { data, isLoading, error } = useArticlesData();
-	const [filteredNews, setFilteredNews] = useState('all');
+	const [filteredNews, setFilteredNews] = useState<string>('all');
 
-	const nData = data?.data[0].attributes.news;
+	const blogData = data?.data;
 
 	return (
 		<SectionTemplate title="Блог" firstBlock>
@@ -21,7 +21,7 @@ export const SectionMain = () => {
 					isLoading={isLoading}
 					isError={error}
 					currGroup={filteredNews}
-					items={nData}
+					items={blogData}
 				/>
 			</Tabs>
 		</SectionTemplate>

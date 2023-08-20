@@ -4,20 +4,26 @@ import {
 	Grid,
 	Box,
 	Flex,
+	Text,
 	Spinner,
 } from '@chakra-ui/react';
+import { useMemo } from 'react';
 
 import { ArticleBlock } from '@/shared/components/ArticleBlock';
 
-export const blogTabItems: any = [
-	{ text: 'Все', value: 'all' },
-	{ text: 'Мобильная разработка', value: 'mobile' },
-	{ text: 'QA', value: 'qa' },
-	{ text: 'Дизайн', value: 'design' },
-	{ text: 'Web-разработка', value: 'web' },
-];
+import { BlogTabItem, blogTabItems } from '../../constants';
 
 export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
+	const filteredItems = useMemo(() => {
+		if (currGroup === 'all') return items;
+
+		return items.filter((item: any) =>
+			item.attributes.tags.some(
+				(tag: any) => tag.value.toLowerCase() === currGroup.toLowerCase()
+			)
+		);
+	}, [items, currGroup]);
+
 	if (isLoading)
 		return (
 			<Flex
@@ -34,12 +40,7 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 
 	return (
 		<ChakraTabPanels>
-			{blogTabItems.map((el: any) => {
-				const filteredItems =
-					currGroup === 'all'
-						? items
-						: items.filter((item: any) => item.relative === currGroup);
-
+			{blogTabItems.map((el: BlogTabItem) => {
 				return (
 					<TabPanel key={el.value}>
 						<Grid
@@ -49,17 +50,24 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 							}}
 							gap={{ md: 8, xs: 4 }}
 						>
-							{filteredItems.map((item: any) => (
-								<ArticleBlock
-									key={item.id}
-									title={item.title}
-									tag={item.tag}
-									date={item.date}
-									position={item.position}
-									subText={item.describe}
-									href="#"
-								/>
-							))}
+							{filteredItems.length ? (
+								filteredItems.map((item: any) => (
+									<ArticleBlock
+										key={item.id}
+										title={item.attributes.articleTitle}
+										tags={item.attributes.tags}
+										date={item.attributes.publicationDate}
+										author={item.attributes.author}
+										subText={item.attributes.articleDescribe}
+										href="#"
+									/>
+								))
+							) : (
+								<Text size="xs">
+									Пожалуйста, не сердитесь, мы скоро опубликуем интересные
+									статьи для вас
+								</Text>
+							)}
 						</Grid>
 					</TabPanel>
 				);

@@ -1,17 +1,11 @@
 import { TabList as ChakraTabList, Tab } from '@chakra-ui/react';
 
-export const blogTabItems: any = [
-	{ text: 'Все', value: 'all' },
-	{ text: 'Мобильная разработка', value: 'mobile' },
-	{ text: 'QA', value: 'qa' },
-	{ text: 'Дизайн', value: 'design' },
-	{ text: 'Web-разработка', value: 'web' },
-];
+import { blogTabItems, BlogTabItem } from '../../constants';
 
-export const TabList = ({ onClick }: any) => {
+export const TabList = ({ onClick }: { onClick: (arg0: string) => void }) => {
 	return (
 		<ChakraTabList sx={{ border: 'none' }}>
-			{blogTabItems.map((item: any) => (
+			{blogTabItems.map((item: BlogTabItem) => (
 				<Tab
 					key={item.value}
 					value={item.value}

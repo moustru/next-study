@@ -14,22 +14,23 @@ import LikeSVG from 'public/icons/like.svg';
 type BlogBlockModel = {
 	subText?: string;
 	title?: string;
-	tag?: string;
+	tags?: [];
 	date: string;
-	position: string;
+	author: string;
 	href?: Url;
 };
 
 export const ArticleBlock = ({
-	title = 'Название статьи возможно длинное',
-	tag = 'Мобильная разработка',
+	title = 'Название ста',
+	tags = [],
 	subText = 'Необльшое описание или что-то в этом духе',
 	href = '/blog/1',
 	date = '11',
-	position = 'Head',
+	author = 'Head',
 }: BlogBlockModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
+
 	return (
 		<Link
 			style={{
@@ -57,9 +58,11 @@ export const ArticleBlock = ({
 				>
 					<Stack gap={0} mb={{ lg: 12, xs: 4 }}>
 						<Flex gap={4} mb={5}>
-							<Tag size="sm" variant="default">
-								{tag}
-							</Tag>
+							{tags.map((tag) => (
+								<Tag key={tag.value} size="sm" variant="default">
+									{tag.value}
+								</Tag>
+							))}
 						</Flex>
 						<Heading as="h3" variant="h3" mb={2.5}>
 							{title}
@@ -83,7 +86,7 @@ export const ArticleBlock = ({
 										fill
 									/>
 								</Box>
-								<Text variant="xs">{position}</Text>
+								<Text variant="xs">{author}</Text>
 							</Flex>
 
 							<Flex gap={6}>
