@@ -18,7 +18,7 @@ import { SectionReviews } from './sections/SectionReviews';
 const HomePage = () => {
 	const { data } = useHomeData();
 
-	const content = data?.data[0]?.attributes;
+	const content = data.data[0].attributes;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
@@ -26,7 +26,7 @@ const HomePage = () => {
 				return (
 					<Box key={index} className={styles.greet}>
 						<SectionGreet />
-						<SectionPartners {...sectionInfo.partnersLogos} />
+						<SectionPartners {...sectionInfo} />
 					</Box>
 				);
 			case 'sections.global-achievements':
@@ -54,7 +54,7 @@ const HomePage = () => {
 				<MetaInfo title="Vibe Lab – главная" />
 			</Head>
 
-			{content?.zoneOfContents.map((contentSection: any, index: number) =>
+			{content.zoneOfContents.map((contentSection: any, index: number) =>
 				renderSections(contentSection, index)
 			)}
 

@@ -22,6 +22,8 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 						<Image
 							src={logo}
 							alt="Partner logo"
+							width={300}
+							height={60}
 							loader={myImageLoader}
 							objectFit="contain"
 						/>

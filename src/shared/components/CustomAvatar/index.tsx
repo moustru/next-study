@@ -1,18 +1,24 @@
 import { Box, Flex, Stack, Tag, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
+import myImageLoader from '@/shared/utils/imageLoader';
+
+import type { TagModel } from '@/shared/types/Tag';
+
 type CustomAvatarModel = {
+	avatar: any;
 	name: string;
-	imageSrc: string;
-	tags: string[];
+	tags: TagModel[];
 };
 
 export const CustomAvatar = ({
 	name,
-	imageSrc,
+	avatar,
 	tags,
 	...others
 }: CustomAvatarModel) => {
+	const avatarURL = avatar.data.attributes.url;
+
 	return (
 		<Stack gap={0} maxW={230} align="center" {...others}>
 			<Box
@@ -25,15 +31,15 @@ export const CustomAvatar = ({
 				position="relative"
 				mb={6}
 			>
-				<Image src={imageSrc} alt="Avatar img" fill />
+				<Image src={avatarURL} loader={myImageLoader} alt="Avatar img" fill />
 			</Box>
 			<Text variant="md" mb={4}>
 				{name}
 			</Text>
 			<Flex gap={3}>
-				{tags.map((tag, i) => (
-					<Tag variant="default" size="sm" key={tag + i}>
-						{tag}
+				{tags.map((tag) => (
+					<Tag variant="default" size="sm" key={tag.id}>
+						{tag.value}
 					</Tag>
 				))}
 			</Flex>
