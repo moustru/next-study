@@ -3,8 +3,6 @@ import { Flex } from '@chakra-ui/react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { NewsItem } from '@/shared/components/NewsItem';
 
-// import { news } from './mocks';
-
 type SectionNewsModel = {
 	heading: string;
 	news: {
