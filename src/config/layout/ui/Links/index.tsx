@@ -16,8 +16,6 @@ export const Links = ({
 	const router = useRouter();
 	const currentRoute = router.pathname;
 
-	console.log(currentRoute, 'currentRoute');
-
 	return (
 		<Flex gap={8} direction={{ xs: 'column', md: 'row' }}>
 			{links.map((link) => (

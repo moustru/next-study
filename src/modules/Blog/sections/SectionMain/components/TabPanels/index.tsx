@@ -63,9 +63,9 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 									/>
 								))
 							) : (
-								<Text size="xs">
-									Пожалуйста, не сердитесь, мы скоро опубликуем интересные
-									статьи для вас
+								<Text variant="md">
+									Статьи находятся в разработке. Пожалуйста, не сердитесь, мы
+									скоро опубликуем их...
 								</Text>
 							)}
 						</Grid>

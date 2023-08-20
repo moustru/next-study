@@ -25,6 +25,7 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 							width={300}
 							height={60}
 							loader={myImageLoader}
+							quality={100}
 							objectFit="contain"
 						/>
 					</GridItem>

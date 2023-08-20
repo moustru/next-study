@@ -6,6 +6,10 @@ const Tabs = {
 			padding: 3,
 			borderRadius: '12px',
 			borderBottom: '4px solid red',
+			'@media screen and (max-width: 768px)': {
+				width: '100%',
+				flexDirection: 'column-reverse',
+			},
 		},
 		tabpanel: {
 			paddingInline: 0,
