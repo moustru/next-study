@@ -4,9 +4,17 @@ import { useState } from 'react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CustomAvatar } from '@/shared/components/CustomAvatar';
 
-import { team } from './mocks';
+import type { TagModel } from '@/shared/types/Tag';
 
-export const SectionTeam = () => {
+type SectionTeamModel = {
+	team: {
+		avatar: any;
+		name: string;
+		tags: TagModel[];
+	}[];
+};
+
+export const SectionTeam = (props: SectionTeamModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
 
 	const prevSlide = () => {
@@ -36,18 +44,12 @@ export const SectionTeam = () => {
 					// { maxWidth: 'sm', slideSize: '100%' },
 				]}
 			>
-				{team.map((teamMember, i) => (
+				{props.team.map((teamMember, i) => (
 					<Carousel.Slide key={teamMember.name + i}>
 						<CustomAvatar {...teamMember} minW={{ md: 'none', xs: '100%' }} />
 					</Carousel.Slide>
 				))}
 			</Carousel>
-
-			{/* <Flex gap={16}>
-				{team.map((teamMember, i) => (
-					<CustomAvatar {...teamMember} key={teamMember.name + i} />
-				))}
-			</Flex> */}
 		</SectionTemplate>
 	);
 };

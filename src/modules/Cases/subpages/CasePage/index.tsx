@@ -1,4 +1,4 @@
-import { Center, Heading, Text } from '@chakra-ui/react';
+import { Center, Heading } from '@chakra-ui/react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 
@@ -18,8 +18,6 @@ export const CasePage = () => {
 	const { data, isLoading } = useCasePageData(query.caseId as string);
 
 	const content = data?.data?.attributes?.zoneOfContents;
-
-	console.log(content);
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
