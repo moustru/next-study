@@ -8,7 +8,6 @@ import { MovingArrow } from '../MovingArrow';
 
 import type { Url } from 'next/dist/shared/lib/router/router';
 
-import ArrowSVG from 'public/icons/arrow_right.svg';
 import LikeSVG from 'public/icons/like.svg';
 
 type BlogBlockModel = {

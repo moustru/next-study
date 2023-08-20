@@ -5,8 +5,6 @@ import { useRef, useState } from 'react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ReviewBlock } from '@/shared/components/ReviewBlock';
 
-// import { reviews } from './mocks';
-
 type SectionReviewsModel = {
 	heading: string;
 	reviews: {

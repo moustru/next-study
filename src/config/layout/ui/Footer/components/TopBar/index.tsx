@@ -15,7 +15,14 @@ export const TopBar = () => {
 			<Flex gap={{ xs: 4, md: 8 }} direction={{ xs: 'column', md: 'row' }}>
 				{links.map((link) => (
 					<Link href={link.href} key={link.id}>
-						<Text variant={{ xs: 'md', md: 'sm' }} color="white">
+						<Text
+							variant={{ xs: 'md', md: 'sm' }}
+							color="white"
+							sx={{ fontWeight: '600 !important' }}
+							_hover={{
+								color: 'basic.200',
+							}}
+						>
 							{link.pageName}
 						</Text>
 					</Link>

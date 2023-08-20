@@ -1,5 +1,6 @@
 import { Carousel, Embla } from '@mantine/carousel';
-import { useState } from 'react';
+import Autoplay from 'embla-carousel-autoplay';
+import { useRef, useState } from 'react';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CustomAvatar } from '@/shared/components/CustomAvatar';
@@ -8,6 +9,7 @@ import { team } from './mocks';
 
 export const SectionTeam = () => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
+	const autoplay = useRef(Autoplay({ delay: 2000 }));
 
 	const prevSlide = () => {
 		embla?.scrollPrev();
@@ -29,11 +31,11 @@ export const SectionTeam = () => {
 				slideSize="25%"
 				align="start"
 				slidesToScroll={1}
+				plugins={[autoplay.current]}
 				breakpoints={[
 					{ maxWidth: 1024, slideSize: '33.333333%' },
 					{ maxWidth: 768, slideSize: '50%' },
 					{ maxWidth: 480, slideSize: '100%' },
-					// { maxWidth: 'sm', slideSize: '100%' },
 				]}
 			>
 				{team.map((teamMember, i) => (

@@ -1,5 +1,6 @@
 import { Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { links } from './constants';
 
@@ -12,6 +13,11 @@ export const Links = ({
 	isLight = false,
 	closeMenu = () => false,
 }: LinksModel) => {
+	const router = useRouter();
+	const currentRoute = router.pathname;
+
+	console.log(currentRoute, 'currentRoute');
+
 	return (
 		<Flex gap={8} direction={{ xs: 'column', md: 'row' }}>
 			{links.map((link) => (
@@ -19,7 +25,10 @@ export const Links = ({
 					<Text
 						variant={{ xs: 'xl', md: 'sm' }}
 						color={isLight ? 'white' : 'grey.600'}
-						sx={{ fontWeight: '600 !important' }}
+						sx={{
+							fontWeight: '600 !important',
+							color: currentRoute === link.href && 'basic.200',
+						}}
 						_hover={{
 							color: 'basic.200',
 						}}
