@@ -58,6 +58,7 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 										tags={item.tags}
 										date={item.publicationDate}
 										author={item.author}
+										authorAvatar={item.authorAvatar}
 										subText={item.articleDescribe}
 										href={`/blog/${item.slug}`}
 									/>

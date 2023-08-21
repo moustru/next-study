@@ -4,6 +4,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
+import { TagModel } from '@/shared/types/Tag';
+import myImageLoader from '@/shared/utils/imageLoader';
+
 import { MovingArrow } from '../MovingArrow';
 
 import type { Url } from 'next/dist/shared/lib/router/router';
@@ -13,22 +16,26 @@ import LikeSVG from 'public/icons/like.svg';
 type BlogBlockModel = {
 	subText?: string;
 	title?: string;
-	tags?: [];
+	tags: TagModel[];
 	date: string;
 	author: string;
-	href?: Url;
+	authorAvatar: any;
+	href: Url;
 };
 
 export const ArticleBlock = ({
-	title = 'Название ста',
-	tags = [],
-	subText = 'Необльшое описание или что-то в этом духе',
-	href = '/blog/1',
-	date = '11',
-	author = 'Head',
+	title,
+	tags,
+	subText,
+	href,
+	date,
+	author,
+	authorAvatar,
 }: BlogBlockModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
+
+	const authorAvatarURL = authorAvatar.data.attributes.url;
 
 	return (
 		<Link
@@ -80,7 +87,8 @@ export const ArticleBlock = ({
 									overflow="hidden"
 								>
 									<Image
-										src="/images/reviews/terminatessa.jpg"
+										src={authorAvatarURL}
+										loader={myImageLoader}
 										alt="Author"
 										fill
 									/>
