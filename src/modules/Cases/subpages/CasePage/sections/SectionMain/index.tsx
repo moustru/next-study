@@ -4,29 +4,21 @@ import Link from 'next/link';
 
 import type { TagModel } from '@/shared/types/Tag';
 
-type LinkModel = {
-	id: number;
-	href: string;
-	title: string;
-	iconSrc: string;
-};
-
-type LinkSectionModel = {
-	button: Record<'href' | 'text', string>;
-	links: LinkModel[];
-};
-
 type SectionMainModel = {
 	heading: string;
 	description: string;
-	links: LinkSectionModel;
+	siteLink: string;
+	appStoreLink: string;
+	googleLink: string;
 	tags: TagModel[];
 };
 
 export const SectionMain = ({
 	heading,
 	description,
-	links,
+	siteLink,
+	appStoreLink,
+	googleLink,
 	tags,
 }: SectionMainModel) => {
 	return (
@@ -53,21 +45,30 @@ export const SectionMain = ({
 			<Container mb={{ lg: 180, md: '80px', xs: '40px' }}>
 				<Flex gap={{ md: 4, xs: 2 }}>
 					<Button variant="dark">
-						<Link href={links.button.href}>{links.button.text}</Link>
+						<Link href={siteLink}>Перейти на сайт</Link>
 					</Button>
 
-					{links.links.map((link) => (
-						<Button key={link.id} width={54} variant="dark" p={0}>
-							<Link href={link.href}>
-								<Image
-									width={32}
-									height={32}
-									src={link.iconSrc || '/icons/app_store.svg'}
-									alt="App Button"
-								/>
-							</Link>
-						</Button>
-					))}
+					<Button width={54} variant="dark" p={0}>
+						<Link href={appStoreLink}>
+							<Image
+								width={32}
+								height={32}
+								src="/icons/app_store.svg"
+								alt="App Button"
+							/>
+						</Link>
+					</Button>
+
+					<Button width={54} variant="dark" p={0}>
+						<Link href={googleLink}>
+							<Image
+								width={32}
+								height={32}
+								src="/icons/google_play.svg"
+								alt="App Button"
+							/>
+						</Link>
+					</Button>
 				</Flex>
 			</Container>
 		</>

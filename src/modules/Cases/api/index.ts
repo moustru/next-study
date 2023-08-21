@@ -18,7 +18,7 @@ const config = {
 export const prefetchCasesData = async (queryClient: QueryClient) =>
 	await queryClient.prefetchQuery(config);
 
-export const prefetchHomeCasesData = async (
+export const prefetchPaginatedCasesData = async (
 	queryClient: QueryClient,
 	params: string
 ) =>
@@ -28,7 +28,7 @@ export const prefetchHomeCasesData = async (
 	});
 
 export const useCasesData = () => useQuery(config);
-export const useHomeCasesData = (params: string) =>
+export const usePaginatedCasesData = (params: string) =>
 	useQuery({
 		queryKey: [`cases-${params}`],
 		queryFn: () => getCasesData(params),

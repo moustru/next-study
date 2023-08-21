@@ -17,8 +17,6 @@ export const SectionMain = () => {
 		id: obj.id,
 	}));
 
-	console.log(content);
-
 	return (
 		<SectionTemplate title="Блог" firstBlock>
 			<Tabs>

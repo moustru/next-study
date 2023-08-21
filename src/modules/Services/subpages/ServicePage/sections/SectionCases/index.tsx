@@ -1,18 +1,21 @@
 import { Grid } from '@chakra-ui/react';
 
+import { usePaginatedCasesData } from '@/modules/Cases/api';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
 import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
-type SectionCasesModel = {
-	heading: string;
-	cases: CaseDataModel[];
-};
+export const SectionCases = () => {
+	const { data } = usePaginatedCasesData('&pagination[pageSize]=2');
 
-export const SectionCases = ({ heading, cases }: SectionCasesModel) => {
+	const cases: CaseDataModel[] = data.data.map((obj: any) => ({
+		...obj.attributes.cardOptions,
+		id: obj.id,
+	}));
+
 	return (
-		<SectionTemplate title={heading}>
+		<SectionTemplate title="Примеры кейсов">
 			<Grid
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 				gap={8}

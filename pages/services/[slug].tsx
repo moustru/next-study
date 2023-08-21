@@ -1,6 +1,7 @@
 import { dehydrate } from '@tanstack/react-query';
 
 import { composeQueryClient } from '@/config/api/queryClient';
+import { prefetchPaginatedCasesData } from '@/modules/Cases/api';
 import { ServicePage as ServicePageComponent } from '@/modules/Services/subpages/ServicePage';
 import { prefetchServicePageData } from '@/modules/Services/subpages/ServicePage/api';
 
@@ -11,7 +12,10 @@ const ServicePage = () => <ServicePageComponent />;
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
 	const queryClient = composeQueryClient();
 
-	await prefetchServicePageData(queryClient, query.slug as string);
+	await Promise.all([
+		prefetchServicePageData(queryClient, query.slug as string),
+		prefetchPaginatedCasesData(queryClient, '&pagination[pageSize]=2'),
+	]);
 
 	return {
 		props: {

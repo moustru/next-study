@@ -4,16 +4,18 @@ import Image from 'next/image';
 import myImageLoader from '@/shared/utils/imageLoader';
 
 type TeamSingleModel = {
-	avatarSrc: string;
+	avatar: any;
 	nameAndPosition: string;
 	reviewText: string;
 };
 
 export const MemberReviewBlock = ({
-	avatarSrc,
+	avatar,
 	nameAndPosition,
 	reviewText,
 }: TeamSingleModel) => {
+	const avatarURL = avatar.data.attributes.url;
+
 	return (
 		<Flex
 			px={{ md: 10, xs: 6 }}
@@ -31,7 +33,7 @@ export const MemberReviewBlock = ({
 				borderRadius="50%"
 				overflow="hidden"
 			>
-				<Image src={avatarSrc} loader={myImageLoader} alt="Member photo" fill />
+				<Image src={avatarURL} loader={myImageLoader} alt="Member photo" fill />
 			</Box>
 			<Box width="fit-content">
 				<Text variant="xl" mb={3}>

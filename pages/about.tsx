@@ -4,11 +4,11 @@ import { composeQueryClient } from '@/config/api/queryClient';
 import { AboutPage } from '@/modules/About';
 import { prefetchAboutData, prefetchTeamData } from '@/modules/About/api';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const About = () => <AboutPage />;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const queryClient = composeQueryClient();
 
 	await Promise.all([

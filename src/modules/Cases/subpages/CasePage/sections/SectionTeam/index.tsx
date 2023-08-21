@@ -7,7 +7,7 @@ import { MemberReviewBlock } from '@/shared/components/MemberReviewBlock';
 
 type TeamSingleModel = {
 	id: number;
-	avatarSrc: string;
+	avatar: any;
 	nameAndPosition: string;
 	reviewText: string;
 };

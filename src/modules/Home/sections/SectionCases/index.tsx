@@ -1,14 +1,14 @@
 import { Stack, Button } from '@chakra-ui/react';
 import Link from 'next/link';
 
-import { useHomeCasesData } from '@/modules/Cases/api';
+import { usePaginatedCasesData } from '@/modules/Cases/api';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
 export const SectionCases = ({ heading, ...others }: any) => {
-	const { data } = useHomeCasesData('&pagination[pageSize]=2');
+	const { data } = usePaginatedCasesData('&pagination[pageSize]=2');
 
 	const cases = data.data.map((obj: any) => ({
 		...obj.attributes.cardOptions,
