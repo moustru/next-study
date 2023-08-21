@@ -35,7 +35,7 @@ export default async function handler(req, res) {
 	const mailOptions = {
 		from: process.env.NEXT_PUBLIC_MAIL_USERNAME,
 		to: process.env.NEXT_PUBLIC_MAIL_TO,
-		subject: `Request | ${requestBody.name} | Vibe Lab `,
+		subject: `Новая заявка | Vibe Lab `,
 		text: 'Новое обращение',
 		html: TEXT,
 	};

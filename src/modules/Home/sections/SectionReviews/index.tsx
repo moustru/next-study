@@ -18,7 +18,7 @@ type SectionReviewsModel = {
 
 export const SectionReviews = ({ heading, reviews }: SectionReviewsModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
-	const autoplay = useRef(Autoplay({ delay: 2000 }));
+	const autoplay = useRef(Autoplay({ delay: 10000 }));
 
 	const prevSlide = () => {
 		embla?.scrollPrev();

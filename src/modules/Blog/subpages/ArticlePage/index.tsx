@@ -15,9 +15,9 @@ import { TitleSegment } from './components/TitleSegment';
 export const ArticlePage = () => {
 	const { query } = useRouter();
 
-	const { data } = useArticleData(query.articleId as string);
+	const { data } = useArticleData(query.slug as string);
 
-	const content = data.data.attributes;
+	const content = data.data[0].attributes;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {

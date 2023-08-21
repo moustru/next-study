@@ -5,17 +5,13 @@ import { CaseBlock } from '@/shared/components/CaseBlock';
 
 import { useCasesData } from '../../api';
 
-import { getCasesWithUIData } from './lib/formatCasesData';
-import { casesItems, casesUI } from './mocks';
-
 export const SectionMain = () => {
-	// const casesArr = getCasesWithUIData(casesItems, casesUI);
-
 	const { data } = useCasesData();
 
-	const content = data?.data[0]?.attributes;
-
-	console.log(content);
+	const content = data.data.map((obj: any) => ({
+		...obj.attributes.cardOptions,
+		id: obj.id,
+	}));
 
 	return (
 		<SectionTemplate title="Кейсы" firstBlock mt={{ md: 200, xs: '120px' }}>
@@ -23,7 +19,7 @@ export const SectionMain = () => {
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 				gap={{ md: 8, xs: 4 }}
 			>
-				{content?.cases?.map((caseItem: any) => (
+				{content.map((caseItem: any) => (
 					<CaseBlock {...caseItem} key={caseItem.id} />
 				))}
 			</Grid>

@@ -15,7 +15,7 @@ import { SectionTeam } from './sections/SectionTeam';
 export const CasePage = () => {
 	const { query } = useRouter();
 
-	const { data } = useCasePageData(query.caseId as string);
+	const { data } = useCasePageData(query.slug as string);
 
 	if (!data)
 		return (
@@ -26,7 +26,7 @@ export const CasePage = () => {
 			</Center>
 		);
 
-	const content = data.data.attributes.zoneOfContents;
+	const content = data.data[0].attributes.zoneOfContents;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {

@@ -20,12 +20,14 @@ const HomePage = () => {
 
 	const content = data.data[0].attributes;
 
+	console.log(content);
+
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
 			case 'home.partners':
 				return (
 					<Box key={index} className={styles.greet}>
-						<SectionGreet />
+						<SectionGreet subheading={content.subheading} />
 						<SectionPartners {...sectionInfo} />
 					</Box>
 				);

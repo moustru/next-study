@@ -2,7 +2,7 @@ import { useQuery, type QueryClient } from '@tanstack/react-query';
 
 import { httpStrapi } from '@/config/api';
 
-export const getServicePageData = async (serviceId: string): Promise<any> => {
+export const getServicePageData = async (slug: string): Promise<any> => {
 	const params = [
 		'populate[0]=zoneOfContents',
 		'populate[1]=zoneOfContents.achievements.icon',
@@ -13,31 +13,31 @@ export const getServicePageData = async (serviceId: string): Promise<any> => {
 	const paramsStr = params.join('&');
 
 	return await httpStrapi
-		.get(`/service-pages/${serviceId}?${paramsStr}`)
+		.get(`/service-pages?filters[cardOptions][slug]=${slug}&${paramsStr}`)
 		.json();
 };
 
 const config = {
-	queryKey: (serviceId: string) => [`servicePage-${serviceId}`],
+	queryKey: (slug: string) => [`servicePage-${slug}`],
 };
 
 export const prefetchServicePageData = async (
 	queryClient: QueryClient,
-	serviceId: string
+	slug: string
 ) => {
 	const { queryKey } = config;
 
 	await queryClient.prefetchQuery({
-		queryKey: queryKey(serviceId),
-		queryFn: () => getServicePageData(serviceId),
+		queryKey: queryKey(slug),
+		queryFn: () => getServicePageData(slug),
 	});
 };
 
-export const useServicePageData = (serviceId: string) => {
+export const useServicePageData = (slug: string) => {
 	const { queryKey } = config;
 
 	return useQuery({
-		queryKey: queryKey(serviceId),
-		queryFn: () => getServicePageData(serviceId),
+		queryKey: queryKey(slug),
+		queryFn: () => getServicePageData(slug),
 	});
 };

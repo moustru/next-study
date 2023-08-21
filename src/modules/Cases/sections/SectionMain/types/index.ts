@@ -6,7 +6,7 @@ export type CaseDataModel = {
 	title: string;
 	developType: string;
 	description: string;
-	href: string;
+	slug: string;
 	bgImage: any;
 	size: Size;
 	variant: Variant;

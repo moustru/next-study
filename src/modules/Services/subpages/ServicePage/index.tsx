@@ -14,9 +14,9 @@ import { SectionMain } from './sections/SectionMain';
 export const ServicePage = () => {
 	const { query } = useRouter();
 
-	const { data } = useServicePageData(query.serviceId as string);
+	const { data } = useServicePageData(query.slug as string);
 
-	const content = data.data.attributes;
+	const content = data.data[0].attributes;
 
 	const renderSections = (sectionInfo: any, index: number) => {
 		switch (sectionInfo.__component) {
