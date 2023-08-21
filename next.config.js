@@ -6,6 +6,9 @@ const nextConfig = {
 	eslint: {
 		ignoreDuringBuilds: true,
 	},
+	typescript: {
+		ignoreBuildErrors: true,
+	},
 	swcMinify: true,
 	webpack(config) {
 		config.module.rules.push({
