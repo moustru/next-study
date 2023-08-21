@@ -14,37 +14,29 @@ export const SectionImages = ({ images }: any) => {
 			{largerThan768 ? (
 				<Flex justifyContent="space-between">
 					{imagesURLs.map((image: any, i: number) => (
-						<Box
-							key={image + i}
-							position="relative"
-							w={{ xs: '100%', md: 330 }}
-							h={{ xs: 150, md: 330 }}
-						>
-							<Image
-								src={image}
-								loader={myImageLoader}
-								alt={`Example ${i}`}
-								fill
-							/>
-						</Box>
+						<Image
+							key={image}
+							src={image}
+							loader={myImageLoader}
+							alt={`Example ${i}`}
+							width={300}
+							height={600}
+						/>
 					))}
 				</Flex>
 			) : (
 				<Carousel slideGap={16} slideSize="100%">
 					{imagesURLs.map((image: any, i: number) => (
 						<Carousel.Slide key={image + i}>
-							<Box
-								position="relative"
-								w={{ xs: '100%', md: 330 }}
-								h={{ xs: 150, md: 330 }}
-							>
+							<Flex justify="center">
 								<Image
 									src={image}
 									loader={myImageLoader}
 									alt={`Example ${i}`}
-									fill
+									width={200}
+									height={300}
 								/>
-							</Box>
+							</Flex>
 						</Carousel.Slide>
 					))}
 				</Carousel>
