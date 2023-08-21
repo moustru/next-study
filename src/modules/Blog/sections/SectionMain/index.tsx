@@ -12,7 +12,12 @@ export const SectionMain = () => {
 	const { data, isLoading, error } = useAllArticlesData();
 	const [filteredNews, setFilteredNews] = useState<string>('all');
 
-	const blogData = data.data;
+	const content = data.data.map((obj: any) => ({
+		...obj.attributes,
+		id: obj.id,
+	}));
+
+	console.log(content);
 
 	return (
 		<SectionTemplate title="Блог" firstBlock>
@@ -22,7 +27,7 @@ export const SectionMain = () => {
 					isLoading={isLoading}
 					isError={error}
 					currGroup={filteredNews}
-					items={blogData}
+					items={content}
 				/>
 			</Tabs>
 		</SectionTemplate>

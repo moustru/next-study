@@ -2,7 +2,7 @@ import { useQuery, type QueryClient } from '@tanstack/react-query';
 
 import { httpStrapi } from '@/config/api';
 
-export const getCasePageData = async (caseId: string): Promise<any> => {
+export const getCasePageData = async (slug: string): Promise<any> => {
 	const params = [
 		'populate[0]=zoneOfContents',
 		'populate[1]=zoneOfContents.tags',
@@ -12,30 +12,32 @@ export const getCasePageData = async (caseId: string): Promise<any> => {
 
 	const paramsStr = params.join('&');
 
-	return await httpStrapi.get(`/case-pages/${caseId}?${paramsStr}`).json();
+	return await httpStrapi
+		.get(`/case-pages?filters[slug]=${slug}&${paramsStr}`)
+		.json();
 };
 
 const config = {
-	queryKey: (caseId: string) => [`casePage-${caseId}`],
+	queryKey: (slug: string) => [`casePage-${slug}`],
 };
 
 export const prefetchCasePageData = async (
 	queryClient: QueryClient,
-	caseId: string
+	slug: string
 ) => {
 	const { queryKey } = config;
 
 	await queryClient.prefetchQuery({
-		queryKey: queryKey(caseId),
-		queryFn: () => getCasePageData(caseId),
+		queryKey: queryKey(slug),
+		queryFn: () => getCasePageData(slug),
 	});
 };
 
-export const useCasePageData = (caseId: string) => {
+export const useCasePageData = (slug: string) => {
 	const { queryKey } = config;
 
 	return useQuery({
-		queryKey: queryKey(caseId),
-		queryFn: () => getCasePageData(caseId),
+		queryKey: queryKey(slug),
+		queryFn: () => getCasePageData(slug),
 	});
 };

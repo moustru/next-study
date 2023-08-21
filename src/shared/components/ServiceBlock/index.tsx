@@ -7,18 +7,23 @@ import { MovingArrow } from '../MovingArrow';
 import type { TagModel } from '@/shared/types/Tag';
 
 type ServiceBlockModel = {
-	id: number;
+	slug: string;
 	label: string;
 	title: string;
 	tags: TagModel[];
 };
 
-export const ServiceBlock = ({ id, label, title, tags }: ServiceBlockModel) => {
+export const ServiceBlock = ({
+	slug,
+	label,
+	title,
+	tags,
+}: ServiceBlockModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
 	return (
 		<Link
-			href={`/services/${id}`}
+			href={`/services/${slug}`}
 			onMouseEnter={hoverHandler}
 			onMouseLeave={hoverHandler}
 			style={{

@@ -1,6 +1,10 @@
 import { Container, Heading, Text } from '@chakra-ui/react';
 
-export const SectionGreet = () => {
+type SectionGreetModel = {
+	subheading: string;
+};
+
+export const SectionGreet = ({ subheading }: SectionGreetModel) => {
 	return (
 		<Container
 			as="section"
@@ -14,10 +18,7 @@ export const SectionGreet = () => {
 				</Text>
 				разработки
 			</Heading>
-			<Text variant={{ md: 'xl', xs: 'md' }}>
-				Создаем уникальные сервисы и приложения для IT-индустрии на базе СПбГЭТУ
-				ЛЭТИ с командой из более чем 30 специалистов с собственным R&D отделом
-			</Text>
+			<Text variant={{ md: 'xl', xs: 'md' }}>{subheading}</Text>
 		</Container>
 	);
 };

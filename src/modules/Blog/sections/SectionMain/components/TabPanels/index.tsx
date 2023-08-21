@@ -54,12 +54,12 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 								filteredItems.map((item: any) => (
 									<ArticleBlock
 										key={item.id}
-										title={item.attributes.articleTitle}
-										tags={item.attributes.tags}
-										date={item.attributes.publicationDate}
-										author={item.attributes.author}
-										subText={item.attributes.articleDescribe}
-										href="#"
+										title={item.articleTitle}
+										tags={item.tags}
+										date={item.publicationDate}
+										author={item.author}
+										subText={item.articleDescribe}
+										href={`/blog/${item.slug}`}
 									/>
 								))
 							) : (

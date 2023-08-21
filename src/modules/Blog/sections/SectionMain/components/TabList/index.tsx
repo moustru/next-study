@@ -1,4 +1,4 @@
-import { TabList as ChakraTabList, Tab } from '@chakra-ui/react';
+import { TabList as ChakraTabList, Tab, Text } from '@chakra-ui/react';
 
 import { blogTabItems, BlogTabItem } from '../../constants';
 
@@ -12,7 +12,7 @@ export const TabList = ({ onClick }: { onClick: (arg0: string) => void }) => {
 					onClick={(event: any) => onClick(event.target.value)}
 					sx={{ border: 'none', paddingInline: '4', paddingBlock: '2' }}
 				>
-					{item.text}
+					<Text variant="sm">{item.text}</Text>
 				</Tab>
 			))}
 		</ChakraTabList>

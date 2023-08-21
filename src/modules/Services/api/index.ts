@@ -3,9 +3,7 @@ import { useQuery, type QueryClient } from '@tanstack/react-query';
 import { httpStrapi } from '@/config/api';
 
 export const getServicesData = async (): Promise<any> =>
-	await httpStrapi
-		.get('/services?populate[0]=services&populate[1]=services.tags')
-		.json();
+	await httpStrapi.get('/service-pages?populate[0]=cardOptions.tags').json();
 
 const config = {
 	queryKey: ['services'],

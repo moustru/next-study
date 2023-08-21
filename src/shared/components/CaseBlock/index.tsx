@@ -7,7 +7,7 @@ import { MovingArrow } from '../MovingArrow';
 import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
 export const CaseBlock = ({
-	id,
+	slug,
 	title,
 	developType,
 	description,
@@ -22,7 +22,7 @@ export const CaseBlock = ({
 	const bgImageURL = bgImage.data.attributes.url;
 
 	return (
-		<Link href={`/cases/${id}`}>
+		<Link href={`/cases/${slug}`}>
 			<Flex
 				position="relative"
 				onMouseEnter={hoverHandler}

@@ -8,7 +8,10 @@ import { useServicesData } from '../../api';
 export const SectionServices = () => {
 	const { data } = useServicesData();
 
-	const content = data?.data[0]?.attributes;
+	const content = data.data.map((obj: any) => ({
+		...obj.attributes.cardOptions,
+		id: obj.id,
+	}));
 
 	return (
 		<SectionTemplate title="Услуги" firstBlock>
@@ -16,7 +19,7 @@ export const SectionServices = () => {
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 				gap={{ lg: 8, xs: 4 }}
 			>
-				{content?.services.map((service: any) => (
+				{content.map((service: any) => (
 					<ServiceBlock {...service} key={service.id} />
 				))}
 			</Grid>
