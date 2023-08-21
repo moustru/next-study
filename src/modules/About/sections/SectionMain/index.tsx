@@ -1,6 +1,10 @@
 import { Box, Heading, Text } from '@chakra-ui/react';
 
-export const SectionMain = () => {
+type SectionMainModel = {
+	subheading: string;
+};
+
+export const SectionMain = ({ subheading }: SectionMainModel) => {
 	return (
 		<Box
 			mt={{ lg: 200, md: 160, xs: '80px' }}
@@ -19,14 +23,7 @@ export const SectionMain = () => {
 					color="grey.100"
 					maxWidth={{ lg: '70%', xs: '100%' }}
 				>
-					Создаем уникальные сервисы и приложения для IT-индустрии на базе
-					СПбГЭТУ ЛЭТИ с командой из более чем 30 специалистов с собственным R&D
-					отделом. Создаем уникальные сервисы и приложения для IT-индустрии на
-					базе СПбГЭТУ ЛЭТИ с командой из более чем 30 специалистов с
-					собственным R&D отделом. Создаем уникальные сервисы и приложения для
-					IT-индустрии на базе СПбГЭТУ ЛЭТИ с командой из более чем 30
-					специалистов с собственным R&D отделом. Создаем уникальные сервисы и
-					приложения для IT-индустрии на базе{' '}
+					{subheading}
 				</Text>
 			</Box>
 		</Box>

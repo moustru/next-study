@@ -1,47 +1,50 @@
-// import { type NextApiRequest, type NextApiResponse } from 'next';
 import nodemailer from 'nodemailer';
 
-// interface EmailProps {
-// 	name: string;
-// 	email: string;
-// 	message: string;
-// 	company: string;
-// }
+const solutions = [
+	{ value: 'mobile', text: 'Мобильное приложение' },
+	{ value: 'web', text: 'Веб-платформа' },
+	{ value: 'outstaff', text: 'Аутстафф' },
+	{ value: 'partners', text: 'Партнерство' },
+	{ value: 'ai', text: 'AI и нейросети' },
+	{ value: 'crmerp', text: 'CRM и ERP' },
+];
+
+const getSolution = (value) => {
+	return solutions.find((solution) => solution.value === value)?.text;
+};
 
 export default async function handler(req, res) {
 	const requestBody = req.body;
-	console.log(req.body);
 
-	// const TEXT = `
-	// 	<p><strong>Name:</strong> ${requestBody.name}</p>
-	// 	<p><strong>E-mail:</strong> ${requestBody.email}</p>
-	// 	<p><strong>Company:</strong> ${requestBody.company}</p>
-	// 	<p><strong>Message:</strong> ${requestBody.message}</p>
-	// 	`;
+	const TEXT = `
+		<p><strong>Имя:</strong> ${requestBody.name}</p>
+		<p><strong>E-mail:</strong> ${requestBody.email}</p>
+		<p><strong>Решение:</strong> ${getSolution(requestBody.solution)}</p>
+		`;
 
 	const transporter = nodemailer.createTransport({
-		host: process.env.MAIL_HOST,
-		port: Number(process.env.MAIL_PORT),
-		secure: false,
+		host: process.env.NEXT_PUBLIC_MAIL_HOST,
+		port: Number(process.env.NEXT_PUBLIC_MAIL_PORT),
+		secure: true,
 		auth: {
-			user: process.env.MAIL_USERNAME,
-			pass: process.env.MAIL_PASSWORD,
+			user: process.env.NEXT_PUBLIC_MAIL_USERNAME,
+			pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,
 		},
 	});
 
 	const mailOptions = {
-		from: requestBody.email,
-		to: process.env.MAIL_TO,
-		subject: `Request | ${requestBody.name} | CRYPTOX `,
-		text: requestBody,
+		from: process.env.NEXT_PUBLIC_MAIL_USERNAME,
+		to: process.env.NEXT_PUBLIC_MAIL_TO,
+		subject: `Request | ${requestBody.name} | Vibe Lab `,
+		text: 'Новое обращение',
+		html: TEXT,
 	};
 
 	transporter.sendMail(mailOptions, (error) => {
 		if (error) {
-			console.log(error);
 			res.status(500).send(error);
 		} else {
-			res.send('Email sent');
+			res.send(requestBody);
 		}
 	});
 }

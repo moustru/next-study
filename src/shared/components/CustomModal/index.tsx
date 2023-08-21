@@ -31,7 +31,7 @@ const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 
 	return largerThan1024 ? (
 		<Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
-			<ModalOverlay bg="blackAlpha.500" />
+			<ModalOverlay sx={{ backdropFilter: 'blur(5px)' }} bg="blackAlpha.500" />
 			<ModalContent w="83.3333%" maxW="1320px" p={{ lg: '60px', xs: '24px' }}>
 				{children}
 			</ModalContent>

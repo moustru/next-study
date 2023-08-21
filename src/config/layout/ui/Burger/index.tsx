@@ -42,7 +42,7 @@ export const HeaderMobile = () => {
 	const modalHandler = () => openModal(<ModalForm />);
 
 	return (
-		<header className={css.burger}>
+		<header data-open={isOpen} className={css.burger}>
 			<Overlay isOpen={isOpen} onClick={toggleOpenHandler} />
 			<motion.nav
 				className={css.modal}

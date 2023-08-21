@@ -1,7 +1,7 @@
 import { Flex, Heading, Stack, Text } from '@chakra-ui/react';
 
 type NewsModel = Record<
-	'title' | 'description' | 'publisher' | 'releaseDate',
+	'title' | 'description' | 'publisher' | 'publicationDate',
 	string
 >;
 
@@ -9,9 +9,9 @@ export const NewsItem = ({
 	title,
 	description,
 	publisher,
-	releaseDate,
+	publicationDate,
 }: NewsModel) => {
-	const formattedDate = new Date(releaseDate).toLocaleDateString();
+	// const formattedDate = new Date(releaseDate).toLocaleDateString();
 
 	return (
 		<Flex
@@ -31,7 +31,7 @@ export const NewsItem = ({
 				<Text variant="lg">{description}</Text>
 			</Stack>
 			<Text variant="sm" color="grey.500">
-				{publisher}, {formattedDate}
+				{publisher}, {publicationDate}
 			</Text>
 		</Flex>
 	);

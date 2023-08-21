@@ -1,23 +1,30 @@
-import { Box, Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
+import { Flex, Heading, Stack, Tag, Text } from '@chakra-ui/react';
 import Link from 'next/link';
+import { useState } from 'react';
 
-import ArrowSVG from 'public/icons/arrow_right.svg';
+import { MovingArrow } from '../MovingArrow';
+
+import type { TagModel } from '@/shared/types/Tag';
 
 type ServiceBlockModel = {
+	id: number;
 	label: string;
 	title: string;
-	tags: string[];
-	href: string;
+	tags: TagModel[];
 };
 
-export const ServiceBlock = ({
-	label,
-	title,
-	tags,
-	href,
-}: ServiceBlockModel) => {
+export const ServiceBlock = ({ id, label, title, tags }: ServiceBlockModel) => {
+	const [hovered, setHovered] = useState(false);
+	const hoverHandler = () => setHovered(!hovered);
 	return (
-		<Link href={href}>
+		<Link
+			href={`/services/${id}`}
+			onMouseEnter={hoverHandler}
+			onMouseLeave={hoverHandler}
+			style={{
+				position: 'relative',
+			}}
+		>
 			<Stack
 				h={{ lg: 425, md: 300, xs: 200 }}
 				justifyContent="space-between"
@@ -35,16 +42,15 @@ export const ServiceBlock = ({
 						{title}
 					</Heading>
 					<Flex gap={4} mb={{ md: 25, xs: '12px' }}>
-						{tags.map((tag, i) => (
-							<Tag key={tag + i} size="sm" variant="default">
-								{tag}
+						{tags.map((tag) => (
+							<Tag key={tag.id} size="sm" variant="default">
+								{tag.value}
 							</Tag>
 						))}
 					</Flex>
 				</Stack>
-				<Box w={{ xs: '32px', md: '60px' }}>
-					<ArrowSVG fill="#26282B" width="100%" />
-				</Box>
+
+				<MovingArrow isHoverOnParent={hovered} />
 			</Stack>
 		</Link>
 	);

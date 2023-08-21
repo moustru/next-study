@@ -1,4 +1,3 @@
-import { Grid } from '@chakra-ui/react';
 import Head from 'next/head';
 
 import { MetaInfo } from '@/shared/components/MetaInfo';

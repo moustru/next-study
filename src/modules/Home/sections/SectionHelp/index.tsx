@@ -1,12 +1,10 @@
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { ContentSteps } from '@/shared/components/ContentSteps';
 
-import { helpCases } from './mocks';
-
-export const SectionHelp = ({ ...others }) => {
+export const SectionHelp = ({ heading, steps, ...others }: any) => {
 	return (
-		<SectionTemplate title="Чем мы помогаем?" {...others}>
-			<ContentSteps steps={helpCases} />
+		<SectionTemplate title={heading} {...others}>
+			<ContentSteps steps={steps} />
 		</SectionTemplate>
 	);
 };

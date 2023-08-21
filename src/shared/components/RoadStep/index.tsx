@@ -8,11 +8,11 @@ import {
 } from '@chakra-ui/react';
 
 type RoadStepModel = {
-	year: number;
-	milestones: string[];
+	year: string;
+	changelog: string[];
 };
 
-export const RoadStep = ({ year, milestones }: RoadStepModel) => {
+export const RoadStep = ({ year, changelog }: RoadStepModel) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	if (largerThan1024) {
@@ -33,9 +33,9 @@ export const RoadStep = ({ year, milestones }: RoadStepModel) => {
 				<Heading as="h3" variant="h3" color="basic.200" mb={6}>
 					{year}
 				</Heading>
-				{milestones.map((milestone, i) => (
-					<Text variant="lg" key={milestone + i} paddingRight="20px">
-						{milestone}
+				{changelog.map((log, i) => (
+					<Text variant="lg" key={log + i} paddingRight="20px">
+						{log}
 					</Text>
 				))}
 			</Box>
@@ -60,9 +60,9 @@ export const RoadStep = ({ year, milestones }: RoadStepModel) => {
 				{year}
 			</Heading>
 			<Stack>
-				{milestones.map((milestone, i) => (
-					<Text variant="lg" key={milestone + i} paddingRight="20px">
-						{milestone}
+				{changelog.map((log, i) => (
+					<Text variant="lg" key={log + i} paddingRight="20px">
+						{log}
 					</Text>
 				))}
 			</Stack>

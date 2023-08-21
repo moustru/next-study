@@ -1,41 +1,28 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useState } from 'react';
 
-import css from './index.module.css';
+import { MovingArrow } from '../MovingArrow';
 
-import type { Size } from '@/shared/types/Size';
-import type { Variant } from '@/shared/types/Variant';
-
-import ArrowSVG from 'public/icons/arrow_right.svg';
-
-type CaseBlockProps = {
-	title: string;
-	developType: string;
-	description: string;
-	href: string;
-	bgImage: string;
-	bgColor?: string;
-	size?: Size;
-	variant?: Variant;
-};
+import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
 export const CaseBlock = ({
+	id,
 	title,
 	developType,
 	description,
-	href,
 	bgImage,
 	bgColor = 'light.200',
 	size = 'md',
 	variant = 'light',
-}: CaseBlockProps) => {
+}: CaseDataModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
 
+	const bgImageURL = bgImage.data.attributes.url;
+
 	return (
-		<Link href={href}>
+		<Link href={`/cases/${id}`}>
 			<Flex
 				position="relative"
 				onMouseEnter={hoverHandler}
@@ -47,7 +34,7 @@ export const CaseBlock = ({
 				}
 				flexDirection="column"
 				justifyContent="space-between"
-				bgImage={`/images/cases/${bgImage}`}
+				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageURL}`}
 				bgRepeat="no-repeat"
 				bgColor={bgColor}
 				bgPosition="bottom right"
@@ -90,14 +77,7 @@ export const CaseBlock = ({
 						{description}
 					</Text>
 				)}
-				<div className={css.arrow}>
-					<motion.div
-						className={css.blackmove}
-						initial={{ x: '-10%' }}
-						animate={{ x: hovered ? '100%' : 0 }}
-						transition={{ duration: 0.3, cubicBezier: '0.83, 0, 0.17, 1' }}
-					/>
-				</div>
+				<MovingArrow isHoverOnParent={hovered} />
 			</Flex>
 		</Link>
 	);

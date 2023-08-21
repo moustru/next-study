@@ -1,27 +1,27 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import { Variant } from '@/shared/types/Variant';
+import { AchievementModel } from '@/shared/types/Achievement';
+import myImageLoader from '@/shared/utils/imageLoader';
+
+import type { Variant } from '@/shared/types/Variant';
 
 type AchieveBlockModel = {
-	bgColor?: string;
-	variant?: Variant;
-	achievements: {
-		image: string;
-		alt: string;
-		place: number;
-		text: string;
-	}[];
+	achievements: AchievementModel[];
+	variant: Variant;
 };
 
-const defaultBgColor =
-	'radial-gradient(60% 100% at 0% 50%, var(--chakra-colors-basic-200) 0%, var(--chakra-colors-grey-600) 100%);';
+const setBgColor = (variant: Variant) => {
+	switch (variant) {
+		case 'light':
+			return 'linear-gradient(90deg, var(--chakra-colors-light-100) 40%, var(--chakra-colors-basic-100) 100%);';
+		case 'dark':
+		default:
+			return 'radial-gradient(60% 100% at 0% 50%, var(--chakra-colors-basic-200) 0%, var(--chakra-colors-grey-600) 100%);';
+	}
+};
 
-export const AchieveBlock = ({
-	achievements,
-	bgColor = defaultBgColor,
-	variant = 'dark',
-}: AchieveBlockModel) => {
+export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 	return (
 		<Flex
 			justify="space-between"
@@ -31,18 +31,18 @@ export const AchieveBlock = ({
 			gap={{ lg: 0, sm: 6, xs: 12 }}
 			borderRadius={{ md: 56, xs: 28 }}
 			sx={{
-				background: bgColor,
+				background: setBgColor(variant),
 			}}
 		>
-			{achievements.map(({ image, alt, place, text }, index) => (
-				<Box w={{ lg: 230, sm: '100%' }} key={image + index}>
+			{achievements?.map((achieve) => (
+				<Box w={{ lg: 230, sm: '100%' }} key={achieve.id}>
 					<Flex alignItems="center" gap={4} mb={{ lg: 6, sm: 2 }}>
 						<Heading
 							as="h3"
 							variant="h1"
 							color={variant === 'dark' ? 'light.100' : 'grey.600'}
 						>
-							#{place}
+							#{achieve.place}
 						</Heading>
 						<Box
 							position="relative"
@@ -50,10 +50,10 @@ export const AchieveBlock = ({
 							height={{ xs: '10vw', md: '56px' }}
 						>
 							<Image
-								src={`/images/achievements/${image}`}
-								alt={alt}
+								src={achieve?.icon?.data?.attributes?.url}
+								loader={myImageLoader}
+								alt="Achieve icon"
 								fill
-								key={alt + index}
 							/>
 						</Box>
 					</Flex>
@@ -61,7 +61,7 @@ export const AchieveBlock = ({
 						color={variant === 'dark' ? 'light.100' : 'grey.600'}
 						variant="md"
 					>
-						{text}
+						{achieve.description}
 					</Text>
 				</Box>
 			))}

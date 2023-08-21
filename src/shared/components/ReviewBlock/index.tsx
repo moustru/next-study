@@ -1,17 +1,23 @@
 import { Box, Divider, Flex, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
-type ReviewBlockModel = Record<
-	'user' | 'company' | 'avatar' | 'reviewText',
-	string
->;
+import myImageLoader from '@/shared/utils/imageLoader';
+
+type ReviewBlockModel = {
+	reviewText: string;
+	reviewAuthor: string;
+	avatar: any;
+	authorCompany: string;
+};
 
 export const ReviewBlock = ({
-	user,
-	company,
+	reviewAuthor,
+	authorCompany,
 	avatar,
 	reviewText,
 }: ReviewBlockModel) => {
+	const avatarURL = avatar?.data?.attributes?.url;
+
 	return (
 		<Flex
 			align={{ lg: 'flex-start', xs: 'center' }}
@@ -30,12 +36,17 @@ export const ReviewBlock = ({
 					w={{ xs: '20vw', md: '180px' }}
 					h={{ xs: '20vw', md: '180px' }}
 				>
-					<Image src={`/images/reviews/${avatar}`} alt="Terminatessa" fill />
+					<Image
+						src={avatarURL}
+						loader={myImageLoader}
+						alt="Terminatessa"
+						fill
+					/>
 				</Box>
 				<Text variant="md" mt={4}>
-					{user}
+					{reviewAuthor}
 				</Text>
-				<Text variant="md">{company}</Text>
+				<Text variant="md">{authorCompany}</Text>
 			</Stack>
 		</Flex>
 	);

@@ -3,28 +3,23 @@ import { Grid } from '@chakra-ui/react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
-import { caseItems } from './mocks';
+import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
-export const SectionCases = () => {
+type SectionCasesModel = {
+	heading: string;
+	cases: CaseDataModel[];
+};
+
+export const SectionCases = ({ heading, cases }: SectionCasesModel) => {
 	return (
-		<SectionTemplate title="Примеры кейсов">
+		<SectionTemplate title={heading}>
 			<Grid
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 				gap={8}
 			>
-				<CaseBlock
-					{...caseItems[0]}
-					bgColor="grey.200"
-					size="sm"
-					key={caseItems[0].title}
-				/>
-				<CaseBlock
-					{...caseItems[1]}
-					bgColor="grey.600"
-					size="sm"
-					variant="dark"
-					key={caseItems[1].title}
-				/>
+				{cases.map((caseItem) => (
+					<CaseBlock {...caseItem} key={caseItem.id} />
+				))}
 			</Grid>
 		</SectionTemplate>
 	);
