@@ -18,7 +18,7 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 		if (currGroup === 'all') return items;
 
 		return items.filter((item: any) =>
-			item.attributes.tags.some(
+			item.tags.some(
 				(tag: any) => tag.value.toLowerCase() === currGroup.toLowerCase()
 			)
 		);
