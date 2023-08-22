@@ -9,7 +9,7 @@ export const TabList = ({ onClick }: { onClick: (arg0: string) => void }) => {
 				<Tab
 					key={item.value}
 					value={item.value}
-					onClick={(event: any) => onClick(event.target.value)}
+					onClick={() => onClick(item.value)}
 					sx={{ border: 'none', paddingInline: '4', paddingBlock: '2' }}
 				>
 					<Text variant="sm">{item.text}</Text>
