@@ -34,8 +34,8 @@ export const CaseBlock = ({
 				bgPosition="bottom right"
 				bgSize="50%"
 				borderRadius={{ md: 56, xs: 20 }}
-				px={{ lg: '80px', md: '48px', xs: '24px' }}
-				py={{ lg: '70px', md: '40px', xs: '24px' }}
+				px={{ lg: '80px', md: '48px', xs: '36px' }}
+				py={{ lg: '70px', md: '48px', xs: '48px' }}
 			>
 				<Box>
 					<Text
