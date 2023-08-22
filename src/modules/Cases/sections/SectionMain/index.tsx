@@ -14,7 +14,7 @@ export const SectionMain = () => {
 	}));
 
 	return (
-		<SectionTemplate title="Кейсы" firstBlock mt={{ md: 200, xs: '120px' }}>
+		<SectionTemplate title="Кейсы" firstBlock>
 			<Grid
 				gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 				gap={{ md: 8, xs: 4 }}
