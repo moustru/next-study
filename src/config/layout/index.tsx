@@ -1,21 +1,20 @@
 import { Grid, useMediaQuery } from '@chakra-ui/react';
-import { useState, type PropsWithChildren, useEffect } from 'react';
 
 import { HeaderMobile } from './ui/Burger';
 import { Footer } from './ui/Footer';
 import { Header } from './ui/Header';
 
-export function AppLayout({ children }: PropsWithChildren) {
-	const [isPhone, setScreenSize] = useState<boolean>(false);
-	const [screenLess768] = useMediaQuery('(max-width: 768px)');
+import type { PropsWithChildren } from 'react';
 
-	useEffect(() => {
-		setScreenSize(screenLess768);
-	}, [screenLess768]);
+export function AppLayout({ children }: PropsWithChildren) {
+	const [screenLess768] = useMediaQuery('(max-width: 768px)', {
+		fallback: true,
+		ssr: true,
+	});
 
 	return (
 		<Grid minH="100vh" gridTemplateRows="auto 1fr auto">
-			{isPhone ? <HeaderMobile /> : <Header />}
+			{screenLess768 ? <HeaderMobile /> : <Header />}
 			<main>{children}</main>
 			<Footer />
 		</Grid>

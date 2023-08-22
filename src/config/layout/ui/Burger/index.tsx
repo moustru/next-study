@@ -69,7 +69,7 @@ export const HeaderMobile = () => {
 				</AnimatePresence>
 				<MenuToggle toggle={toggleOpenHandler} />
 			</motion.nav>
-			<Logo extraClick={toggleOpenHandler} />
+			<Logo />
 		</header>
 	);
 };
