@@ -1,20 +1,19 @@
 import { Grid } from '@chakra-ui/react';
 
+import { usePaginatedCasesData } from '@/modules/Cases/api';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CaseBlock } from '@/shared/components/CaseBlock';
 
-import type {
-	CaseDataModel,
-	CaseUIModel,
-} from '@/modules/Cases/sections/SectionMain/types';
+import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
-type SectionSimilarProjectsModel = {
-	cases: (CaseDataModel & CaseUIModel)[];
-};
+export const SectionSimilarProjects = () => {
+	const { data } = usePaginatedCasesData('&pagination[pageSize]=2');
 
-export const SectionSimilarProjects = ({
-	cases,
-}: SectionSimilarProjectsModel) => {
+	const cases: CaseDataModel[] = data.data.map((obj: any) => ({
+		...obj.attributes.cardOptions,
+		id: obj.id,
+	}));
+
 	return (
 		<SectionTemplate title="Похожие проекты">
 			<Grid

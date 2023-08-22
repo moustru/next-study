@@ -142,5 +142,7 @@ module.exports = {
 		'@next/next/no-img-element': 0,
 		'prefer-const': 0,
 		'no-empty-pattern': 0,
+		'default-case': 0,
+		'consistent-return': 0,
 	},
 };

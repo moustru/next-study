@@ -6,8 +6,9 @@ export const getCasePageData = async (slug: string): Promise<any> => {
 	const params = [
 		'populate[0]=zoneOfContents',
 		'populate[1]=zoneOfContents.tags',
-		'populate[2]=zoneOfContents.reviews',
-		'populate[3]=zoneOfContents.cases.bgImage',
+		'populate[2]=zoneOfContents.reviews.avatar',
+		'populate[4]=zoneOfContents.images',
+		'populate[5]=zoneOfContents.cases.bgImage',
 	];
 
 	const paramsStr = params.join('&');

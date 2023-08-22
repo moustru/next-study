@@ -4,11 +4,11 @@ import { composeQueryClient } from '@/config/api/queryClient';
 import { CasesPage } from '@/modules/Cases';
 import { prefetchCasesData } from '@/modules/Cases/api';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const Cases = () => <CasesPage />;
 
-export const getStaticProps: GetStaticProps = async ({}) => {
+export const getServerSideProps: GetServerSideProps = async ({}) => {
 	const queryClient = composeQueryClient();
 
 	await prefetchCasesData(queryClient);
@@ -17,7 +17,6 @@ export const getStaticProps: GetStaticProps = async ({}) => {
 		props: {
 			dehydratedState: dehydrate(queryClient),
 		},
-		revalidate: 1,
 	};
 };
 

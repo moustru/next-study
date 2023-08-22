@@ -4,11 +4,11 @@ import { composeQueryClient } from '@/config/api/queryClient';
 import { BlogPage } from '@/modules/Blog';
 import { prefetchAllArticlesData } from '@/modules/Blog/api';
 
-import type { GetStaticProps } from 'next';
+import type { GetServerSideProps } from 'next';
 
 const Blog = () => <BlogPage />;
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
 	const queryClient = composeQueryClient();
 
 	await prefetchAllArticlesData(queryClient);
@@ -17,7 +17,6 @@ export const getStaticProps: GetStaticProps = async () => {
 		props: {
 			dehydratedState: dehydrate(queryClient),
 		},
-		revalidate: 1,
 	};
 };
 
