@@ -1,4 +1,4 @@
-import { Box, Container, Flex, useMediaQuery } from '@chakra-ui/react';
+import { Container, Flex, useMediaQuery } from '@chakra-ui/react';
 import { Carousel } from '@mantine/carousel';
 import Image from 'next/image';
 
@@ -15,16 +15,24 @@ export const SectionImages = ({ images }: any) => {
 	return (
 		<Container mb={{ lg: 180, md: '80px', xs: '40px' }}>
 			{largerThan768 ? (
-				<Flex justifyContent="space-between">
+				<Flex justifyContent="space-between" gap="30px">
 					{imagesURLs.map((image: any, i: number) => (
-						<Image
+						<div
 							key={image}
-							src={image}
-							loader={myImageLoader}
-							alt={`Example ${i}`}
-							width={300}
-							height={600}
-						/>
+							style={{
+								position: 'relative',
+								flexBasis: '30%',
+								height: '80vh',
+							}}
+						>
+							<Image
+								src={image}
+								loader={myImageLoader}
+								alt={`Example ${i}`}
+								fill
+								objectFit="contain"
+							/>
+						</div>
 					))}
 				</Flex>
 			) : (
