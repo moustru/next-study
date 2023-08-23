@@ -5,7 +5,10 @@ import Image from 'next/image';
 import myImageLoader from '@/shared/utils/imageLoader';
 
 export const SectionImages = ({ images }: any) => {
-	const [largerThan768] = useMediaQuery('(min-width: 768px)');
+	const [largerThan768] = useMediaQuery('(min-width: 768px)', {
+		ssr: true,
+		fallback: true,
+	});
 
 	const imagesURLs = images.data.map((image: any) => image.attributes.url);
 
