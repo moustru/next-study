@@ -18,7 +18,7 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 				rowGap="2rem"
 			>
 				{logos?.map((logo: any, index: number) => (
-					<GridItem key={logo + index}>
+					<GridItem key={logo + index} display="flex" alignItems="center">
 						<Image
 							src={logo}
 							alt="Partner logo"

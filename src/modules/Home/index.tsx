@@ -33,7 +33,7 @@ const HomePage = () => {
 				return <SectionAchievements key={index} {...sectionInfo} />;
 			case 'sections.global-steps':
 				return <SectionHelp key={index} {...sectionInfo} />;
-			case 'sections.same-projects':
+			case 'home.cases':
 				return <SectionCases key={index} {...sectionInfo} />;
 			case 'home.news':
 				return <SectionNews key={index} {...sectionInfo} />;
