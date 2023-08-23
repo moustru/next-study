@@ -54,7 +54,7 @@ export const CaseBlock = ({
 						{title}
 					</Heading>
 				</Box>
-				<MovingArrow isHoverOnParent={hovered} />
+				<MovingArrow isHoverOnParent={hovered} isDark={variant === 'dark'} />
 			</Flex>
 		</Link>
 	);
