@@ -26,7 +26,7 @@ export const CasePage = () => {
 				return <SectionMain key={index} {...sectionInfo} />;
 			case 'case.text-section':
 				return <SectionText key={index} {...sectionInfo} />;
-			case 'case.image-section':
+			case 'sections.image-section':
 				return <SectionImages key={index} {...sectionInfo} />;
 			case 'sections.sonclusions':
 				return <SectionConclusions key={index} {...sectionInfo} />;
