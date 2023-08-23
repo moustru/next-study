@@ -2,6 +2,8 @@ import { Carousel, Embla } from '@mantine/carousel';
 import Autoplay from 'embla-carousel-autoplay';
 import { useRef, useState } from 'react';
 
+import { useModal } from '@/config/providers/Modal.provider';
+import { ModalBecomeMember } from '@/modules/Common/modals/ModalBecomeMember';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { CustomAvatar } from '@/shared/components/CustomAvatar';
 
@@ -18,6 +20,7 @@ type SectionTeamModel = {
 export const SectionTeam = (props: SectionTeamModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
 	const autoplay = useRef(Autoplay({ delay: 2000 }));
+	const { openModal } = useModal();
 
 	const prevSlide = () => {
 		embla?.scrollPrev();
@@ -27,10 +30,16 @@ export const SectionTeam = (props: SectionTeamModel) => {
 		embla?.scrollNext();
 	};
 
+	const openTeamModal = () => {
+		openModal(<ModalBecomeMember />);
+	};
+
 	return (
 		<SectionTemplate
 			title="Команда"
 			carouselControls
+			withButton
+			handleButtonClick={openTeamModal}
 			carouselEvents={{ scrollPrev: prevSlide, scrollNext: nextSlide }}
 		>
 			<Carousel
