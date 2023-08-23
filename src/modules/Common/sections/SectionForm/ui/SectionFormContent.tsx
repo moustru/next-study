@@ -20,7 +20,7 @@ import { RadioCard } from '@/shared/components/RadioCard';
 import { formSchema } from '../lib/validationSchema';
 import { radios } from '../mocks';
 
-export const SectionFormContent = () => {
+export const SectionFormContent = ({ short = false }) => {
 	const [solution, setSolution] = useState('mobile');
 	const { openModal } = useModal();
 	const toast = useToast();
@@ -50,27 +50,31 @@ export const SectionFormContent = () => {
 		});
 
 	const sendData = (data: any) => {
-		sendEmailData({ ...data, solution });
+		sendEmailData(short ? { ...data } : { ...data, solution });
 	};
 
 	return (
 		<>
-			<Text variant="sm" mb={4}>
-				Выберите нативное решение
-			</Text>
-			<RadioGroup mb="54px" onChange={setSolution} value={solution}>
-				<Grid
-					gridTemplateColumns={{
-						lg: 'repeat(3, 1fr)',
-						xs: 'repeat(1, 1fr)',
-					}}
-					gap={{ lg: 8, xs: 4 }}
-				>
-					{radios.map((radio, i) => (
-						<RadioCard labelText="Нативное решение" {...radio} key={i} />
-					))}
-				</Grid>
-			</RadioGroup>
+			{!short && (
+				<>
+					<Text variant="sm" mb={4}>
+						Выберите нативное решение
+					</Text>
+					<RadioGroup mb="54px" onChange={setSolution} value={solution}>
+						<Grid
+							gridTemplateColumns={{
+								lg: 'repeat(3, 1fr)',
+								xs: 'repeat(1, 1fr)',
+							}}
+							gap={{ lg: 8, xs: 4 }}
+						>
+							{radios.map((radio, i) => (
+								<RadioCard labelText="Нативное решение" {...radio} key={i} />
+							))}
+						</Grid>
+					</RadioGroup>
+				</>
+			)}
 
 			<form onSubmit={handleSubmit(sendData)}>
 				<Grid

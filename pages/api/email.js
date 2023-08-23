@@ -16,11 +16,20 @@ const getSolution = (value) => {
 export default async function handler(req, res) {
 	const requestBody = req.body;
 
-	const TEXT = `
+	const TEXT = () => {
+		if (requestBody.solution) {
+			return `
+			<p><strong>Имя:</strong> ${requestBody.name}</p>
+			<p><strong>E-mail:</strong> ${requestBody.email}</p>
+			<p><strong>Решение:</strong> ${getSolution(requestBody.solution)}</p>
+			`;
+		}
+
+		return `
 		<p><strong>Имя:</strong> ${requestBody.name}</p>
 		<p><strong>E-mail:</strong> ${requestBody.email}</p>
-		<p><strong>Решение:</strong> ${getSolution(requestBody.solution)}</p>
 		`;
+	};
 
 	const transporter = nodemailer.createTransport({
 		host: process.env.NEXT_PUBLIC_MAIL_HOST,
@@ -35,9 +44,11 @@ export default async function handler(req, res) {
 	const mailOptions = {
 		from: process.env.NEXT_PUBLIC_MAIL_USERNAME,
 		to: process.env.NEXT_PUBLIC_MAIL_TO,
-		subject: `Новая заявка | Vibe Lab `,
+		subject: requestBody.solution
+			? `Новая заявка | Vibe Lab `
+			: 'Стать частью команды | Vibe Lab',
 		text: 'Новое обращение',
-		html: TEXT,
+		html: TEXT(),
 	};
 
 	transporter.sendMail(mailOptions, (error) => {

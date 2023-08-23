@@ -6,6 +6,7 @@ import { MetaInfo } from '@/shared/components/MetaInfo';
 import { SectionForm } from '../Common/sections/SectionForm';
 
 import { useAboutData, useTeamData } from './api';
+import { ImageSection } from './sections/ImageSection';
 import { SectionContacts } from './sections/SectionContacts';
 import { SectionHistory } from './sections/SectionHistory';
 import { SectionMain } from './sections/SectionMain';
@@ -27,6 +28,8 @@ export const AboutPage = () => {
 				return <SectionHistory key={index} {...sectionInfo} />;
 			case 'about.team':
 				return <SectionTeam key={index} team={teamDataContent} />;
+			case 'sections.image-section':
+				return <ImageSection key={index} {...sectionInfo} />;
 			case 'about.contacts':
 				return <SectionContacts key={index} {...sectionInfo} />;
 			default:
