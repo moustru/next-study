@@ -1,0 +1,9 @@
+.ru {
+	@media (max-width: 768px) {
+		display: none;
+	}
+}
+
+.en {
+	margin-top: 40px;
+}

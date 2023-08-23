@@ -7,6 +7,7 @@ import { ModalForm } from '@/modules/Common/modals';
 import { useDimensions } from '@/shared/hooks/useDimensions';
 import useLockedBody from '@/shared/hooks/useLockedBody';
 
+import { LangVersion } from '../LangVersion';
 import { Links } from '../Links';
 import { Logo } from '../Logo';
 
@@ -64,6 +65,7 @@ export const HeaderMobile = () => {
 							<Button mt={10} size="md" variant="blue" onClick={modalHandler}>
 								Написать нам
 							</Button>
+							<LangVersion />
 						</motion.div>
 					)}
 				</AnimatePresence>
