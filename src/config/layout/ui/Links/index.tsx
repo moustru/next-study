@@ -21,7 +21,7 @@ export const Links = ({
 			{links.map((link) => (
 				<Link href={link.href} key={link.id} onClick={closeMenu}>
 					<Text
-						variant={{ xs: 'xl', md: 'sm' }}
+						variant={{ xs: 'xl', md: 'xs' }}
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
 							fontWeight: '600 !important',
