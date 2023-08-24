@@ -53,11 +53,11 @@
 
 > Хорошей практикой будет вынести **.env** в переменные CI/CD в Gitlab
 
-**NEXT_PUBLIC_STRAPI_IMAGE** - урл для получения картинок (если по какой-то причине не получается прокинуть src в компонент Image)
-**NEXT_PUBLIC_STRAPI_URL** - корневой урл для соединения со Strapi
-**NEXT_PUBLIC_MAIL_HOST** - хост SMTP для соединения с почтовым сервисом
-**NEXT_PUBLIC_MAIL_USERNAME** - логин клиента почтовика
-**NEXT_PUBLIC_MAIL_PASSWORD** - пароль клиента
-**NEXT_PUBLIC_MAIL_ENCRYPTION** - шифрование почтовика
-**NEXT_PUBLIC_MAIL_PORT** - порт почтовика
-**NEXT_PUBLIC_MAIL_TO** - e-mail, куда будут приходить письма
+- **NEXT_PUBLIC_STRAPI_IMAGE** - урл для получения картинок (если по какой-то причине не получается прокинуть src в компонент Image)
+- **NEXT_PUBLIC_STRAPI_URL** - корневой урл для соединения со Strapi
+- **NEXT_PUBLIC_MAIL_HOST** - хост SMTP для соединения с почтовым сервисом
+- **NEXT_PUBLIC_MAIL_USERNAME** - логин клиента почтовика
+- **NEXT_PUBLIC_MAIL_PASSWORD** - пароль клиента
+- **NEXT_PUBLIC_MAIL_ENCRYPTION** - шифрование почтовика
+- **NEXT_PUBLIC_MAIL_PORT** - порт почтовика
+- **NEXT_PUBLIC_MAIL_TO** - e-mail, куда будут приходить письма
