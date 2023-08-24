@@ -15,15 +15,21 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 					sm: 'repeat(2, 1fr)',
 					xs: 'repeat(1, 1fr)',
 				}}
-				rowGap="2rem"
+				rowGap="3rem"
 			>
 				{logos?.map((logo: any, index: number) => (
-					<GridItem key={logo + index} display="flex" alignItems="center">
+					<GridItem
+						key={logo + index}
+						position="relative"
+						display="flex"
+						alignItems="center"
+						w={300}
+						h={50}
+					>
 						<Image
 							src={logo}
 							alt="Partner logo"
-							width={300}
-							height={60}
+							fill
 							loader={myImageLoader}
 							quality={100}
 							objectFit="contain"

@@ -1,4 +1,4 @@
-import { Stack, Button } from '@chakra-ui/react';
+import { Stack, Button, Flex } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { usePaginatedCasesData } from '@/modules/Cases/api';
@@ -17,15 +17,15 @@ export const SectionCases = ({ heading, ...others }: any) => {
 
 	return (
 		<SectionTemplate title={heading} {...others}>
-			<>
-				<Stack
-					gap={{ lg: '100px', md: '64px', xs: '32px' }}
-					mb={{ lg: '60px', md: '32px', xs: '16px' }}
-				>
-					{cases.map((caseItem: any) => (
-						<CaseBlock {...caseItem} key={caseItem.id} />
-					))}
-				</Stack>
+			<Stack
+				gap={{ lg: '100px', md: '64px', xs: '32px' }}
+				mb={{ lg: '60px', md: '32px', xs: '16px' }}
+			>
+				{cases.map((caseItem: any) => (
+					<CaseBlock {...caseItem} key={caseItem.id} />
+				))}
+			</Stack>
+			<Flex justifyContent="flex-end">
 				<Button
 					float="right"
 					rightIcon={<ArrowSVG fill="#26282B" width="24px" />}
@@ -34,7 +34,7 @@ export const SectionCases = ({ heading, ...others }: any) => {
 				>
 					<Link href="/cases">Ко всем кейсам</Link>
 				</Button>
-			</>
+			</Flex>
 		</SectionTemplate>
 	);
 };

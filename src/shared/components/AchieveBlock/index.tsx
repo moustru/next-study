@@ -17,7 +17,7 @@ const setBgColor = (variant: Variant) => {
 			return 'linear-gradient(90deg, var(--chakra-colors-light-100) 40%, var(--chakra-colors-basic-100) 100%);';
 		case 'dark':
 		default:
-			return 'radial-gradient(60% 100% at 0% 50%, var(--chakra-colors-basic-200) 0%, var(--chakra-colors-grey-600) 100%);';
+			return 'radial-gradient(73.54% 315.43% at 0% 200.16%, #0F5AEF 0%, #26282B 100%)';
 	}
 };
 
@@ -40,10 +40,11 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 						<Heading
 							as="h3"
 							variant="h1"
-							color={variant === 'dark' ? 'light.100' : 'grey.600'}
+							color={variant === 'dark' ? 'grey.50' : 'grey.600'}
 						>
 							#{achieve.place}
 						</Heading>
+
 						<Box
 							position="relative"
 							width={{ xs: '10vw', md: '56px' }}
@@ -58,7 +59,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 						</Box>
 					</Flex>
 					<Text
-						color={variant === 'dark' ? 'light.100' : 'grey.600'}
+						color={variant === 'dark' ? 'grey.50' : 'grey.600'}
 						variant="md"
 					>
 						{achieve.description}
