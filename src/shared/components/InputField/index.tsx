@@ -7,6 +7,7 @@ type InputModel = {
 	label?: string;
 	isDisabled?: boolean;
 	isInvalid?: boolean;
+	placeholder?: string;
 	validateData?: UseFormRegisterReturn;
 	errorMsg?: string;
 };
@@ -16,6 +17,7 @@ export const InputField = ({
 	label = '',
 	isDisabled = false,
 	isInvalid = false,
+	placeholder = '',
 	validateData = undefined,
 	errorMsg = '',
 }: InputModel) => {
@@ -26,6 +28,7 @@ export const InputField = ({
 				value={value}
 				isDisabled={isDisabled}
 				isInvalid={isInvalid}
+				placeholder={placeholder}
 				{...validateData}
 				errorBorderColor="error.100"
 			/>

@@ -17,6 +17,7 @@ export const ArticlePage = () => {
 
 	const { data } = useArticleData(query.slug as string);
 
+	const articleId = data.data[0].id;
 	const content = data.data[0].attributes;
 
 	const renderSections = (sectionInfo: any, index: number) => {
@@ -49,6 +50,7 @@ export const ArticlePage = () => {
 				<TitleSegment articleTitle={content.articleTitle} />
 
 				<AuthorSegment
+					articleId={articleId}
 					author={content.author}
 					authorAvatar={content.authorAvatar}
 					likes={content.likes}

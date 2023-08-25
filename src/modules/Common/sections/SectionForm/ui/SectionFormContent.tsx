@@ -21,7 +21,7 @@ import { formSchema } from '../lib/validationSchema';
 import { radios } from '../mocks';
 
 export const SectionFormContent = ({ short = false }) => {
-	const [solution, setSolution] = useState('mobile');
+	const [solution, setSolution] = useState('');
 	const { openModal } = useModal();
 	const toast = useToast();
 
@@ -80,17 +80,19 @@ export const SectionFormContent = ({ short = false }) => {
 				<Grid
 					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 					gap={{ lg: 8, xs: 4 }}
-					mb={5}
+					mb={20}
 				>
 					<InputField
 						label="Ваше имя"
 						validateData={register('name')}
+						placeholder="Алексей"
 						isInvalid={!!errors.name?.message}
 						errorMsg={errors.name?.message}
 					/>
 					<InputField
 						label="Ваша электронная почта"
 						validateData={register('email')}
+						placeholder="info@gmail.com"
 						isInvalid={!!errors.email?.message}
 						errorMsg={errors.email?.message}
 					/>
@@ -112,6 +114,7 @@ export const SectionFormContent = ({ short = false }) => {
 					</Text>
 					<Button
 						isLoading={isLoadingSendingEmail}
+						isDisabled={!solution}
 						size={{ lg: 'xl', xs: 'md' }}
 						variant="blue"
 						type="submit"

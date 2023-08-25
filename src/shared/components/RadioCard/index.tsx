@@ -9,7 +9,9 @@ type RadioCardModel = {
 export const RadioCard = ({ value, labelText, text }: RadioCardModel) => {
 	return (
 		<Radio variant="card" value={value}>
-			<Text variant="sm">{labelText}</Text>
+			<Text variant="sm" mb="2px">
+				{labelText}
+			</Text>
 			<Text variant="lg">{text}</Text>
 		</Radio>
 	);
