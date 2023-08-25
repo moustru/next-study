@@ -23,6 +23,7 @@ export const ReviewBlock = ({
 			align={{ lg: 'flex-start', xs: 'center' }}
 			direction={{ lg: 'row', xs: 'column' }}
 			bgColor="light.100"
+			h={{ lg: 344, xs: 'auto' }}
 			px={{ lg: '48px', xs: '32px' }}
 			py={{ lg: '40px', xs: '32px' }}
 			gap={{ lg: 12, md: 6, xs: 4 }}
@@ -30,7 +31,7 @@ export const ReviewBlock = ({
 		>
 			<Text variant={{ lg: 'xl', sm: 'md', xs: 'sm' }}>{reviewText}</Text>
 			<Divider orientation="vertical" />
-			<Stack minW={185} align={{ xs: 'center', lg: 'left' }}>
+			<Stack minW={185} spacing={4} align={{ xs: 'center', lg: 'start' }}>
 				<Box
 					position="relative"
 					w={{ xs: '20vw', md: '180px' }}
@@ -43,10 +44,10 @@ export const ReviewBlock = ({
 						fill
 					/>
 				</Box>
-				<Text variant="md" mt={4}>
-					{reviewAuthor}
-				</Text>
-				<Text variant="md">{authorCompany}</Text>
+				<Stack spacing={0}>
+					<Text variant="md">{reviewAuthor}</Text>
+					<Text variant="md">{authorCompany}</Text>
+				</Stack>
 			</Stack>
 		</Flex>
 	);

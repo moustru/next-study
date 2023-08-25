@@ -1,11 +1,16 @@
+import { Container, Heading } from '@chakra-ui/react';
+
 import { SectionTemplate } from '../SectionTemplate';
 
 import { SectionFormContent } from './ui/SectionFormContent';
 
 export const SectionForm = () => {
 	return (
-		<SectionTemplate title="Оставьте вашу заявку">
+		<Container as="section" mb={{ lg: '180px', sm: '100px', xs: '60px' }}>
+			<Heading as="h2" variant="h2" mb={{ lg: 20, sm: 12, xs: 8 }}>
+				Оставьте вашу заявку
+			</Heading>
 			<SectionFormContent />
-		</SectionTemplate>
+		</Container>
 	);
 };
