@@ -21,6 +21,7 @@ type BlogBlockModel = {
 	author: string;
 	authorAvatar: any;
 	href: Url;
+	likes: number;
 };
 
 export const ArticleBlock = ({
@@ -31,6 +32,7 @@ export const ArticleBlock = ({
 	date,
 	author,
 	authorAvatar,
+	likes,
 }: BlogBlockModel) => {
 	const [hovered, setHovered] = useState(false);
 	const hoverHandler = () => setHovered(!hovered);
@@ -101,7 +103,7 @@ export const ArticleBlock = ({
 
 								<Flex alignItems="center" gap={1}>
 									<LikeSVG fill="#787D87" width="16px" />
-									<Text color="grey.400">22</Text>
+									<Text color="grey.400">{likes}</Text>
 								</Flex>
 							</Flex>
 						</Box>
