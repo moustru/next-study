@@ -1,5 +1,5 @@
 .movingWay {
-	width: 5%;
+	width: 60px;
 	height: 4px;
 	position: absolute;
 	bottom: 60px;
@@ -29,6 +29,7 @@
 
 .arrow {
 	height: 100%;
+	width: 60px;
 	position: relative;
 	border-top-right-radius: 0px;
 	border-bottom-left-radius: 0px;

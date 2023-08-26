@@ -25,7 +25,7 @@ export const Links = ({
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
 							fontWeight: '600 !important',
-							color: currentRoute === link.href && 'basic.200',
+							color: currentRoute === link.href && 'basic.400',
 							transition: 'color .3s',
 						}}
 						_hover={{
