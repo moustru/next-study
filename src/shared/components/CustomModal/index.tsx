@@ -14,6 +14,7 @@ import {
 	ModalHeader,
 	ModalOverlay,
 	useMediaQuery,
+	Flex,
 } from '@chakra-ui/react';
 import { ReactElement } from 'react';
 
@@ -31,8 +32,13 @@ const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 
 	return largerThan1024 ? (
 		<Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
-			<ModalOverlay sx={{ backdropFilter: 'blur(5px)' }} bg="blackAlpha.500" />
-			<ModalContent w="83.3333%" maxW="1320px" p={{ lg: '60px', xs: '24px' }}>
+			<ModalOverlay sx={{ backdropFilter: 'blur(3px)' }} bg="transparent" />
+			<ModalContent
+				w="90%"
+				maxW="1320px"
+				p={{ lg: '60px', xs: '24px' }}
+				sx={{ borderRadius: '40px' }}
+			>
 				{children}
 			</ModalContent>
 		</Modal>
@@ -53,10 +59,18 @@ CustomModal.Header = ({ children }: CustomModalCompound) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	return largerThan1024 ? (
-		<>
-			<ModalHeader>{children}</ModalHeader>
-			<ModalCloseButton size="xl" p="32px" />
-		</>
+		<Flex justify="space-between">
+			<ModalHeader
+				style={{ flex: 'auto', paddingBottom: 0, paddingTop: 0 }}
+				mb={16}
+			>
+				{children}
+			</ModalHeader>
+			<ModalCloseButton
+				size="xl"
+				style={{ position: 'static', fontSize: '24px', padding: '15px' }}
+			/>
+		</Flex>
 	) : (
 		<>
 			<DrawerHeader>{children}</DrawerHeader>
