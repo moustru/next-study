@@ -16,7 +16,7 @@ export const MovingArrow = ({
 				className={css.arrow}
 				data-color={coloring}
 				initial={{ x: '-10%' }}
-				animate={{ x: isHoverOnParent ? '100%' : 0 }}
+				animate={{ x: isHoverOnParent ? '100%' : '1%' }}
 				transition={{ duration: 0.3, cubicBezier: '0.83, 0, 0.17, 1' }}
 			/>
 		</div>

@@ -1,8 +1,8 @@
 .movingWay {
-	width: 8%;
+	width: 5%;
 	height: 4px;
 	position: absolute;
-	bottom: 40px;
+	bottom: 60px;
 
 	border-top-left-radius: 24px;
 	border-bottom-left-radius: 24px;
@@ -30,6 +30,8 @@
 .arrow {
 	height: 100%;
 	position: relative;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
 
 	&::before {
 		right: -5px;
