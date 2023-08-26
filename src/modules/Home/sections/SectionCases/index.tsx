@@ -31,8 +31,11 @@ export const SectionCases = ({ heading, ...others }: any) => {
 					rightIcon={<ArrowSVG fill="#26282B" width="24px" />}
 					variant="ghost"
 					size={{ md: 'md', xs: 'sm' }}
+					color="grey.600"
 				>
-					<Link href="/cases">Ко всем кейсам</Link>
+					<Link style={{ fontSize: '24px' }} href="/cases">
+						Ко всем кейсам
+					</Link>
 				</Button>
 			</Flex>
 		</SectionTemplate>

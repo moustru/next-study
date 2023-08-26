@@ -54,7 +54,7 @@ export const SectionTemplate = ({
 		<Container
 			as="section"
 			mt={firstBlock ? { lg: '200px', xs: '120px' } : 0}
-			mb={{ lg: '180px', sm: '100px', xs: '60px' }}
+			mb={{ lg: '120px', sm: '100px', xs: '60px' }}
 			{...others}
 		>
 			{title && !carouselControls && (
@@ -95,7 +95,7 @@ export const SectionTemplate = ({
 						)}
 
 						{screenLarger1024 && (
-							<Flex gap={4}>
+							<Flex gap={8}>
 								<IconButton
 									minW={54}
 									aria-label="Slide prev"
