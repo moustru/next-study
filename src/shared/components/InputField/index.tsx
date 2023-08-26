@@ -26,7 +26,6 @@ export const InputField = ({
 			{label && <Text variant="sm">{label}</Text>}
 			<Input
 				value={value}
-				outline="1px"
 				isDisabled={isDisabled}
 				isInvalid={isInvalid}
 				placeholder={placeholder}
