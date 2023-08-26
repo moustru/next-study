@@ -19,9 +19,9 @@ export const Header = () => {
 			<Container paddingBlock={['40px', '40px', '40px', '60px', '60px']}>
 				<Flex alignItems="center" justifyContent="space-between">
 					<Logo location="header" />
-					<Flex gap={7} align="center">
+					<Flex gap={8} align="center">
 						<Links />
-						<Button size="sm" variant="blue" onClick={modalHandler}>
+						<Button size="md" variant="blue" onClick={modalHandler}>
 							Написать нам
 						</Button>
 						<LangVersion />

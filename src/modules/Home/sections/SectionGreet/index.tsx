@@ -1,4 +1,5 @@
 import { Container, Heading, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 
 type SectionGreetModel = {
 	subheading: string;
@@ -19,7 +20,7 @@ export const SectionGreet = ({ subheading }: SectionGreetModel) => {
 				разработки
 			</Heading>
 			<Text variant={{ md: 'xl', xs: 'md' }} maxW="900px">
-				{subheading}
+				{htmlParser(subheading)}
 			</Text>
 		</Container>
 	);
