@@ -14,13 +14,13 @@ export const SectionMain = ({ subheading }: SectionMainModel) => {
 			<Box maxWidth={1440} m="0 auto" p={{ md: '60px', xs: '24px' }}>
 				<Heading as="h1" variant="h1" color="grey.100" mb={{ md: 12, xs: 4 }}>
 					Наша&nbsp;
-					<Text color="basic.200" display="inline-block">
+					<Text color="basic.100" display="inline-block">
 						миссия
 					</Text>
 				</Heading>
 				<Text
 					variant={{ md: 'xl', xs: 'md' }}
-					color="grey.100"
+					color="grey.50"
 					maxWidth={{ lg: '70%', xs: '100%' }}
 				>
 					{subheading}

@@ -1,4 +1,5 @@
-import { Flex, Stack, Text } from '@chakra-ui/react';
+import { Box, Flex, Stack, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 import Link from 'next/link';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
@@ -33,17 +34,33 @@ export const SectionContacts = ({
 					direction={{ lg: 'row', xs: 'column' }}
 					gap={{ lg: 0, xs: 4 }}
 				>
-					<Text variant="xl" maxW={{ lg: 350, xs: 'none' }}>
-						{address}
-					</Text>
+					<Box>
+						<Text variant="xl" fontWeight="bold" mb={6}>
+							Адрес
+						</Text>
 
-					<Flex gap={{ lg: 14, xs: 4 }} direction={{ lg: 'row', xs: 'column' }}>
-						<Link href={`tel:+${phone}`}>
-							<Text variant="xl">{formattedPhone}</Text>
-						</Link>
-						<Link href={`mailto:${email}`}>
-							<Text variant="xl">{email}</Text>
-						</Link>
+						<Text variant="lg" maxW={{ lg: 350, xs: 'none' }}>
+							{htmlParser(address)}
+						</Text>
+					</Box>
+
+					<Flex gap={{ lg: 24, xs: 4 }} direction={{ lg: 'row', xs: 'column' }}>
+						<Box>
+							<Text variant="xl" fontWeight="bold" mb={6}>
+								Телефон
+							</Text>
+							<Link href={`tel:+${phone}`}>
+								<Text variant="xl">{formattedPhone}</Text>
+							</Link>
+						</Box>
+						<Box>
+							<Text variant="xl" fontWeight="bold" mb={6}>
+								Сайт
+							</Text>
+							<Link href={`mailto:${email}`}>
+								<Text variant="xl">{email}</Text>
+							</Link>
+						</Box>
 					</Flex>
 				</Flex>
 			</Stack>

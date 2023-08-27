@@ -94,7 +94,7 @@ export const SectionTemplate = ({
 							</Button>
 						)}
 
-						{screenLarger1024 && (
+						{screenLarger1024 && !withButton && (
 							<Flex gap={8}>
 								<IconButton
 									minW={54}

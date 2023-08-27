@@ -34,7 +34,7 @@ export const RoadStep = ({ year, changelog }: RoadStepModel) => {
 					{year}
 				</Heading>
 				{changelog.map((log, i) => (
-					<Text variant="lg" key={log + i} paddingRight="20px">
+					<Text mb={4} variant="lg" key={log + i} paddingRight="20px">
 						{log}
 					</Text>
 				))}
