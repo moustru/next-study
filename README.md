@@ -2,12 +2,13 @@
 
 ### Стек:
 
-- **Next 13**
-- **TypeScript**
-- **React Query**
-- **Chakra UI**
-- **pnpm**
-- **Nodemailer**
+![](https://img.shields.io/badge/pnpm-8.6-green)
+![](https://img.shields.io/badge/next-13.4.9-yellowgreen)
+![](https://img.shields.io/badge/react-18.2.0-red)
+![](https://img.shields.io/badge/node-18-yellowgreen)
+![](https://img.shields.io/badge/chakra-2.7.1-green)
+![](https://img.shields.io/badge/typescript-4.9.5-green)
+![](https://img.shields.io/badge/react--query-4.29.19-green)
 
 ### Структура проекта:
 
@@ -61,3 +62,20 @@
 - **NEXT_PUBLIC_MAIL_ENCRYPTION** - шифрование почтовика
 - **NEXT_PUBLIC_MAIL_PORT** - порт почтовика
 - **NEXT_PUBLIC_MAIL_TO** - e-mail, куда будут приходить письма
+
+## TODO:
+
+Когда административная панель переедет на новый хостинг, то нужно будет добавить в Next.config следующее:
+
+    ```bash
+    images: {
+    	remotePatterns: [
+    		{
+    			protocol: https,
+    			hostname: ${NEXT_PUBLIC_CLIENT_API_DOMAIN},
+    			pathname: '/uploads/**',
+    			port: '',
+    		},
+    	],
+    }
+    ```
