@@ -16,6 +16,7 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 					xs: 'repeat(1, 1fr)',
 				}}
 				rowGap="3rem"
+				columnGap={'2rem'}
 			>
 				{logos?.map((logo: any, index: number) => (
 					<GridItem
@@ -23,7 +24,10 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 						position="relative"
 						display="flex"
 						alignItems="center"
-						w={300}
+						w={{
+							md: '300px',
+							xs: 'auto',
+						}}
 						h={50}
 					>
 						<Image
