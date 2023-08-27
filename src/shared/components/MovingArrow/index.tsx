@@ -1,7 +1,7 @@
+import { useMediaQuery } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 
 import css from './index.module.css';
-import { useMediaQuery } from '@chakra-ui/react';
 
 export const MovingArrow = ({
 	isHoverOnParent,

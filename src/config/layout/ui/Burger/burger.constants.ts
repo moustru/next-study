@@ -1,3 +1,5 @@
+import { Variant, Variants } from 'framer-motion';
+
 export const sidebarAnimationVariants = {
 	open: (height = 1000) => ({
 		clipPath: `circle(${height * 2 + 200}px at 40px 40px)`,
@@ -22,11 +24,11 @@ export const sidebarAnimationVariants = {
 	},
 };
 
-export const maskAnimation = {
+export const maskAnimation: Variants = {
 	initial: { opacity: 0 },
 	animate: { opacity: 0.8 },
 	exit: { opacity: 0 },
-	duration: 0.1,
+	duration: 0.1 as Variant,
 };
 
 export const menuAnimation = {
