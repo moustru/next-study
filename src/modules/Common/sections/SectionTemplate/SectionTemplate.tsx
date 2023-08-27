@@ -61,7 +61,7 @@ export const SectionTemplate = ({
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={{ lg: 20, sm: 12, xs: 8 }}
+					mb={{ lg: '40px', sm: '30px', xs: '20px' }}
 				>
 					{title}
 				</Heading>

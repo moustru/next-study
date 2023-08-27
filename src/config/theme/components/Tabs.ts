@@ -3,8 +3,9 @@ const Tabs = {
 		tablist: {
 			backgroundColor: 'light.100',
 			width: 'max-content',
-			padding: 3,
-			borderRadius: '12px',
+			padding: '10px',
+			gap: '12px',
+			borderRadius: '10px',
 			borderBottom: '4px solid red',
 			'@media screen and (max-width: 768px)': {
 				width: '100%',
