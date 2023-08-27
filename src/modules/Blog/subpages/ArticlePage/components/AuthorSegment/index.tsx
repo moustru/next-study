@@ -1,5 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 import { useMutation } from '@tanstack/react-query';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -9,7 +10,6 @@ import { setLikePostState } from '../../api/like';
 import { useLikesStorage } from '../../lib/likesStorage';
 
 import { LikeButton } from './LikeButton';
-import dynamic from 'next/dynamic';
 
 const DynamicLikeButton: any = dynamic(() => Promise.resolve(LikeButton), {
 	ssr: false,
@@ -73,6 +73,7 @@ export const AuthorSegment = ({
 				onClick={handleLikePost}
 				likesState={likesState}
 				articleId={articleId}
+				isAlreadyLiked={isAlreadyLiked}
 			/>
 		</Flex>
 	);
