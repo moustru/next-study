@@ -10,11 +10,13 @@ export const BottomBar = () => {
 			direction={{ xs: 'column-reverse', md: 'row' }}
 			gap={{ xs: 8, md: 0 }}
 		>
-			<Grid color="white">
-				<Text variant="xs">
+			<Grid>
+				<Text variant="xs" color="grey.50">
 					Лаборатория коммерческой разработки VibeLab, 2023
 				</Text>
-				<Text variant="xs">Все права защищены</Text>
+				<Text variant="xs" color="grey.50">
+					Все права защищены
+				</Text>
 			</Grid>
 			<Social icons={icons} />
 		</Flex>

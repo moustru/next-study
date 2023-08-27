@@ -2,4 +2,7 @@
 	@media (max-width: 1024px) {
 		transform: scale(0.7);
 	}
+	&[data-placement='footer'] {
+		transform: scale(0.9);
+	}
 }

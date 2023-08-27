@@ -21,11 +21,12 @@ export const Links = ({
 			{links.map((link) => (
 				<Link href={link.href} key={link.id} onClick={closeMenu}>
 					<Text
-						variant={{ xs: 'xl', md: 'xs' }}
+						variant={{ xs: 'xl', md: 'md' }}
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
 							fontWeight: '600 !important',
-							color: currentRoute === link.href && 'basic.200',
+							color: currentRoute === link.href && 'basic.400',
+							transition: 'color .3s',
 						}}
 						_hover={{
 							color: 'basic.200',

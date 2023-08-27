@@ -1,4 +1,5 @@
 import { Flex, Heading, Stack, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 
 type NewsModel = Record<
 	'title' | 'description' | 'publisher' | 'publicationDate',
@@ -28,10 +29,10 @@ export const NewsItem = ({
 				<Heading as="h3" variant="h3" mb={4}>
 					{title}
 				</Heading>
-				<Text variant="lg">{description}</Text>
+				<Text variant="lg">{htmlParser(description)}</Text>
 			</Stack>
 			<Text variant="sm" color="grey.500">
-				{publisher}, {formattedDate}
+				{htmlParser(publisher)}, {htmlParser(formattedDate)}
 			</Text>
 		</Flex>
 	);

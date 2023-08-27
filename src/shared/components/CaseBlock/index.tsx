@@ -25,7 +25,7 @@ export const CaseBlock = ({
 				position="relative"
 				onMouseEnter={hoverHandler}
 				onMouseLeave={hoverHandler}
-				h={{ lg: 380, md: 240, xs: 'auto' }}
+				h={{ lg: 460, md: 240, xs: 'auto' }}
 				flexDirection="column"
 				justifyContent="space-between"
 				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageURL}`}
@@ -40,7 +40,7 @@ export const CaseBlock = ({
 				<Box>
 					<Text
 						variant="sm"
-						mb={{ lg: 6, xs: 3 }}
+						mb={{ lg: 9, xs: 3 }}
 						color={variant === 'light' ? 'grey.600' : 'light.100'}
 					>
 						{developType}

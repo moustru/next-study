@@ -1,4 +1,5 @@
 import { Grid, GridItem, Heading, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 
 import { addZeroBeforeDigit } from '@/shared/utils/formatNumbers';
 
@@ -23,9 +24,9 @@ export const ContentSteps = ({ steps }: ContentStepModel) => {
 				<GridItem key={id}>
 					<Text mb={{ lg: 5, xs: 2 }}>{addZeroBeforeDigit(i + 1)}</Text>
 					<Heading as="h3" variant="h3" color="basic.200" mb={{ md: 4, xs: 2 }}>
-						{title}
+						{htmlParser(title)}
 					</Heading>
-					<Text variant="md">{text}</Text>
+					<Text variant="md">{htmlParser(text)}</Text>
 				</GridItem>
 			))}
 		</Grid>

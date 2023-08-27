@@ -9,7 +9,7 @@ export const Footer = () => {
 	return (
 		<footer className={css.footer}>
 			<Container paddingBlock={['40px', '40px', '40px', '60px', '60px']}>
-				<Grid gap={6}>
+				<Grid gap={10}>
 					<TopBar />
 					<MiddleBar />
 					<BottomBar />
