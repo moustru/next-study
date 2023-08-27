@@ -64,7 +64,7 @@ export const ArticleBlock = ({
 					px={{ lg: '80px', xs: '32px' }}
 					py={{ lg: '60px', xs: '24px' }}
 				>
-					<Stack gap={0} mb={{ lg: 12, xs: 4 }}>
+					<Stack gap={0} mb={{ lg: 16, xs: 8 }}>
 						<Flex gap={4} mb={5}>
 							{tags.map((tag) => (
 								<Tag key={tag.value} size="sm" variant="default">

@@ -2,7 +2,7 @@ import { Grid } from '@chakra-ui/react';
 
 import { usePaginatedCasesData } from '@/modules/Cases/api';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { CaseBlock } from '@/shared/components/CaseBlock';
+import CaseBlock from '@/shared/components/CaseBlock';
 
 import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 
@@ -21,7 +21,7 @@ export const SectionCases = () => {
 				gap={8}
 			>
 				{cases.map((caseItem) => (
-					<CaseBlock {...caseItem} key={caseItem.id} />
+					<CaseBlock.Small {...caseItem} key={caseItem.id} />
 				))}
 			</Grid>
 		</SectionTemplate>
