@@ -10,7 +10,6 @@ import type { CaseDataModel } from '@/modules/Cases/sections/SectionMain/types';
 export const Small = ({
 	slug,
 	title,
-	developType,
 	bgImage,
 	description = '',
 	bgColor = 'light.200',

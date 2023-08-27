@@ -9,6 +9,7 @@ import {
 
 type ModalContextModel = {
 	isOpen: boolean;
+	// eslint-disable-next-line no-unused-vars
 	openModal: (component: ReactElement) => void;
 	closeModal: () => void;
 };
