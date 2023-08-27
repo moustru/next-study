@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { usePaginatedCasesData } from '@/modules/Cases/api';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { CaseBlock } from '@/shared/components/CaseBlock';
+import CaseBlock from '@/shared/components/CaseBlock';
 
 import ArrowSVG from 'public/icons/arrow_right.svg';
 
@@ -22,7 +22,7 @@ export const SectionCases = ({ heading, ...others }: any) => {
 				mb={{ lg: '60px', md: '32px', xs: '16px' }}
 			>
 				{cases.map((caseItem: any) => (
-					<CaseBlock {...caseItem} key={caseItem.id} />
+					<CaseBlock.Big {...caseItem} key={caseItem.id} />
 				))}
 			</Stack>
 			<Flex justifyContent="flex-end">

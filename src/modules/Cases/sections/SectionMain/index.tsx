@@ -1,7 +1,7 @@
 import { Grid } from '@chakra-ui/react';
 
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
-import { CaseBlock } from '@/shared/components/CaseBlock';
+import CaseBlock from '@/shared/components/CaseBlock';
 
 import { useCasesData } from '../../api';
 
@@ -20,7 +20,7 @@ export const SectionMain = () => {
 				gap={{ md: 8, xs: 4 }}
 			>
 				{content.map((caseItem: any) => (
-					<CaseBlock {...caseItem} key={caseItem.id} />
+					<CaseBlock.Small {...caseItem} key={caseItem.id} />
 				))}
 			</Grid>
 		</SectionTemplate>

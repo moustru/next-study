@@ -114,7 +114,7 @@ export const SectionFormContent = ({ short = false }) => {
 					</Text>
 					<Button
 						isLoading={isLoadingSendingEmail}
-						isDisabled={!solution}
+						isDisabled={!solution && !short}
 						size={{ lg: 'xl', xs: 'md' }}
 						variant="blue"
 						type="submit"

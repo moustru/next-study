@@ -1,6 +1,5 @@
 import { Carousel, Embla } from '@mantine/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { useModal } from '@/config/providers/Modal.provider';
 import { ModalBecomeMember } from '@/modules/Common/modals/ModalBecomeMember';
@@ -19,7 +18,6 @@ type SectionTeamModel = {
 
 export const SectionTeam = (props: SectionTeamModel) => {
 	const [embla, setEmbla] = useState<Embla | null>(null);
-	const autoplay = useRef(Autoplay({ delay: 2000 }));
 	const { openModal } = useModal();
 
 	const prevSlide = () => {
@@ -48,7 +46,6 @@ export const SectionTeam = (props: SectionTeamModel) => {
 				slideSize="25%"
 				align="start"
 				slidesToScroll={1}
-				plugins={[autoplay.current]}
 				breakpoints={[
 					{ maxWidth: 1024, slideSize: '33.333333%' },
 					{ maxWidth: 768, slideSize: '50%' },

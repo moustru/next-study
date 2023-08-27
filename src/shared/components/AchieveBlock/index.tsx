@@ -15,7 +15,7 @@ type AchieveBlockModel = {
 const setBgColor = (variant: Variant) => {
 	switch (variant) {
 		case 'light':
-			return 'linear-gradient(90deg, var(--chakra-colors-light-100) 40%, var(--chakra-colors-basic-100) 100%);';
+			return 'linear-gradient(-90deg, #407FFC -100%, #FFF 100%);';
 		case 'dark':
 		default:
 			return 'radial-gradient(73.54% 315.43% at 0% 200.16%, #0F5AEF 0%, #26282B 100%)';
