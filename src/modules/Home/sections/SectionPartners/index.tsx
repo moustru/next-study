@@ -16,7 +16,7 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 					xs: 'repeat(1, 1fr)',
 				}}
 				rowGap="3rem"
-				columnGap={'2rem'}
+				columnGap="2rem"
 			>
 				{logos?.map((logo: any, index: number) => (
 					<GridItem

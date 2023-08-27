@@ -54,7 +54,7 @@ export const SectionTeam = (props: SectionTeamModel) => {
 			>
 				{props.team.map((teamMember, i) => (
 					<Carousel.Slide key={teamMember.name + i}>
-						<CustomAvatar {...teamMember} minW={{ md: 'none', xs: '100%' }} />
+						<CustomAvatar {...teamMember} />
 					</Carousel.Slide>
 				))}
 			</Carousel>

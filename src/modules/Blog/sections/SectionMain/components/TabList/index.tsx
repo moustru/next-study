@@ -2,6 +2,7 @@ import { TabList as ChakraTabList, Tab, Text } from '@chakra-ui/react';
 
 import { blogTabItems, BlogTabItem } from '../../constants';
 
+// eslint-disable-next-line no-unused-vars
 export const TabList = ({ onClick }: { onClick: (arg0: string) => void }) => {
 	return (
 		<ChakraTabList sx={{ border: 'none' }}>
