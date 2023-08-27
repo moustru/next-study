@@ -34,7 +34,7 @@ export const SectionCases = ({ heading, ...others }: any) => {
 					color="grey.600"
 				>
 					<Link href="/cases">
-						<Text variant={'md'}>Ко всем кейсам</Text>
+						<Text variant="md">Ко всем кейсам</Text>
 					</Link>
 				</Button>
 			</Flex>
