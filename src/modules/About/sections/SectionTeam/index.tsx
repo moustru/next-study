@@ -1,6 +1,5 @@
 import { Carousel, Embla } from '@mantine/carousel';
-import Autoplay from 'embla-carousel-autoplay';
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import { useModal } from '@/config/providers/Modal.provider';
 import { ModalBecomeMember } from '@/modules/Common/modals/ModalBecomeMember';
