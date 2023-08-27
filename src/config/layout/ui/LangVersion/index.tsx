@@ -8,11 +8,11 @@ const EN_HREF = 'https://Vibelab.ai';
 export const LangVersion = () => {
 	return (
 		<Flex gap={1}>
-			<Text className={css.ru} color="grey.600" variant="xs">
+			<Text className={css.ru} color="grey.600" variant="md">
 				RU
 			</Text>
 			<Link className={css.en} target="_blank" href={EN_HREF}>
-				<Text color="grey.400" variant="xs">
+				<Text color="grey.400" variant="md">
 					EN
 				</Text>
 			</Link>

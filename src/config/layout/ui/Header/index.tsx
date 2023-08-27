@@ -18,10 +18,10 @@ export const Header = () => {
 		<header className={css.header}>
 			<Container paddingBlock={['40px', '40px', '40px', '60px', '60px']}>
 				<Flex alignItems="center" justifyContent="space-between">
-					<Logo />
-					<Flex gap={7} align="center">
+					<Logo location="header" />
+					<Flex gap={8} align="center">
 						<Links />
-						<Button size="sm" variant="blue" onClick={modalHandler}>
+						<Button size="md" variant="blue" onClick={modalHandler}>
 							Написать нам
 						</Button>
 						<LangVersion />

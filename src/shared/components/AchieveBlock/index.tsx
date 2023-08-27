@@ -1,4 +1,5 @@
 import { Box, Flex, Heading, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 import Image from 'next/image';
 
 import { AchievementModel } from '@/shared/types/Achievement';
@@ -62,7 +63,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 						color={variant === 'dark' ? 'grey.50' : 'grey.600'}
 						variant="md"
 					>
-						{achieve.description}
+						{htmlParser(achieve.description)}
 					</Text>
 				</Box>
 			))}

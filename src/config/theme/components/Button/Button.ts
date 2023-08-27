@@ -2,7 +2,9 @@ import variants from './variants';
 
 const Button = {
 	baseStyle: {
-		borderRadius: '12px',
+		borderRadius: '16px',
+		fontWeight: '400',
+		transition: 'color 0.3s',
 	},
 
 	variants,
@@ -13,16 +15,14 @@ const Button = {
 			paddingBlock: '14px',
 			paddingInline: '32px',
 			fontSize: 'var(--chakra-fontSizes-xl)',
-			lineHeight: '26px',
-			fontWeight: 'var(--chakra-fontWeights-medium)',
+			lineHeight: '1.8',
 		},
 
 		xl: {
 			paddingBlock: '20px',
 			paddingInline: '40px',
 			fontSize: 'var(--chakra-fontSizes-3xl)',
-			lineHeight: '34px',
-			fontWeight: 'var(--chakra-fontWeights-medium)',
+			lineHeight: '1.2',
 		},
 	},
 };

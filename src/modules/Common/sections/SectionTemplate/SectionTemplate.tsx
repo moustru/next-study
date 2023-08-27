@@ -22,6 +22,8 @@ type SectionTemplateModel = ContainerProps & {
 	title?: string;
 	carouselControls?: boolean;
 	withButton?: boolean;
+	canPrev: boolean;
+	canNext: boolean;
 	firstBlock?: boolean;
 	handleButtonClick?: () => void;
 	carouselEvents?: CarouselEvents;
@@ -30,6 +32,8 @@ type SectionTemplateModel = ContainerProps & {
 export const SectionTemplate = ({
 	children,
 	title = '',
+	canPrev,
+	canNext,
 	carouselControls = false,
 	firstBlock = false,
 	withButton = false,
@@ -50,7 +54,7 @@ export const SectionTemplate = ({
 		<Container
 			as="section"
 			mt={firstBlock ? { lg: '200px', xs: '120px' } : 0}
-			mb={{ lg: '180px', sm: '100px', xs: '60px' }}
+			mb={{ lg: '120px', sm: '100px', xs: '60px' }}
 			{...others}
 		>
 			{title && !carouselControls && (
@@ -91,7 +95,7 @@ export const SectionTemplate = ({
 						)}
 
 						{screenLarger1024 && (
-							<Flex gap={4}>
+							<Flex gap={8}>
 								<IconButton
 									minW={54}
 									aria-label="Slide prev"
@@ -99,6 +103,8 @@ export const SectionTemplate = ({
 									bgColor="transparent"
 									p={4}
 									onClick={handlePrevClick}
+									isDisabled={!canPrev}
+									_hover={{ backgroundColor: 'grey.50' }}
 								/>
 								<IconButton
 									minW={54}
@@ -107,6 +113,8 @@ export const SectionTemplate = ({
 									bgColor="transparent"
 									p={4}
 									onClick={handleNextClick}
+									isDisabled={!canNext}
+									_hover={{ backgroundColor: 'grey.50' }}
 								/>
 							</Flex>
 						)}

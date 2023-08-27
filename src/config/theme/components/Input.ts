@@ -9,6 +9,8 @@ const Input = {
 				lineHeight: '44px',
 				backgroundColor: 'grey.50',
 				borderColor: 'transparent',
+				borderWidth: 'inherit',
+				borderRadius: '16px',
 
 				_hover: {
 					borderColor: 'grey.300',

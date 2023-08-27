@@ -1,4 +1,5 @@
 import { Box, Divider, Flex, Stack, Text } from '@chakra-ui/react';
+import htmlParser from 'html-react-parser';
 import Image from 'next/image';
 
 import myImageLoader from '@/shared/utils/imageLoader';
@@ -23,13 +24,14 @@ export const ReviewBlock = ({
 			align={{ lg: 'flex-start', xs: 'center' }}
 			direction={{ lg: 'row', xs: 'column' }}
 			bgColor="light.100"
-			h={{ lg: 344, xs: 'auto' }}
 			px={{ lg: '48px', xs: '32px' }}
 			py={{ lg: '40px', xs: '32px' }}
 			gap={{ lg: 12, md: 6, xs: 4 }}
 			borderRadius={{ md: 32, xs: 20 }}
 		>
-			<Text variant={{ lg: 'xl', sm: 'md', xs: 'sm' }}>{reviewText}</Text>
+			<Text variant={{ lg: 'xl', sm: 'md', xs: 'sm' }}>
+				{htmlParser(reviewText)}
+			</Text>
 			<Divider orientation="vertical" />
 			<Stack minW={185} spacing={4} align={{ xs: 'center', lg: 'start' }}>
 				<Box
@@ -45,8 +47,8 @@ export const ReviewBlock = ({
 					/>
 				</Box>
 				<Stack spacing={0}>
-					<Text variant="md">{reviewAuthor}</Text>
-					<Text variant="md">{authorCompany}</Text>
+					<Text variant="md">{htmlParser(reviewAuthor)}</Text>
+					<Text variant="md">{htmlParser(authorCompany)}</Text>
 				</Stack>
 			</Stack>
 		</Flex>
