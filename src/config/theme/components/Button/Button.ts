@@ -10,6 +10,14 @@ const Button = {
 	variants,
 
 	sizes: {
+		xs: {
+			height: 'auto',
+			paddingBlock: '7px',
+			paddingInline: '16px',
+			fontSize: 'var(--chakra-fontSizes-md)',
+			lineHeight: '1.3',
+		},
+
 		md: {
 			height: 'auto',
 			paddingBlock: '14px',

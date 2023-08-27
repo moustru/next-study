@@ -1,12 +1,11 @@
 .burger {
 	position: fixed;
 	display: block;
-	height: 100%;
 	width: 100%;
 	z-index: 2;
 	padding-inline: 20px;
 	padding-block: 20px;
-	pointer-events: none;
+	/* pointer-events: none; */
 }
 
 .burger[data-open='true'] {
@@ -15,11 +14,11 @@
 
 .modal {
 	bottom: 0;
-	padding: 0 40px;
+	padding: 0 25px;
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 300px;
+	width: 200px;
 	z-index: 2;
 }
 
@@ -30,5 +29,5 @@
 	position: absolute;
 	right: 0;
 	top: 0;
-	width: 300px;
+	width: 200px;
 }

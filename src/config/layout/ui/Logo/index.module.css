@@ -1,5 +1,6 @@
 .logo {
 	@media (max-width: 1024px) {
+		display: inline-block;
 		transform: scale(0.7);
 	}
 	&[data-placement='footer'] {
