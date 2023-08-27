@@ -20,7 +20,13 @@ export const CustomAvatar = ({
 	const avatarURL = avatar.data.attributes.url;
 
 	return (
-		<Stack gap={0} maxW={230} align="center" {...others}>
+		<Stack
+			gap={0}
+			maxW={230}
+			align="center"
+			minW={{ md: 'none', xs: '100%' }}
+			{...others}
+		>
 			<Box
 				w={{ xs: '30vw', sm: '20vw', md: '15vw' }}
 				h={{ xs: '30vw', sm: '20vw', md: '15vw' }}

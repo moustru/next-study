@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import {
 	Drawer,
 	DrawerContent,
@@ -50,7 +51,9 @@ const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 			blockScrollOnMount={false}
 		>
 			<DrawerOverlay />
-			<DrawerContent p={{ lg: '60px', xs: '24px' }}>{children}</DrawerContent>
+			<DrawerContent height={'90%'} p={{ lg: '60px', xs: '24px' }}>
+				{children}
+			</DrawerContent>
 		</Drawer>
 	);
 };

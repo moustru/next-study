@@ -3,8 +3,6 @@ import { Stack } from '@chakra-ui/react';
 import { SectionTemplate } from '@/modules/Common/sections/SectionTemplate';
 import { MemberReviewBlock } from '@/shared/components/MemberReviewBlock';
 
-// import { teamReviews } from './mocks';
-
 type TeamSingleModel = {
 	id: number;
 	avatar: any;

@@ -17,11 +17,11 @@ export const Links = ({
 	const currentRoute = router.pathname;
 
 	return (
-		<Flex gap={8} direction={{ xs: 'column', md: 'row' }}>
+		<Flex gap={{ xs: 4, md: 8 }} direction={{ xs: 'column', md: 'row' }}>
 			{links.map((link) => (
 				<Link href={link.href} key={link.id} onClick={closeMenu}>
 					<Text
-						variant={{ xs: 'xl', md: 'md' }}
+						variant={{ md: 'md' }}
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
 							fontWeight: '600 !important',

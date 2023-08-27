@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState, useLayoutEffect } from 'react';
 
 export const useIsomorphicLayoutEffect =

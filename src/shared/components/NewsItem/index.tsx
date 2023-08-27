@@ -17,7 +17,6 @@ export const NewsItem = ({
 	return (
 		<Flex
 			w={{ lg: 418, xs: '100%' }}
-			h={{ lg: 288, xs: 220 }}
 			direction="column"
 			justify="space-between"
 			bgColor="grey.50"

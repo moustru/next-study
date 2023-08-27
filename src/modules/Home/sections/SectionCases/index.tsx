@@ -1,4 +1,4 @@
-import { Stack, Button, Flex } from '@chakra-ui/react';
+import { Stack, Button, Flex, Text } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { usePaginatedCasesData } from '@/modules/Cases/api';
@@ -33,8 +33,8 @@ export const SectionCases = ({ heading, ...others }: any) => {
 					size={{ md: 'md', xs: 'sm' }}
 					color="grey.600"
 				>
-					<Link style={{ fontSize: '24px' }} href="/cases">
-						Ко всем кейсам
+					<Link href="/cases">
+						<Text variant={'md'}>Ко всем кейсам</Text>
 					</Link>
 				</Button>
 			</Flex>

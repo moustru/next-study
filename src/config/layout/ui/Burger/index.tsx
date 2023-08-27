@@ -43,7 +43,16 @@ export const HeaderMobile = () => {
 	const modalHandler = () => openModal(<ModalForm />);
 
 	return (
-		<header data-open={isOpen} className={css.burger}>
+		<motion.header
+			data-open={isOpen}
+			className={css.burger}
+			initial={{ height: '20%' }}
+			animate={{
+				height: isOpen ? '100%' : '20%',
+				transition: { delay: isOpen ? 0 : 0.5 },
+			}}
+			exit={{ height: '20%' }}
+		>
 			<Overlay isOpen={isOpen} onClick={toggleOpenHandler} />
 			<motion.nav
 				className={css.modal}
@@ -56,13 +65,13 @@ export const HeaderMobile = () => {
 				<AnimatePresence>
 					{isOpen && (
 						<motion.div
-							transition={{ duration: 0.8 }}
+							transition={{ duration: 0.1 }}
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1, position: 'absolute', top: '30px' }}
 							exit={{ opacity: 0 }}
 						>
 							<Links closeMenu={toggleOpenHandler} />
-							<Button mt={10} size="md" variant="blue" onClick={modalHandler}>
+							<Button mt={5} size="xs" variant="blue" onClick={modalHandler}>
 								Написать нам
 							</Button>
 							<LangVersion />
@@ -71,7 +80,7 @@ export const HeaderMobile = () => {
 				</AnimatePresence>
 				<MenuToggle toggle={toggleOpenHandler} />
 			</motion.nav>
-			<Logo />
-		</header>
+			<Logo location="header" />
+		</motion.header>
 	);
 };

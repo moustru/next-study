@@ -22,8 +22,8 @@ type SectionTemplateModel = ContainerProps & {
 	title?: string;
 	carouselControls?: boolean;
 	withButton?: boolean;
-	canPrev: boolean;
-	canNext: boolean;
+	canPrev?: boolean;
+	canNext?: boolean;
 	firstBlock?: boolean;
 	handleButtonClick?: () => void;
 	carouselEvents?: CarouselEvents;
@@ -32,8 +32,8 @@ type SectionTemplateModel = ContainerProps & {
 export const SectionTemplate = ({
 	children,
 	title = '',
-	canPrev,
-	canNext,
+	canPrev = false,
+	canNext = false,
 	carouselControls = false,
 	firstBlock = false,
 	withButton = false,

@@ -20,17 +20,15 @@ export const defaultOptions: DefaultOptions = {
 };
 
 const mutationCache = new MutationCache({
+	// eslint-disable-next-line no-unused-vars
 	onError: (error, _variables, _context, mutation) => {
-		// If this mutation has an onError defined, skip this
 		if (mutation.options.onError) return;
-		// any error handling code...
+
 		throw new Error(error as string);
 	},
 });
 const queryCache = new QueryCache({
 	onError: (error, query) => {
-		// 🎉 only show error toasts if we already have data in the cache
-		// which indicates a failed background update
 		if (query.state.data !== undefined) {
 			throw new Error(error as string);
 		}

@@ -3,13 +3,6 @@
  * */
 const nextConfig = {
 	reactStrictMode: false,
-	eslint: {
-		ignoreDuringBuilds: true,
-	},
-	typescript: {
-		ignoreBuildErrors: true,
-	},
-	swcMinify: true,
 	webpack(config) {
 		config.module.rules.push({
 			test: /\.svg$/i,
