@@ -8,7 +8,12 @@ import myImageLoader from '@/shared/utils/imageLoader';
 import { setLikePostState } from '../../api/like';
 import { useLikesStorage } from '../../lib/likesStorage';
 
-import LikeSVG from 'public/icons/like.svg';
+import { LikeButton } from './LikeButton';
+import dynamic from 'next/dynamic';
+
+const DynamicLikeButton: any = dynamic(() => Promise.resolve(LikeButton), {
+	ssr: false,
+});
 
 type AuthorSegmentModel = {
 	articleId: number;
@@ -64,18 +69,11 @@ export const AuthorSegment = ({
 				</Box>
 				<Text variant={{ md: 'lg', xs: 'md' }}>{author}</Text>
 			</Flex>
-
-			<Flex
-				alignItems="center"
-				gap={4}
+			<DynamicLikeButton
 				onClick={handleLikePost}
-				cursor="pointer"
-			>
-				<LikeSVG fill="#E06667" width="30px" />
-				<Text color="grey.400" variant={{ md: 'lg', xs: 'sm' }}>
-					{likesState}
-				</Text>
-			</Flex>
+				likesState={likesState}
+				articleId={articleId}
+			/>
 		</Flex>
 	);
 };
