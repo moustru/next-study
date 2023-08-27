@@ -25,6 +25,7 @@ const Tag = {
 		default: {
 			container: {
 				backgroundColor: 'grey.200',
+				color: 'grey.500',
 			},
 		},
 

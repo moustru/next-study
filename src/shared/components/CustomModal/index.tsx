@@ -59,11 +59,8 @@ CustomModal.Header = ({ children }: CustomModalCompound) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	return largerThan1024 ? (
-		<Flex justify="space-between">
-			<ModalHeader
-				style={{ flex: 'auto', paddingBottom: 0, paddingTop: 0 }}
-				mb={16}
-			>
+		<Flex justify="space-between" mb={16}>
+			<ModalHeader style={{ flex: 'auto', paddingBottom: 0, paddingTop: 0 }}>
 				{children}
 			</ModalHeader>
 			<ModalCloseButton
