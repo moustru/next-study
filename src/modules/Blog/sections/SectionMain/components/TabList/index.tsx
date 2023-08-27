@@ -13,7 +13,9 @@ export const TabList = ({ onClick }: { onClick: (arg0: string) => void }) => {
 					onClick={() => onClick(item.value)}
 					sx={{ border: 'none', paddingInline: '4', paddingBlock: '2' }}
 				>
-					<Text variant="sm">{item.text}</Text>
+					<Text color={'basic.200'} variant="sm">
+						{item.text}
+					</Text>
 				</Tab>
 			))}
 		</ChakraTabList>
