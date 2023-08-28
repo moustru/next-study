@@ -9,7 +9,7 @@ export const SectionMain = ({ title, subtitle }: SectionMainModel) => {
 			mt={{ md: 200, xs: 120 }}
 			mb={{ lg: 180, md: '80px', xs: '40px' }}
 		>
-			<Heading as="h1" variant="h1" mb={{ lg: '80px', md: '60px', xs: 8 }}>
+			<Heading as="h1" variant="h1" mb={{ lg: '48px', md: '24px', xs: 8 }}>
 				{htmlParser(title)}
 			</Heading>
 			<Text variant="xl" maxW={{ lg: 900, xs: 'auto' }}>
