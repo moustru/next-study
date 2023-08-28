@@ -34,14 +34,15 @@ export const Big = ({
 				bgColor={bgColor}
 				bgPosition="bottom right"
 				bgSize="50%"
+				minH={{ lg: '460px', xs: 'none' }}
 				borderRadius={{ md: 56, xs: 20 }}
-				paddingInline={{ lg: '100px', md: '48px', xs: '36px' }}
-				py={{ lg: '70px', md: '48px', xs: '48px' }}
+				paddingInline={{ lg: '102px', md: '48px', xs: '36px' }}
+				py={{ lg: '82px', md: '48px', xs: '48px' }}
 			>
 				<Box>
 					<Text
 						variant="sm"
-						mb={{ lg: 9, xs: 3 }}
+						mb={{ lg: 8, xs: 4 }}
 						color={variant === 'light' ? 'grey.600' : 'light.100'}
 					>
 						{htmlParser(developType)}
@@ -55,7 +56,7 @@ export const Big = ({
 						{htmlParser(title)}
 					</Heading>
 					<Text
-						variant="sm"
+						variant="md"
 						mb={{ lg: 16, xs: 8 }}
 						color={variant === 'light' ? 'grey.600' : 'light.100'}
 					>

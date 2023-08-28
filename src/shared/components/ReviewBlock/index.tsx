@@ -23,7 +23,8 @@ export const ReviewBlock = ({
 		<Flex
 			align={{ lg: 'flex-start', xs: 'center' }}
 			direction={{ lg: 'row', xs: 'column' }}
-			bgColor="light.100"
+			bgColor="white"
+			h={{ lg: '344px', xs: 'auto' }}
 			px={{ lg: '48px', xs: '32px' }}
 			py={{ lg: '40px', xs: '32px' }}
 			gap={{ lg: 12, md: 6, xs: 4 }}
@@ -38,6 +39,8 @@ export const ReviewBlock = ({
 					position="relative"
 					w={{ xs: '20vw', md: '180px' }}
 					h={{ xs: '20vw', md: '180px' }}
+					borderRadius="50%"
+					overflow="hidden"
 				>
 					<Image
 						src={avatarURL}

@@ -7,6 +7,7 @@ import IconButton from './components/Button/IconButton';
 import Container from './components/Container';
 import Heading from './components/Heading';
 import Input from './components/Input';
+import Modal from './components/Modal';
 import Radio from './components/Radio';
 import Tabs from './components/Tabs';
 import Tag from './components/Tag';
@@ -25,6 +26,7 @@ const VibeLabTheme = extendTheme({
 		Heading,
 		Container,
 		IconButton,
+		Modal,
 	},
 	// ------  components end  ------//
 

@@ -54,14 +54,14 @@ export const SectionTemplate = ({
 		<Container
 			as="section"
 			mt={firstBlock ? { lg: '200px', xs: '120px' } : 0}
-			mb={{ lg: '120px', sm: '100px', xs: '60px' }}
+			mb={{ lg: '180px', sm: '120px', xs: '60px' }}
 			{...others}
 		>
 			{title && !carouselControls && (
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={{ lg: '40px', sm: '30px', xs: '20px' }}
+					mb={{ lg: '80px', sm: '40px', xs: '20px' }}
 				>
 					{title}
 				</Heading>
@@ -99,9 +99,9 @@ export const SectionTemplate = ({
 								<IconButton
 									minW={54}
 									aria-label="Slide prev"
-									icon={<ChevronLeftSVG fill="#000" width="20px" />}
+									icon={<ChevronLeftSVG fill="#000" width="32px" />}
 									bgColor="transparent"
-									p={4}
+									p="11px"
 									onClick={handlePrevClick}
 									isDisabled={!canPrev}
 									_hover={{ backgroundColor: 'grey.50' }}
@@ -109,9 +109,9 @@ export const SectionTemplate = ({
 								<IconButton
 									minW={54}
 									aria-label="Slide next"
-									icon={<ChevronRightSVG fill="#000" width="20px" />}
+									icon={<ChevronRightSVG fill="#000" width="32px" />}
 									bgColor="transparent"
-									p={4}
+									p="11px"
 									onClick={handleNextClick}
 									isDisabled={!canNext}
 									_hover={{ backgroundColor: 'grey.50' }}

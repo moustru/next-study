@@ -9,7 +9,7 @@ export const SectionGreet = ({ subheading }: SectionGreetModel) => {
 	return (
 		<Container
 			as="section"
-			pt={{ md: 180, xs: '120px' }}
+			pt={{ md: 184, xs: '120px' }}
 			pb={{ lg: 180, sm: 100, xs: '40px' }}
 		>
 			<Heading as="h1" variant="h1" mb={{ lg: 12, md: 8, xs: 4 }} maxW="900px">

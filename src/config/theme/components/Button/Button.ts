@@ -26,6 +26,14 @@ const Button = {
 			lineHeight: '1.3',
 		},
 
+		lg: {
+			height: 'auto',
+			paddingBlock: '19px',
+			paddingInline: '40px',
+			fontSize: '1.75rem',
+			lineHeight: '1.2',
+		},
+
 		xl: {
 			paddingBlock: '20px',
 			paddingInline: '40px',
