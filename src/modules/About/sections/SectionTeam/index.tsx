@@ -44,6 +44,7 @@ export const SectionTeam = (props: SectionTeamModel) => {
 				withControls={false}
 				getEmblaApi={setEmbla}
 				slideSize="25%"
+				slideGap="64px"
 				align="start"
 				slidesToScroll={1}
 				breakpoints={[

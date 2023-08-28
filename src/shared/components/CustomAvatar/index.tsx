@@ -28,10 +28,10 @@ export const CustomAvatar = ({
 			{...others}
 		>
 			<Box
-				w={{ xs: '30vw', sm: '20vw', md: '15vw' }}
-				h={{ xs: '30vw', sm: '20vw', md: '15vw' }}
-				maxW={230}
-				maxH={230}
+				w={{ xs: '30vw', sm: '20vw', md: '17vw' }}
+				h={{ xs: '30vw', sm: '20vw', md: '17vw' }}
+				maxW={234}
+				maxH={234}
 				borderRadius="50%"
 				overflow="hidden"
 				position="relative"

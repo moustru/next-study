@@ -87,7 +87,7 @@ export const SectionTemplate = ({
 							<Button
 								size="md"
 								variant="blue"
-								rightIcon={<PlusSVG width="16px" />}
+								rightIcon={<PlusSVG width="24px" />}
 								onClick={handleButtonClick}
 							>
 								Стать частью команды

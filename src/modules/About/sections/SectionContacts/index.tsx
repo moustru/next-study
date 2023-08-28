@@ -35,7 +35,7 @@ export const SectionContacts = ({
 					gap={{ lg: 0, xs: 4 }}
 				>
 					<Box>
-						<Text variant="xl" fontWeight="bold" mb={6}>
+						<Text variant="xl" lineHeight="38px" fontWeight="600" mb={6}>
 							Адрес
 						</Text>
 
@@ -46,7 +46,7 @@ export const SectionContacts = ({
 
 					<Flex gap={{ lg: 24, xs: 4 }} direction={{ lg: 'row', xs: 'column' }}>
 						<Box>
-							<Text variant="xl" fontWeight="bold" mb={6}>
+							<Text variant="xl" lineHeight="38px" fontWeight="600" mb={6}>
 								Телефон
 							</Text>
 							<Link href={`tel:+${phone}`}>
@@ -54,7 +54,7 @@ export const SectionContacts = ({
 							</Link>
 						</Box>
 						<Box>
-							<Text variant="xl" fontWeight="bold" mb={6}>
+							<Text variant="xl" lineHeight="38px" fontWeight="600" mb={6}>
 								Сайт
 							</Text>
 							<Link href={`mailto:${email}`}>
