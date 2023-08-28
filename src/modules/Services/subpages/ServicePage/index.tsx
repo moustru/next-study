@@ -1,9 +1,7 @@
 import { Heading } from '@chakra-ui/react';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { SectionForm } from '@/modules/Common/sections/SectionForm';
-import { MetaInfo } from '@/shared/components/MetaInfo';
 
 import { useServicePageData } from './api';
 import { SectionAchievements } from './sections/SectionAchievements';
@@ -43,10 +41,6 @@ export const ServicePage = () => {
 
 	return (
 		<>
-			<Head>
-				<MetaInfo title="Услуга" />
-			</Head>
-
 			<SectionMain title={content.title} subtitle={content.subtitle} />
 
 			{content.zoneOfContents.map((contentSection: any, index: number) =>

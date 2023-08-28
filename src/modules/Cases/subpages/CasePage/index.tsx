@@ -1,8 +1,6 @@
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { SectionForm } from '@/modules/Common/sections/SectionForm';
-import { MetaInfo } from '@/shared/components/MetaInfo';
 
 import { useCasePageData } from './api';
 import { SectionConclusions } from './sections/SectionConclusions';
@@ -38,10 +36,6 @@ export const CasePage = () => {
 
 	return (
 		<>
-			<Head>
-				<MetaInfo title="Vibe Lab – кейс" />
-			</Head>
-
 			{content.map((contentSection: any, index: number) =>
 				renderSections(contentSection, index)
 			)}

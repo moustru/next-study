@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import { useDebounce } from '@/shared/hooks/useDebounce';
 import myImageLoader from '@/shared/utils/imageLoader';
 
 import { setLikePostState } from '../../api/like';
@@ -32,6 +33,7 @@ export const AuthorSegment = ({
 	let [likesState, setLikes] = useState(likes);
 
 	const { handle: handleStorage, isAlreadyLiked } = useLikesStorage();
+	const isLiked = isAlreadyLiked(articleId);
 
 	const { mutate: setLikeStateOnStrapi } = useMutation(setLikePostState, {
 		onSuccess: (data) => {
@@ -40,8 +42,8 @@ export const AuthorSegment = ({
 		},
 	});
 
-	const handleLikePost = async () => {
-		const type = isAlreadyLiked(articleId) ? 'remove' : 'add';
+	const handleLikePost = useDebounce(async () => {
+		const type = isLiked ? 'remove' : 'add';
 
 		const getLikes = () => {
 			switch (type) {
@@ -53,7 +55,7 @@ export const AuthorSegment = ({
 		};
 
 		await setLikeStateOnStrapi({ articleId, likes: getLikes() });
-	};
+	}, 1000);
 
 	return (
 		<Flex justifyContent="space-between" mb={{ md: 0, xs: 8 }}>
@@ -72,8 +74,7 @@ export const AuthorSegment = ({
 			<DynamicLikeButton
 				onClick={handleLikePost}
 				likesState={likesState}
-				articleId={articleId}
-				isAlreadyLiked={isAlreadyLiked}
+				isLiked={isLiked}
 			/>
 		</Flex>
 	);

@@ -6,8 +6,10 @@ type TextSegmentModel = {
 
 export const TextSegment = ({ text }: TextSegmentModel) => {
 	return (
-		<Container mb={{ lg: '80px', md: '48px', xs: '32px' }}>
-			<Text variant="xl">{text}</Text>
+		<Container mb={{ lg: '180px', md: '90px', xs: '32px' }}>
+			<Text maxW="869px" variant="xl">
+				{text}
+			</Text>
 		</Container>
 	);
 };

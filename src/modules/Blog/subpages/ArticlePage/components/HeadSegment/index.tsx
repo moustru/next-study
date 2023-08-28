@@ -8,6 +8,14 @@ type HeadSegmentModel = {
 };
 
 export const HeadSegment = ({ tags, publicationDate }: HeadSegmentModel) => {
+	const formattedDate = new Date(publicationDate)
+		.toLocaleDateString('ru-RU', {
+			day: '2-digit',
+			month: 'long',
+			year: 'numeric',
+		})
+		.replace(' г.', '');
+
 	return (
 		<Flex
 			justifyContent="space-between"
@@ -22,7 +30,7 @@ export const HeadSegment = ({ tags, publicationDate }: HeadSegmentModel) => {
 					</Tag>
 				))}
 			</Flex>
-			<Text variant="sm">{publicationDate}</Text>
+			<Text variant="sm">{formattedDate}</Text>
 		</Flex>
 	);
 };
