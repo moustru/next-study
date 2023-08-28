@@ -1,7 +1,4 @@
 import { Heading } from '@chakra-ui/react';
-import Head from 'next/head';
-
-import { MetaInfo } from '@/shared/components/MetaInfo';
 
 import { SectionForm } from '../Common/sections/SectionForm';
 
@@ -43,10 +40,6 @@ export const AboutPage = () => {
 
 	return (
 		<>
-			<Head>
-				<MetaInfo title="Vibe Lab – о нас" />
-			</Head>
-
 			<SectionMain subheading={aboutDataContent.subheading} />
 
 			{aboutDataContent.zoneOfContents.map(

@@ -24,9 +24,9 @@ export const Small = ({
 		<Link href={`/cases/${slug}`}>
 			<Flex
 				position="relative"
+				minH="380px"
 				onMouseEnter={hoverHandler}
 				onMouseLeave={hoverHandler}
-				// h={{ lg: 460, md: 240, xs: 'auto' }}
 				flexDirection="column"
 				justifyContent="space-between"
 				bgImage={`${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${bgImageURL}`}
@@ -34,8 +34,8 @@ export const Small = ({
 				bgColor={bgColor}
 				bgPosition="bottom right"
 				bgSize="50%"
-				borderRadius={{ md: 56, xs: 20 }}
-				px={{ lg: '80px', md: '48px', xs: '36px' }}
+				borderRadius={{ md: 44, xs: 34 }}
+				px={{ lg: '78px', md: '48px', xs: '36px' }}
 				py={{ lg: '60px', md: '48px', xs: '48px' }}
 			>
 				<Box>

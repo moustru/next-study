@@ -5,7 +5,7 @@ const Tabs = {
 			width: 'max-content',
 			padding: '10px',
 			gap: '12px',
-			borderRadius: '10px',
+			borderRadius: '12px',
 			borderBottom: '4px solid red',
 			'@media screen and (max-width: 768px)': {
 				width: '100%',
@@ -22,11 +22,12 @@ const Tabs = {
 			paddingBlock: 0,
 			color: 'basic.200',
 			fontSize: '20px',
+			borderRadius: '10px',
 			fontWeight: 600,
 			_selected: {
 				color: 'basic.200',
 				bg: 'rgba(64, 127, 252, 0.08)',
-				borderRadius: '12px',
+				borderRadius: '10px',
 			},
 		},
 	},

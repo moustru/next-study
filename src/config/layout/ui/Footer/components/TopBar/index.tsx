@@ -20,7 +20,7 @@ export const TopBar = () => {
 							color="grey.50"
 							sx={{ transition: 'color .3s' }}
 							_hover={{
-								color: 'basic.200',
+								color: 'basic.100',
 							}}
 						>
 							{link.pageName}

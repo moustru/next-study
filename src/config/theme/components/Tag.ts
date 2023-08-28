@@ -26,6 +26,7 @@ const Tag = {
 			container: {
 				backgroundColor: 'grey.200',
 				color: 'grey.500',
+				fontWeight: 400,
 			},
 		},
 

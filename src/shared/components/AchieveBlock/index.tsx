@@ -15,7 +15,7 @@ type AchieveBlockModel = {
 const setBgColor = (variant: Variant) => {
 	switch (variant) {
 		case 'light':
-			return 'linear-gradient(-90deg, #407FFC -100%, #FFF 100%);';
+			return 'linear-gradient(-90deg, #407FFC -100%, #FFF 80%);';
 		case 'dark':
 		default:
 			return 'radial-gradient(73.54% 315.43% at 0% 200.16%, #0F5AEF 0%, #26282B 100%)';
@@ -27,7 +27,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 		<Flex
 			justify="space-between"
 			direction={{ lg: 'row', xs: 'column' }}
-			px={{ lg: '100px', sm: '64px', xs: '32px' }}
+			px={{ lg: '102px', sm: '64px', xs: '32px' }}
 			py={{ lg: '80px', sm: '48px', xs: '24px' }}
 			gap={{ lg: 0, sm: 6, xs: 12 }}
 			borderRadius={{ md: 56, xs: 28 }}

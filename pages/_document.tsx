@@ -1,5 +1,7 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
+import { MetaInfo } from '@/shared/components/MetaInfo';
+
 export default function Document() {
 	return (
 		<Html lang="ru">
@@ -29,7 +31,9 @@ export default function Document() {
 				/>
 				<meta name="msapplication-TileColor" content="#da532c" />
 				<meta name="theme-color" content="#ffffff" />
+				<MetaInfo title="Vibe Lab" />
 			</Head>
+
 			<body>
 				<Main />
 				<NextScript />

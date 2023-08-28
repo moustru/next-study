@@ -39,7 +39,9 @@ export const MemberReviewBlock = ({
 				<Text variant="xl" mb={3}>
 					{reviewText}
 				</Text>
-				<Text variant="sm">{nameAndPosition}</Text>
+				<Text variant="sm" color="grey.500">
+					{nameAndPosition}
+				</Text>
 			</Box>
 		</Flex>
 	);

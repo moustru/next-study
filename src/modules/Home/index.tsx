@@ -1,7 +1,4 @@
 import { Box, Heading } from '@chakra-ui/react';
-import Head from 'next/head';
-
-import { MetaInfo } from '@/shared/components/MetaInfo';
 
 import { SectionForm } from '../Common/sections/SectionForm';
 
@@ -50,10 +47,6 @@ const HomePage = () => {
 
 	return (
 		<>
-			<Head>
-				<MetaInfo title="Vibe Lab – главная" />
-			</Head>
-
 			{content.zoneOfContents.map((contentSection: any, index: number) =>
 				renderSections(contentSection, index)
 			)}

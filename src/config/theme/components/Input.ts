@@ -9,8 +9,12 @@ const Input = {
 				lineHeight: '1.2',
 				backgroundColor: 'grey.50',
 				borderColor: 'transparent',
-				borderWidth: 'inherit',
+				borderWidth: '0.5px',
 				borderRadius: '16px',
+
+				'&::placeholder': {
+					color: 'grey.400',
+				},
 
 				_hover: {
 					borderColor: 'grey.300',
@@ -18,6 +22,7 @@ const Input = {
 
 				_focus: {
 					borderColor: 'basic.200',
+					boxShadow: 'none',
 				},
 
 				_disabled: {

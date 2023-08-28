@@ -6,7 +6,7 @@ type SectionTextModel = {
 
 export const SectionText = ({ text }: SectionTextModel) => {
 	return (
-		<Container mb={{ lg: 180, md: '80px', xs: '40px' }}>
+		<Container mb={{ lg: '80px', md: '60px', xs: '40px' }}>
 			<Text variant="xl" mb={{ lg: 20, md: 10, xs: 8 }}>
 				{text}
 			</Text>

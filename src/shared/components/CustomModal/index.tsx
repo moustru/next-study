@@ -17,7 +17,9 @@ import {
 	useMediaQuery,
 	Flex,
 } from '@chakra-ui/react';
-import { ReactElement } from 'react';
+import { ReactElement, useEffect } from 'react';
+
+import useLockedBody from '@/shared/hooks/useLockedBody';
 
 type CustomModalProps = CustomModalCompound & {
 	isOpen: boolean;
@@ -31,13 +33,30 @@ type CustomModalCompound = {
 const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
+	const [locked, setLocked] = useLockedBody(false, 'root');
+
+	const disableScroll = () => {
+		setLocked(!locked);
+	};
+
+	useEffect(() => {
+		if (isOpen) {
+			disableScroll();
+		}
+
+		return () => {
+			setLocked(locked);
+		};
+	}, [isOpen]);
+
 	return largerThan1024 ? (
 		<Modal isOpen={isOpen} onClose={onClose} blockScrollOnMount={false}>
 			<ModalOverlay sx={{ backdropFilter: 'blur(3px)' }} bg="transparent" />
 			<ModalContent
 				w="90%"
 				maxW="1320px"
-				p={{ lg: '60px', xs: '24px' }}
+				px={{ lg: '60px', xs: '24px' }}
+				py={{ lg: '56px', xs: '24px' }}
 				sx={{ borderRadius: '40px' }}
 			>
 				{children}
@@ -63,9 +82,7 @@ CustomModal.Header = ({ children }: CustomModalCompound) => {
 
 	return largerThan1024 ? (
 		<Flex justify="space-between" mb={16}>
-			<ModalHeader style={{ flex: 'auto', paddingBottom: 0, paddingTop: 0 }}>
-				{children}
-			</ModalHeader>
+			<ModalHeader style={{ flex: 'auto', padding: 0 }}>{children}</ModalHeader>
 			<ModalCloseButton
 				size="xl"
 				style={{ position: 'static', fontSize: '24px', padding: '15px' }}
@@ -83,7 +100,7 @@ CustomModal.Body = ({ children }: CustomModalCompound) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	return largerThan1024 ? (
-		<ModalBody>{children}</ModalBody>
+		<ModalBody p={0}>{children}</ModalBody>
 	) : (
 		<DrawerBody w="100%">{children}</DrawerBody>
 	);

@@ -12,7 +12,7 @@ export const LangVersion = () => {
 				RU
 			</Text>
 			<Link className={css.en} target="_blank" href={EN_HREF}>
-				<Text color="grey.400" variant="md">
+				<Text color="grey.300" variant="md">
 					EN
 				</Text>
 			</Link>
