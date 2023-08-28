@@ -30,7 +30,11 @@ export const SectionMain = ({
 				<Heading as="h1" variant="h1" mb={{ lg: 10, xs: 6 }}>
 					{heading}
 				</Heading>
-				<Text variant="lg" mb={{ lg: 12, xs: 6 }}>
+				<Text
+					maxW={{ md: '50%', xs: '100%' }}
+					variant="lg"
+					mb={{ lg: 12, xs: 6 }}
+				>
 					{description}
 				</Text>
 				<Flex gap={{ md: 4, xs: 2 }}>
