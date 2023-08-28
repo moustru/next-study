@@ -30,11 +30,11 @@ export const SectionCases = ({ heading, ...others }: any) => {
 					float="right"
 					rightIcon={<ArrowSVG fill="#26282B" width="24px" />}
 					variant="ghost"
-					size={{ md: 'md', xs: 'sm' }}
+					size={{ md: 'lg', xs: 'sm' }}
 					color="grey.600"
 				>
 					<Link href="/cases">
-						<Text variant="md">Ко всем кейсам</Text>
+						<Text variant="lg">Ко всем кейсам</Text>
 					</Link>
 				</Button>
 			</Flex>

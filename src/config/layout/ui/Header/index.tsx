@@ -16,7 +16,7 @@ export const Header = () => {
 
 	return (
 		<header className={css.header}>
-			<Container paddingBlock={['40px', '40px', '40px', '60px', '60px']}>
+			<Container paddingBlock="40px" paddingInline="60px">
 				<Flex alignItems="center" justifyContent="space-between">
 					<Logo location="header" />
 					<Flex gap={8} align="center">

@@ -20,7 +20,7 @@ import { RadioCard } from '@/shared/components/RadioCard';
 import { formSchema } from '../lib/validationSchema';
 import { radios } from '../mocks';
 
-export const SectionFormContent = ({ short = false }) => {
+export const SectionFormContent = ({ short = false, inModal = false }) => {
 	const [solution, setSolution] = useState('');
 	const { openModal } = useModal();
 	const toast = useToast();
@@ -80,7 +80,7 @@ export const SectionFormContent = ({ short = false }) => {
 				<Grid
 					gridTemplateColumns={{ lg: 'repeat(2, 1fr)', xs: 'repeat(1, 1fr)' }}
 					gap={{ lg: 8, xs: 4 }}
-					mb={20}
+					mb={inModal ? 14 : 20}
 				>
 					<InputField
 						label="Ваше имя"
@@ -115,7 +115,7 @@ export const SectionFormContent = ({ short = false }) => {
 					<Button
 						isLoading={isLoadingSendingEmail}
 						isDisabled={!solution && !short}
-						size={{ lg: 'xl', xs: 'md' }}
+						size={{ lg: 'lg', xs: 'md' }}
 						variant="blue"
 						type="submit"
 					>

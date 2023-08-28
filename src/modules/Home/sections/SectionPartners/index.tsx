@@ -11,7 +11,8 @@ export const SectionPartners = ({ partnersLogos, ...others }: any) => {
 		<SectionTemplate title="С нами работают" {...others}>
 			<Grid
 				templateColumns={{
-					lg: 'repeat(4, 1fr)',
+					xl: 'repeat(4, 1fr)',
+					lg: 'repeat(3, 1fr)',
 					sm: 'repeat(2, 1fr)',
 					xs: 'repeat(1, 1fr)',
 				}}

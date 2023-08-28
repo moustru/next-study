@@ -28,7 +28,9 @@ export const NewsItem = ({
 				<Heading as="h3" variant="h3" mb={4}>
 					{title}
 				</Heading>
-				<Text variant="lg">{htmlParser(description)}</Text>
+				<Text variant="lg" mb={6}>
+					{htmlParser(description)}
+				</Text>
 			</Stack>
 			<Text variant="sm" color="grey.500">
 				{htmlParser(publisher)}, {htmlParser(formattedDate)}

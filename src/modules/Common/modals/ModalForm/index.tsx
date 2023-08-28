@@ -17,7 +17,7 @@ export const ModalForm = () => {
 			</CustomModal.Header>
 
 			<CustomModal.Body>
-				<SectionFormContent />
+				<SectionFormContent inModal />
 			</CustomModal.Body>
 		</CustomModal>
 	);
