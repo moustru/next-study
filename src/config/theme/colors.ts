@@ -18,7 +18,7 @@ const colors = {
 	},
 
 	light: {
-		100: '#FFFFFF',
+		100: '#F1F2F3',
 		200: '#F0F5FF',
 	},
 

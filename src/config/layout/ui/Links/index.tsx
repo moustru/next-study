@@ -24,12 +24,12 @@ export const Links = ({
 						variant={{ md: 'md' }}
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
-							fontWeight: '600 !important',
-							color: currentRoute === link.href && 'basic.400',
+							fontWeight: '400 !important',
+							color: currentRoute === link.href && 'basic.300',
 							transition: 'color .3s',
 						}}
 						_hover={{
-							color: 'basic.200',
+							color: 'basic.100',
 						}}
 					>
 						{link.pageName}
