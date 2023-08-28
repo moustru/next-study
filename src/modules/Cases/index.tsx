@@ -6,7 +6,6 @@ export const CasesPage = () => {
 	return (
 		<>
 			<SectionMain />
-
 			<SectionForm />
 		</>
 	);

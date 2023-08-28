@@ -1,6 +1,9 @@
 .movingWay {
 	width: 60px;
 	height: 4px;
+	margin-top: -4px;
+	position: relative;
+	top: -18px;
 
 	border-top-left-radius: 24px;
 	border-bottom-left-radius: 24px;
