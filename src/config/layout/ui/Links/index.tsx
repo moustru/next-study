@@ -14,7 +14,7 @@ export const Links = ({
 	closeMenu = () => false,
 }: LinksModel) => {
 	const router = useRouter();
-	const currentRoute = router.pathname;
+	const currentRoute = router.asPath.split('?')[0];
 
 	return (
 		<Flex gap={{ xs: 4, md: 8 }} direction={{ xs: 'column', md: 'row' }}>
@@ -25,7 +25,7 @@ export const Links = ({
 						color={isLight ? 'white' : 'grey.600'}
 						sx={{
 							fontWeight: '400 !important',
-							color: currentRoute === link.href && 'basic.300',
+							color: currentRoute.startsWith(link.href) && 'basic.300',
 							transition: 'color .3s',
 						}}
 						_hover={{
