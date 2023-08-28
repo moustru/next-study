@@ -33,12 +33,13 @@ export const ServiceBlock = ({
 			<Stack
 				justifyContent="space-between"
 				gap={0}
-				bgColor="light.100"
+				bgColor="white"
+				h={{ lg: 420, xs: 'auto' }}
 				borderRadius={{ md: 44, xs: 20 }}
-				px={{ lg: '80px', md: '48px', xs: '24px' }}
+				px={{ lg: '78px', md: '48px', xs: '24px' }}
 				py={{ lg: '60px', md: '40px', xs: '20px' }}
 			>
-				<Stack gap={0} mb={{ md: 16, xs: 8 }}>
+				<Stack gap={0}>
 					<Text variant="sm" mb={4}>
 						{label}
 					</Text>

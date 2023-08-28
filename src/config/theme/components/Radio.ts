@@ -41,12 +41,12 @@ const Radio = {
 					},
 				},
 
-				_active: {
-					borderColor: 'grey.500',
+				_checked: {
+					borderColor: 'transparent',
 				},
 
 				_disabled: {
-					backgroundColor: 'grey.200',
+					backgroundColor: 'transparent',
 				},
 			},
 		},
