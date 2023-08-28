@@ -39,6 +39,14 @@ export const ArticleBlock = ({
 
 	const authorAvatarURL = authorAvatar.data.attributes.url;
 
+	const formattedDate = new Date(date)
+		.toLocaleDateString('ru-RU', {
+			day: '2-digit',
+			month: 'long',
+			year: 'numeric',
+		})
+		.replace(' г.', '');
+
 	return (
 		<Link
 			style={{
@@ -61,7 +69,7 @@ export const ArticleBlock = ({
 					height="100%"
 					bgColor="light.100"
 					borderRadius={{ md: 44, xs: 20 }}
-					px={{ lg: '80px', xs: '32px' }}
+					px={{ lg: '78px', xs: '32px' }}
 					py={{ lg: '60px', xs: '24px' }}
 				>
 					<Stack gap={0} mb={{ lg: 16, xs: 8 }}>
@@ -95,11 +103,13 @@ export const ArticleBlock = ({
 										fill
 									/>
 								</Box>
-								<Text variant="xs">{author}</Text>
+								<Text color="grey.500" variant="xs">
+									{author}
+								</Text>
 							</Flex>
 
 							<Flex gap={6}>
-								<Text color="grey.400">{date}</Text>
+								<Text color="grey.400">{formattedDate}</Text>
 
 								<Flex alignItems="center" gap={1}>
 									<LikeSVG fill="#787D87" width="16px" />
