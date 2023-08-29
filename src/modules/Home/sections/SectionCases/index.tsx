@@ -28,10 +28,11 @@ export const SectionCases = ({ heading, ...others }: any) => {
 			<Flex justifyContent="flex-end">
 				<Button
 					float="right"
-					rightIcon={<ArrowSVG fill="#26282B" width="24px" />}
+					rightIcon={<ArrowSVG fill="#26282B" width="32px" />}
 					variant="ghost"
 					size={{ md: 'lg', xs: 'sm' }}
 					color="grey.600"
+					sx={{ '.chakra-button__icon': { margin: 0 } }}
 				>
 					<Link href="/cases">
 						<Text variant="lg">Ко всем кейсам</Text>

@@ -40,7 +40,7 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 					<Flex alignItems="center" gap={4} mb={{ lg: 6, sm: 2 }}>
 						<Heading
 							as="h3"
-							variant="h1"
+							variant={variant === 'dark' ? 'h1' : 'h2'}
 							color={variant === 'dark' ? 'grey.50' : 'grey.600'}
 						>
 							#{achieve.place}

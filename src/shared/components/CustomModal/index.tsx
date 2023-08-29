@@ -57,7 +57,9 @@ const CustomModal = ({ isOpen, onClose, children }: CustomModalProps) => {
 				maxW="1320px"
 				px={{ lg: '60px', xs: '24px' }}
 				py={{ lg: '56px', xs: '24px' }}
-				sx={{ borderRadius: '40px' }}
+				sx={{
+					borderRadius: '40px',
+				}}
 			>
 				{children}
 			</ModalContent>

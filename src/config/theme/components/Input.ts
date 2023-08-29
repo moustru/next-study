@@ -6,7 +6,7 @@ const Input = {
 				paddingBlock: '16px',
 				paddingInline: '30px',
 				fontSize: ['16px', '16px', '24px', '32px', '32px', '32px'],
-				lineHeight: '1.2',
+				lineHeight: ['22px', '22px', '33px', '44px', '44px', '44px'],
 				backgroundColor: 'grey.50',
 				borderColor: 'transparent',
 				borderWidth: '0.5px',
