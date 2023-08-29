@@ -52,7 +52,13 @@ export const SectionMain = ({
 						<Link href={siteLink}>Перейти на сайт</Link>
 					</Button>
 
-					<Button width={54} variant="dark" p={0}>
+					<Button
+						width={54}
+						sx={{ borderRadius: '10px' }}
+						variant="dark"
+						p={0}
+						borderRadius="10px"
+					>
 						<Link href={appStoreLink}>
 							<Image
 								width={32}
@@ -63,7 +69,13 @@ export const SectionMain = ({
 						</Link>
 					</Button>
 
-					<Button width={54} variant="dark" p={0}>
+					<Button
+						width={54}
+						variant="dark"
+						sx={{ borderRadius: '10px' }}
+						p={0}
+						borderRadius="10px"
+					>
 						<Link href={googleLink}>
 							<Image
 								width={32}

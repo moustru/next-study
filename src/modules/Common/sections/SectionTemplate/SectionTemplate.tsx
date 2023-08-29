@@ -7,6 +7,7 @@ import {
 	IconButton,
 	useMediaQuery,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 
 import type { EmblaCarouselType } from 'embla-carousel-react';
@@ -50,6 +51,8 @@ export const SectionTemplate = ({
 		ssr: true,
 	});
 
+	const router = useRouter();
+
 	return (
 		<Container
 			as="section"
@@ -61,7 +64,11 @@ export const SectionTemplate = ({
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={{ lg: '80px', sm: '40px', xs: '20px' }}
+					mb={{
+						lg: router.pathname === '/blog' ? '40px' : '80px',
+						sm: '40px',
+						xs: '20px',
+					}}
 				>
 					{title}
 				</Heading>
@@ -87,8 +94,10 @@ export const SectionTemplate = ({
 							<Button
 								size="md"
 								variant="blue"
+								gap="12px"
 								rightIcon={<PlusSVG width="24px" />}
 								onClick={handleButtonClick}
+								sx={{ '.chakra-button__icon': { margin: 0 } }}
 							>
 								Стать частью команды
 							</Button>
@@ -102,6 +111,7 @@ export const SectionTemplate = ({
 									icon={<ChevronLeftSVG fill="#000" width="32px" />}
 									bgColor="transparent"
 									p="11px"
+									borderRadius="10px"
 									onClick={handlePrevClick}
 									isDisabled={!canPrev}
 									_hover={{ backgroundColor: 'grey.50' }}
@@ -112,6 +122,7 @@ export const SectionTemplate = ({
 									icon={<ChevronRightSVG fill="#000" width="32px" />}
 									bgColor="transparent"
 									p="11px"
+									borderRadius="10px"
 									onClick={handleNextClick}
 									isDisabled={!canNext}
 									_hover={{ backgroundColor: 'grey.50' }}

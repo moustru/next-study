@@ -63,7 +63,8 @@ export const SectionFormContent = ({ short = false, inModal = false }) => {
 					<RadioGroup mb="54px" onChange={setSolution} value={solution}>
 						<Grid
 							gridTemplateColumns={{
-								lg: 'repeat(3, 1fr)',
+								xl: 'repeat(3, 1fr)',
+								lg: 'repeat(2, 1fr)',
 								xs: 'repeat(1, 1fr)',
 							}}
 							gap={{ lg: 8, xs: 4 }}

@@ -28,7 +28,7 @@ export const NewsItem = ({
 				<Heading as="h3" variant="h3" mb={4}>
 					{title}
 				</Heading>
-				<Text variant="lg" mb={6}>
+				<Text variant="lg" mb="58px" noOfLines={[1, 2, 3]}>
 					{htmlParser(description)}
 				</Text>
 			</Stack>

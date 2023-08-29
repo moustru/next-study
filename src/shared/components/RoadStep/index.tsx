@@ -10,14 +10,15 @@ import {
 type RoadStepModel = {
 	year: string;
 	changelog: string[];
+	isLast: boolean;
 };
 
-export const RoadStep = ({ year, changelog }: RoadStepModel) => {
+export const RoadStep = ({ year, changelog, isLast }: RoadStepModel) => {
 	const [largerThan1024] = useMediaQuery('(min-width: 1024px)');
 
 	if (largerThan1024) {
 		return (
-			<Box>
+			<Box w={isLast ? '240px' : '100%'}>
 				<Flex alignItems="center" mb={12}>
 					<Box
 						width={6}
