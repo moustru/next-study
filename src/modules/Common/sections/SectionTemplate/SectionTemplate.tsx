@@ -7,6 +7,7 @@ import {
 	IconButton,
 	useMediaQuery,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { ReactElement } from 'react';
 
 import type { EmblaCarouselType } from 'embla-carousel-react';
@@ -50,6 +51,8 @@ export const SectionTemplate = ({
 		ssr: true,
 	});
 
+	const router = useRouter();
+
 	return (
 		<Container
 			as="section"
@@ -61,7 +64,11 @@ export const SectionTemplate = ({
 				<Heading
 					as={firstBlock ? 'h1' : 'h2'}
 					variant={firstBlock ? 'h1' : 'h2'}
-					mb={{ lg: '80px', sm: '40px', xs: '20px' }}
+					mb={{
+						lg: router.pathname === '/blog' ? '40px' : '80px',
+						sm: '40px',
+						xs: '20px',
+					}}
 				>
 					{title}
 				</Heading>
