@@ -1,7 +1,7 @@
 const Modal = {
 	baseStyle: {
 		dialogContainer: {
-			overflowY: 'hidden',
+			alignItems: 'center',
 		},
 
 		dialog: {
