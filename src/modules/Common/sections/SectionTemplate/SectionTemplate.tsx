@@ -94,6 +94,7 @@ export const SectionTemplate = ({
 							<Button
 								size="md"
 								variant="blue"
+								gap="12px"
 								rightIcon={<PlusSVG width="24px" />}
 								onClick={handleButtonClick}
 								sx={{ '.chakra-button__icon': { margin: 0 } }}
