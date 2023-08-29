@@ -55,7 +55,7 @@ export const AuthorSegment = ({
 		};
 
 		await setLikeStateOnStrapi({ articleId, likes: getLikes() });
-	}, 1000);
+	}, 200);
 
 	return (
 		<Flex justifyContent="space-between" mb={{ md: 0, xs: 8 }}>
@@ -75,6 +75,7 @@ export const AuthorSegment = ({
 				onClick={handleLikePost}
 				likesState={likesState}
 				isLiked={isLiked}
+				isAlreadyLiked={isAlreadyLiked}
 			/>
 		</Flex>
 	);

@@ -6,6 +6,11 @@ const Radio = {
 				height: '24px',
 				borderColor: 'grey.400',
 
+				'@media screen and (max-width: 768px)': {
+					width: '16px',
+					height: '16px',
+				},
+
 				_checked: {
 					borderColor: 'basic.100',
 					background: 'transparent',
@@ -14,6 +19,10 @@ const Radio = {
 						width: '16px',
 						height: '16px',
 						background: 'basic.100',
+						'@media screen and (max-width: 768px)': {
+							width: '8px',
+							height: '8px',
+						},
 					},
 				},
 			},
