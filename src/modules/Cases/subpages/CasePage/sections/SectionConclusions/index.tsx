@@ -18,7 +18,13 @@ export const SectionConclusions = ({
 			</Heading>
 			<Text variant="xl">
 				{describe}{' '}
-				<Tag variant="dark" verticalAlign="baseline">
+				<Tag
+					fontWeight="400"
+					position="relative"
+					top="-3px"
+					variant="dark"
+					verticalAlign="baseline"
+				>
 					{period}
 				</Tag>
 			</Text>
