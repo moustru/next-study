@@ -94,6 +94,7 @@ export const SectionTemplate = ({
 							<Button
 								size="md"
 								variant="blue"
+								gap="4px"
 								rightIcon={<PlusSVG width="24px" />}
 								onClick={handleButtonClick}
 							>
