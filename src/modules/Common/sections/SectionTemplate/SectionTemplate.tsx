@@ -89,6 +89,7 @@ export const SectionTemplate = ({
 								variant="blue"
 								rightIcon={<PlusSVG width="24px" />}
 								onClick={handleButtonClick}
+								sx={{ '.chakra-button__icon': { margin: 0 } }}
 							>
 								Стать частью команды
 							</Button>
@@ -102,6 +103,7 @@ export const SectionTemplate = ({
 									icon={<ChevronLeftSVG fill="#000" width="32px" />}
 									bgColor="transparent"
 									p="11px"
+									borderRadius="10px"
 									onClick={handlePrevClick}
 									isDisabled={!canPrev}
 									_hover={{ backgroundColor: 'grey.50' }}
@@ -112,6 +114,7 @@ export const SectionTemplate = ({
 									icon={<ChevronRightSVG fill="#000" width="32px" />}
 									bgColor="transparent"
 									p="11px"
+									borderRadius="10px"
 									onClick={handleNextClick}
 									isDisabled={!canNext}
 									_hover={{ backgroundColor: 'grey.50' }}
