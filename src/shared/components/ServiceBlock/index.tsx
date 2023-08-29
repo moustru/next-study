@@ -39,7 +39,7 @@ export const ServiceBlock = ({
 				px={{ lg: '78px', md: '48px', xs: '24px' }}
 				py={{ lg: '60px', md: '40px', xs: '20px' }}
 			>
-				<Stack gap={0}>
+				<Stack gap={0} mb={{ xs: '25px' }}>
 					<Text variant="sm" mb={4}>
 						{label}
 					</Text>

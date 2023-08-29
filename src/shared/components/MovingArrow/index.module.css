@@ -11,7 +11,8 @@
 	@media (max-width: 991px) {
 		width: 30px;
 		height: 2px;
-		right: 50px;
+		/* right: 50px; */
+		top: 0px;
 	}
 }
 
