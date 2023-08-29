@@ -18,7 +18,7 @@ export const SectionMain = () => {
 	}));
 
 	return (
-		<SectionTemplate title="Блог" firstBlock>
+		<SectionTemplate title="Блог" firstBlock bg="#F7F7F8">
 			<Tabs>
 				<TabList onClick={setFilteredNews} />
 				<TabPanels

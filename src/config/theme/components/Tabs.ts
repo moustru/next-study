@@ -1,7 +1,7 @@
 const Tabs = {
 	baseStyle: {
 		tablist: {
-			backgroundColor: 'light.100',
+			backgroundColor: 'white',
 			width: 'max-content',
 			padding: '10px',
 			gap: '12px',

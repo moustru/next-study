@@ -39,13 +39,7 @@ export const ArticleBlock = ({
 
 	const authorAvatarURL = authorAvatar.data.attributes.url;
 
-	const formattedDate = new Date(date)
-		.toLocaleDateString('ru-RU', {
-			day: '2-digit',
-			month: 'long',
-			year: 'numeric',
-		})
-		.replace(' г.', '');
+	const formattedDate = new Date(date).toLocaleDateString('ru-RU');
 
 	return (
 		<Link
@@ -67,7 +61,7 @@ export const ArticleBlock = ({
 					justifyContent="space-between"
 					gap={0}
 					height="100%"
-					bgColor="light.100"
+					bgColor="white"
 					borderRadius={{ md: 44, xs: 20 }}
 					px={{ lg: '78px', xs: '32px' }}
 					py={{ lg: '60px', xs: '24px' }}
