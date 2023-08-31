@@ -1,5 +1,6 @@
 import { useMediaQuery } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
+import ArrowSVG from 'public/icons/arrowr.svg';
 
 import css from './index.module.css';
 
@@ -19,12 +20,13 @@ export const MovingArrow = ({
 	return (
 		<div data-color={coloring} className={css.movingWay}>
 			<motion.div
-				className={css.arrow}
-				data-color={coloring}
+				className={css.arrowWrapper}
 				initial={{ x: '-10%' }}
-				animate={{ x: !isMobile && isHoverOnParent ? '100%' : '5%' }}
+				animate={{ x: !isMobile && isHoverOnParent ? '90%' : '5%' }}
 				transition={{ duration: 0.3, cubicBezier: '0.83, 0, 0.17, 1' }}
-			/>
+			>
+				<ArrowSVG data-color={coloring} className={css.arrow} />
+			</motion.div>
 		</div>
 	);
 };

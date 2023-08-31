@@ -4,6 +4,9 @@
 	margin-top: -4px;
 	position: relative;
 	top: -18px;
+	display: grid;
+	place-items: center;
+	position: relative;
 
 	border-top-left-radius: 24px;
 	border-bottom-left-radius: 24px;
@@ -11,69 +14,32 @@
 	@media (max-width: 991px) {
 		width: 30px;
 		height: 2px;
-		/* right: 50px; */
 		top: 0px;
 	}
 }
 
-.arrow::before,
-.arrow::after {
-	content: '';
+.arrowWrapper {
 	position: absolute;
-	height: 4px;
-	width: 25px;
-	border-radius: 24px;
-	@media (max-width: 991px) {
-		height: 2px;
-		width: 15px;
-	}
 }
 
 .arrow {
-	height: 100%;
-	width: 60px;
-	position: relative;
-	border-top-right-radius: 0px;
-	border-bottom-left-radius: 0px;
-
-	&::before {
-		right: -5px;
-		transform: rotate(45deg);
-		top: -7.5px;
-		border-radius: 24px;
-		border-top-left-radius: 30px;
-		border-top-right-radius: 20px;
-		border-bottom-right-radius: 15px;
-		border-bottom-left-radius: 30px;
-		@media (max-width: 991px) {
-			top: -5px;
-		}
-	}
-	&::after {
-		right: -5px;
-		transform: rotate(-45deg);
-		top: 7.5px;
-		border-top-left-radius: 30px;
-		border-top-right-radius: 0px;
-		border-bottom-right-radius: 20px;
-		border-bottom-left-radius: 30px;
-
-		@media (max-width: 991px) {
-			top: 5px;
-		}
-	}
+	transform: scale(0.95);
 }
 
-.movingWay,
-.arrow {
-	&[data-color='dark'],
-	&[data-color='dark']::after,
-	&[data-color='dark']::before {
+.movingWay {
+	&[data-color='dark'] {
 		background-color: #26282b;
 	}
-	&[data-color='light'],
-	&[data-color='light']::after,
-	&[data-color='light']::before {
+	&[data-color='light'] {
 		background-color: #ffffff;
+	}
+}
+
+.arrow {
+	&[data-color='dark'] {
+		color: #26282b;
+	}
+	&[data-color='light'] {
+		color: #ffffff;
 	}
 }
