@@ -4,7 +4,7 @@ import { ContentSteps } from '@/shared/components/ContentSteps';
 export const SectionHelp = ({ heading, steps, ...others }: any) => {
 	return (
 		<SectionTemplate title={heading} {...others}>
-			<ContentSteps steps={steps} withRightMargin />
+			<ContentSteps steps={steps} />
 		</SectionTemplate>
 	);
 };
