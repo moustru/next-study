@@ -7,13 +7,9 @@ import type { StepBlock } from '@/shared/types/StepBlock';
 
 type ContentStepModel = {
 	steps: StepBlock[];
-	withRightMargin?: boolean;
 };
 
-export const ContentSteps = ({
-	steps,
-	withRightMargin = false,
-}: ContentStepModel) => {
+export const ContentSteps = ({ steps }: ContentStepModel) => {
 	return (
 		<Grid
 			templateColumns={{
@@ -23,8 +19,7 @@ export const ContentSteps = ({
 				xs: 'repeat(1, 1fr)',
 			}}
 			rowGap={{ lg: 20, sm: 12, xs: 8 }}
-			columnGap={6}
-			marginRight={withRightMargin ? { lg: '120px', xs: 0 } : 0}
+			columnGap={16}
 		>
 			{steps?.map(({ id, title, text }, i) => (
 				<GridItem key={id}>
