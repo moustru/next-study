@@ -48,8 +48,16 @@ export const AchieveBlock = ({ achievements, variant }: AchieveBlockModel) => {
 
 						<Box
 							position="relative"
-							width={{ xs: '10vw', md: '56px' }}
-							height={{ xs: '10vw', md: '56px' }}
+							width={
+								variant === 'light'
+									? { xs: '10vw', md: '48px' }
+									: { xs: '10vw', md: '56px' }
+							}
+							height={
+								variant === 'light'
+									? { xs: '10vw', md: '48px' }
+									: { xs: '10vw', md: '56px' }
+							}
 						>
 							<Image
 								src={achieve?.icon?.data?.attributes?.url}

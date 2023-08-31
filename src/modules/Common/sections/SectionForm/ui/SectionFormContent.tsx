@@ -28,7 +28,7 @@ export const SectionFormContent = ({ short = false, inModal = false }) => {
 	const {
 		register,
 		handleSubmit,
-		formState: { errors },
+		formState: { errors, isValid },
 	} = useForm({
 		resolver: yupResolver(formSchema),
 	});
@@ -51,6 +51,12 @@ export const SectionFormContent = ({ short = false, inModal = false }) => {
 
 	const sendData = (data: any) => {
 		sendEmailData(short ? { ...data } : { ...data, solution });
+	};
+
+	const disableButton = () => {
+		if (short) return !isValid;
+
+		return !solution || !isValid;
 	};
 
 	return (
@@ -115,7 +121,7 @@ export const SectionFormContent = ({ short = false, inModal = false }) => {
 					</Text>
 					<Button
 						isLoading={isLoadingSendingEmail}
-						isDisabled={!solution && !short}
+						isDisabled={disableButton()}
 						size={{ lg: 'lg', xs: 'md' }}
 						variant="blue"
 						type="submit"

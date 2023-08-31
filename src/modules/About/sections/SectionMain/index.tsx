@@ -7,7 +7,7 @@ type SectionMainModel = {
 export const SectionMain = ({ subheading }: SectionMainModel) => {
 	return (
 		<Box
-			mt={{ lg: 200, md: 160, xs: '120px' }}
+			mt={{ lg: 176, md: 160, xs: '120px' }}
 			mb={{ lg: 120, md: '80px', xs: '40px' }}
 			backgroundColor="grey.600"
 		>
