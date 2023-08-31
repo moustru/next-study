@@ -1,5 +1,5 @@
 .movingWay {
-	width: 60px;
+	width: 57px;
 	height: 4px;
 	margin-top: -4px;
 	position: relative;
@@ -16,6 +16,9 @@
 		height: 2px;
 		top: 0px;
 	}
+	@media (max-width: 768px) {
+		background-color: transparent !important;
+	}
 }
 
 .arrowWrapper {
@@ -23,7 +26,10 @@
 }
 
 .arrow {
-	transform: scale(0.95);
+	transform: scale(0.9);
+	@media (max-width: 768px) {
+		transform: scale(0.5);
+	}
 }
 
 .movingWay {
