@@ -5,9 +5,7 @@ import type { ImageLoaderProps } from 'next/image';
 export default function myImageLoader({
 	src,
 	width,
-	quality,
+	quality = 100,
 }: ImageLoaderProps) {
-	return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${src}?w=${width}&q=${
-		quality || 100
-	}`;
+	return `${process.env.NEXT_PUBLIC_STRAPI_IMAGE}${src}?w=${width}&q=${quality}`;
 }

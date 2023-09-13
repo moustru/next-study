@@ -1,4 +1,6 @@
-import { Container, Text } from '@chakra-ui/react';
+import { Container } from '@chakra-ui/react';
+
+import { TextComponent } from '@/shared/components/TextComponent';
 
 type TextSegmentModel = {
 	text: string;
@@ -7,9 +9,7 @@ type TextSegmentModel = {
 export const TextSegment = ({ text }: TextSegmentModel) => {
 	return (
 		<Container mb={{ lg: '180px', md: '90px', xs: '32px' }}>
-			<Text maxW="869px" variant="xl">
-				{text}
-			</Text>
+			<TextComponent text={text} maxW="869px" variant="xl" />
 		</Container>
 	);
 };
