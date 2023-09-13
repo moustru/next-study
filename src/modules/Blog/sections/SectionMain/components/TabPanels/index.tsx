@@ -60,7 +60,7 @@ export const TabPanels = ({ items, currGroup, isLoading, isError }: any) => {
 										author={item.author}
 										likes={item.likes}
 										authorAvatar={item.authorAvatar}
-										subText={item.articleDescribe}
+										subText={item.annotationForCard}
 										href={`/blog/${item.slug}`}
 									/>
 								))
