@@ -8,10 +8,11 @@ type ImageSegmentModel = {
 };
 
 export const ImageSegment = ({ image }: ImageSegmentModel) => {
-	const imageURL = image?.data?.attributes?.url;
+	const imagesURLs = image?.data?.map((img: any) => img?.attributes?.url);
 
-	return (
+	return imagesURLs?.map((imageURL: any, i: number) => (
 		<Box
+			key={imageURL + i}
 			mx="auto"
 			w="100%"
 			h={600}
@@ -29,5 +30,5 @@ export const ImageSegment = ({ image }: ImageSegmentModel) => {
 				fill
 			/>
 		</Box>
-	);
+	));
 };
